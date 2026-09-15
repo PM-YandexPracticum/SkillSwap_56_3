@@ -1,5 +1,5 @@
 import type { Category } from "@/shared/types";
 
-export type SkillsBtnProps = {
+export type SkillsPopoverContentProps = {
   categories: Category[];
 };

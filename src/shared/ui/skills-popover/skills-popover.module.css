@@ -1,67 +1,35 @@
-.popover {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  z-index: 100;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  border: 1px solid #69735d;
-  border-radius: 20px;
-  padding: 60px;
-  color: #253017;
-  background: #fff;
-  inline-size: 1136px;
-  font-family: Roboto, sans-serif;
+.wrapper {
+  position: relative;
+  display: inline-block;
 }
 
-.category {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 8px 12px;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  background: none;
+  cursor: pointer;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.categoryName {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  font-family: Jost, sans-serif;
-}
-
-.subcategoryList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  list-style: none;
-}
-
-.subcategoryItem {
+.buttonText {
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 2%;
 }
 
-.iconWrapper {
-  width: 48px;
-  height: 48px;
-  padding: 10px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.buttonIcon {
   flex-shrink: 0;
-  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
 }
 
-.icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+.buttonIconOpen {
+  transform: rotate(180deg);
 }

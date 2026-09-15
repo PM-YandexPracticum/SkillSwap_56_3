@@ -1,1 +1,1 @@
-export { SkillsPopover } from './skills-popover.tsx';
+export { SkillsBtn } from './skills-popover'
