@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import styles from './auth-btns.module.css';
+import styles from './guest-actions.module.css';
 import { Button } from '../button';
 
-export const AuthBtns = () => {
+export const GuestActions = () => {
   return (
     <div className={styles.wrapper}>
       <Link to="/login">
