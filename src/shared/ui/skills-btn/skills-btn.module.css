@@ -1,0 +1,36 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 8px 12px;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  background: none;
+  cursor: pointer;
+}
+
+.buttonText {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.buttonIconOpen {
+  transform: rotate(180deg);
+}
