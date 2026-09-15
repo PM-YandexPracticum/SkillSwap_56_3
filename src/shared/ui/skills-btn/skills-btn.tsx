@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SkillsPopover } from '../skill-popover';
+import { SkillsPopover } from '../skills-popover';
 import styles from './skills-btn.module.css';
 import { SkillBtnProps } from './type';
 
