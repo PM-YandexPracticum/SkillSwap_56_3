@@ -26,7 +26,6 @@
   width: 16px;
   height: 16px;
   object-fit: contain;
-
   transition: transform 0.2s ease;
   transform: rotate(0deg);
 }

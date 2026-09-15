@@ -12,7 +12,7 @@
   color: #253017;
   background: #fff;
   inline-size: 1136px;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 .category {
@@ -31,7 +31,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
-  font-family: 'Jost', sans-serif;
+  font-family: Jost, sans-serif;
 }
 
 .subcategoryList {
