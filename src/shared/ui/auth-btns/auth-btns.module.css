@@ -1,0 +1,37 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 12px 23px;
+  font: inherit;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.register {
+  background: #abd27a;
+}
+
+.register:hover {
+  background: #deebc5;
+}
+
+.login {
+  border: 1px solid #abd27a;
+  background: transparent;
+}
+
+.login:hover {
+ background: #deebc5;
+}
