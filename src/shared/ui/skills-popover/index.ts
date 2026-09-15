@@ -1,1 +1,1 @@
-export { SkillsBtn } from './skills-popover'
+export { SkillsPopover } from './skills-popover'
