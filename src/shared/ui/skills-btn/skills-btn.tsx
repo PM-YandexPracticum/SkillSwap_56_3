@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { SkillsPopover } from '../skills-popover';
 import styles from './skills-btn.module.css';
-import { SkillBtnProps } from './type';
+import { SkillsBtnProps } from './type';
 
-export const SkillsBtn = ({categories}: SkillBtnProps) => {
+export const SkillsBtn = ({categories}: SkillsBtnProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!categories || categories.length === 0) {

@@ -1,5 +1,5 @@
 import type { Category } from "@/shared/types";
 
-export type SkillBtnProps = {
+export type SkillsBtnProps = {
   categories: Category[];
 };
