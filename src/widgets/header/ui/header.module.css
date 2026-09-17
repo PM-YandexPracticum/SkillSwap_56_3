@@ -1,0 +1,14 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: var(--color-background);
+}
+
+.header__inner {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	min-height: 104px;
+	padding-block: 36px 20px;
+}
