@@ -2,14 +2,15 @@ import { BasePopover } from '../base-popover/base-popover';
 import { SkillsPopoverContent } from './skills-popover-content/skills-popover-content';
 import styles from './skills-popover.module.css';
 import { SkillsPopoverProps } from './type';
+import { Button } from '../button';
 
 export const SkillsPopover = ({ categories }: SkillsPopoverProps) => {
   return (
     <BasePopover
       trigger={({ isOpen, toggle }) => (
-        <button
+        <Button
           type="button"
-          className={styles.button}
+          extraClass={styles.button}
           onClick={toggle}
         >
           <span className={styles.buttonText}>Все навыки</span>
@@ -18,7 +19,7 @@ export const SkillsPopover = ({ categories }: SkillsPopoverProps) => {
             alt=""
             className={`${styles.buttonIcon} ${isOpen ? styles.buttonIconOpen : ''}`}
           />
-        </button>
+        </Button>
       )}
     >
       <SkillsPopoverContent categories={categories} />
