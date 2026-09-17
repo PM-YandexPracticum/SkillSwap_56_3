@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #71766f;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #f1f3ed;
+  transform: scale(1.06);
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px rgb(171 210 122 / 50%);
+}
+
+.active {
+  color: #e55c5c;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
