@@ -6,11 +6,15 @@ export const GuestActions = () => {
   return (
     <div className={styles.wrapper}>
       <Link to="/login">
-        <Button extraClass={`${styles.btn} ${styles.login}`} text='Войти'/>
+        <Button extraClass={`${styles.btn} ${styles.login}`}>
+          Войти
+        </Button>
       </Link>
 
       <Link to="/register">
-        <Button extraClass={`${styles.btn} ${styles.register}`} text='Зарегистрироваться'/>
+        <Button extraClass={`${styles.btn} ${styles.register}`}>
+          Зарегистрироваться
+        </Button>
       </Link>
     </div>
   );

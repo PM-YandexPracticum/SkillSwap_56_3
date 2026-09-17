@@ -3,7 +3,7 @@ import { ButtonProps } from './type';
 
 export const Button = ({
   onClick,
-  text,
+  children,
   type = 'button',
   extraClass = '',
 }: ButtonProps) => {
@@ -13,7 +13,7 @@ export const Button = ({
       onClick={onClick}
       className={`${styles.button} ${extraClass}`.trim()}
     >
-      {text}
+      {children}
     </button>
   );
 };
