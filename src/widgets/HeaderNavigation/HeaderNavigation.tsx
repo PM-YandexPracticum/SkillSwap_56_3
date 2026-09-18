@@ -1,16 +1,11 @@
-import type { Category } from '@/shared/types'
 import { SkillsPopover } from '@/shared/ui/skills-popover'
 import { Button } from '@/shared/ui/button'
+import { HeaderNavigationProps } from './type'
 
-interface HeaderNavigationProps {
-  onAbout: () => void
-  categories: Category[]
-}
-
-export function HeaderNavigation({ onAbout, categories }: HeaderNavigationProps) {
+export function HeaderNavigation({ categories }: HeaderNavigationProps) {
   return (
     <nav>
-      <Button type="button" onClick={onAbout}>
+      <Button type="button">
         О проекте
       </Button>
       <SkillsPopover categories={categories} />
