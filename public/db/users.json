@@ -1,1 +1,1660 @@
-[]
+{
+  "meta": {
+    "wantFilter": [
+      {
+        "id": "all",
+        "name": "Всё"
+      },
+      {
+        "id": "learn",
+        "name": "Хочу научиться"
+      },
+      {
+        "id": "teach",
+        "name": "Могу научить"
+      }
+    ],
+    "genders": [
+      {
+        "id": "all",
+        "name": "Не имеет значения"
+      },
+      {
+        "id": "male",
+        "name": "Мужской"
+      },
+      {
+        "id": "female",
+        "name": "Женский"
+      }
+    ],
+    "cities": [
+      {
+        "id": "moscow",
+        "name": "Москва"
+      },
+      {
+        "id": "saint-petersburg",
+        "name": "Санкт-Петербург"
+      },
+      {
+        "id": "arkhangelsk",
+        "name": "Архангельск"
+      },
+      {
+        "id": "novosibirsk",
+        "name": "Новосибирск"
+      },
+      {
+        "id": "yekaterinburg",
+        "name": "Екатеринбург"
+      },
+      {
+        "id": "kazan",
+        "name": "Казань"
+      },
+      {
+        "id": "nizhny-novgorod",
+        "name": "Нижний Новгород"
+      },
+      {
+        "id": "chelyabinsk",
+        "name": "Челябинск"
+      },
+      {
+        "id": "samara",
+        "name": "Самара"
+      },
+      {
+        "id": "sochi",
+        "name": "Сочи"
+      },
+      {
+        "id": "rostov-on-don",
+        "name": "Ростов-на-Дону"
+      },
+      {
+        "id": "ufa",
+        "name": "Уфа"
+      },
+      {
+        "id": "krasnoyarsk",
+        "name": "Красноярск"
+      },
+      {
+        "id": "perm",
+        "name": "Пермь"
+      },
+      {
+        "id": "voronezh",
+        "name": "Воронеж"
+      },
+      {
+        "id": "vladivostok",
+        "name": "Владивосток"
+      },
+      {
+        "id": "kaliningrad",
+        "name": "Калининград"
+      }
+    ],
+    "categories": [
+      {
+        "id": "business-career",
+        "name": "Бизнес и карьера",
+        "subcategories": [
+          {
+            "id": "team-management",
+            "name": "Управление командой"
+          },
+          {
+            "id": "marketing-advertising",
+            "name": "Маркетинг и реклама"
+          },
+          {
+            "id": "sales-negotiations",
+            "name": "Продажи и переговоры"
+          },
+          {
+            "id": "personal-brand",
+            "name": "Личный бренд"
+          },
+          {
+            "id": "resume-interview",
+            "name": "Резюме и собеседование"
+          },
+          {
+            "id": "time-management",
+            "name": "Тайм-менеджмент"
+          },
+          {
+            "id": "project-management",
+            "name": "Проектное управление"
+          },
+          {
+            "id": "entrepreneurship",
+            "name": "Предпринимательство"
+          }
+        ]
+      },
+      {
+        "id": "creativity-art",
+        "name": "Творчество и искусство",
+        "subcategories": [
+          {
+            "id": "drawing-illustration",
+            "name": "Рисование и иллюстрация"
+          },
+          {
+            "id": "photography",
+            "name": "Фотография"
+          },
+          {
+            "id": "video-editing",
+            "name": "Видеомонтаж"
+          },
+          {
+            "id": "music-sound",
+            "name": "Музыка и звук"
+          },
+          {
+            "id": "acting",
+            "name": "Актёрское мастерство"
+          },
+          {
+            "id": "creative-writing",
+            "name": "Креативное письмо"
+          },
+          {
+            "id": "arts-crafts",
+            "name": "Арт-терапия"
+          },
+          {
+            "id": "decor-diy",
+            "name": "Декор и DIY"
+          }
+        ]
+      },
+      {
+        "id": "foreign-languages",
+        "name": "Иностранные языки",
+        "subcategories": [
+          {
+            "id": "english",
+            "name": "Английский"
+          },
+          {
+            "id": "french",
+            "name": "Французский"
+          },
+          {
+            "id": "spanish",
+            "name": "Испанский"
+          },
+          {
+            "id": "german",
+            "name": "Немецкий"
+          },
+          {
+            "id": "chinese",
+            "name": "Китайский"
+          },
+          {
+            "id": "japanese",
+            "name": "Японский"
+          },
+          {
+            "id": "exam-preparation",
+            "name": "Подготовка к экзаменам (IELTS, TOEFL)"
+          }
+        ]
+      },
+      {
+        "id": "education-development",
+        "name": "Образование и развитие",
+        "subcategories": [
+          {
+            "id": "personal-development",
+            "name": "Личностное развитие"
+          },
+          {
+            "id": "learning-skills",
+            "name": "Навыки обучения"
+          },
+          {
+            "id": "cognitive-techniques",
+            "name": "Когнитивные техники"
+          },
+          {
+            "id": "speed-reading",
+            "name": "Скорочтение"
+          },
+          {
+            "id": "teaching-skills",
+            "name": "Навыки преподавания"
+          },
+          {
+            "id": "coaching",
+            "name": "Коучинг"
+          }
+        ]
+      },
+      {
+        "id": "home-comfort",
+        "name": "Дом и уют",
+        "subcategories": [
+          {
+            "id": "cleaning-organization",
+            "name": "Уборка и организация"
+          },
+          {
+            "id": "home-finance",
+            "name": "Домашние финансы"
+          },
+          {
+            "id": "cooking",
+            "name": "Приготовление еды"
+          },
+          {
+            "id": "houseplants",
+            "name": "Домашние растения"
+          },
+          {
+            "id": "repair",
+            "name": "Ремонт"
+          },
+          {
+            "id": "storage",
+            "name": "Хранение вещей"
+          }
+        ]
+      },
+      {
+        "id": "health-lifestyle",
+        "name": "Здоровье и лайфстайл",
+        "subcategories": [
+          {
+            "id": "yoga-meditation",
+            "name": "Йога и медитация"
+          },
+          {
+            "id": "nutrition-healthy-lifestyle",
+            "name": "Питание и ЗОЖ"
+          },
+          {
+            "id": "mental-health",
+            "name": "Ментальное здоровье"
+          },
+          {
+            "id": "mindfulness",
+            "name": "Осознанность"
+          },
+          {
+            "id": "physical-training",
+            "name": "Физические тренировки"
+          },
+          {
+            "id": "sleep-recovery",
+            "name": "Сон и восстановление"
+          },
+          {
+            "id": "work-life-balance",
+            "name": "Баланс жизни и работы"
+          }
+        ]
+      }
+    ]
+  },
+  "data": [
+    {
+      "id": "u001",
+      "name": "Анна Смирнова",
+      "email": "anna.smirnova@example.com",
+      "birthDate": "1995-04-18",
+      "gender": "female",
+      "city": "moscow",
+      "likesCount": 124,
+      "aboutMe": "Люблю языки, путешествия и уютные книжные клубы.",
+      "createdAt": "2023-06-12T10:15:00Z",
+      "teachSkill": {
+        "name": "Английский для путешествий",
+        "category": "Иностранные языки",
+        "subcategory": "Английский",
+        "id": "s001"
+      },
+      "learnSkills": [
+        {
+          "name": "Основы фотографии",
+          "category": "Творчество и искусство",
+          "subcategory": "Фотография"
+        },
+        {
+          "name": "Йога для начинающих",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Йога и медитация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=47"
+    },
+    {
+      "id": "u002",
+      "name": "Иван Петров",
+      "email": "ivan.petrov@example.com",
+      "birthDate": "1991-11-02",
+      "gender": "male",
+      "city": "saint-petersburg",
+      "likesCount": 86,
+      "aboutMe": "Frontend-разработчик, увлекаюсь музыкой и бегом.",
+      "createdAt": "2022-09-08T14:30:00Z",
+      "teachSkill": {
+        "name": "Управление командой",
+        "category": "Бизнес и карьера",
+        "subcategory": "Управление командой",
+        "id": "s002"
+      },
+      "learnSkills": [
+        {
+          "name": "Видеомонтаж в DaVinci Resolve",
+          "category": "Творчество и искусство",
+          "subcategory": "Видеомонтаж"
+        },
+        {
+          "name": "Медитация",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Йога и медитация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=12"
+    },
+    {
+      "id": "u003",
+      "name": "Мария Кузнецова",
+      "email": "maria.kuznetsova@example.com",
+      "birthDate": "1998-07-21",
+      "gender": "female",
+      "city": "arkhangelsk",
+      "likesCount": 201,
+      "aboutMe": "Фотографирую север, выращиваю растения и учусь новому.",
+      "createdAt": "2024-01-19T09:00:00Z",
+      "teachSkill": {
+        "name": "Портретная фотография",
+        "category": "Творчество и искусство",
+        "subcategory": "Фотография",
+        "id": "s003"
+      },
+      "learnSkills": [
+        {
+          "name": "Китайский: начальный уровень",
+          "category": "Иностранные языки",
+          "subcategory": "Китайский"
+        },
+        {
+          "name": "Комнатные растения",
+          "category": "Дом и уют",
+          "subcategory": "Домашние растения"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=45"
+    },
+    {
+      "id": "u004",
+      "name": "Дмитрий Орлов",
+      "email": "dmitry.orlov@example.com",
+      "birthDate": "1989-02-13",
+      "gender": "male",
+      "city": "novosibirsk",
+      "likesCount": 57,
+      "aboutMe": "Предприниматель и поклонник системного подхода.",
+      "createdAt": "2021-05-03T08:45:00Z",
+      "teachSkill": {
+        "name": "Запуск небольшого бизнеса",
+        "category": "Бизнес и карьера",
+        "subcategory": "Предпринимательство",
+        "id": "s004"
+      },
+      "learnSkills": [
+        {
+          "name": "Переговоры",
+          "category": "Бизнес и карьера",
+          "subcategory": "Продажи и переговоры"
+        },
+        {
+          "name": "Здоровое питание",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Питание и ЗОЖ"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=11"
+    },
+    {
+      "id": "u005",
+      "name": "Елена Волкова",
+      "email": "elena.volkova@example.com",
+      "birthDate": "1993-09-30",
+      "gender": "female",
+      "city": "yekaterinburg",
+      "likesCount": 178,
+      "aboutMe": "Иллюстратор, люблю скетчбуки и тёплые цвета.",
+      "createdAt": "2023-03-24T12:20:00Z",
+      "teachSkill": {
+        "name": "Цифровая иллюстрация",
+        "category": "Творчество и искусство",
+        "subcategory": "Рисование и иллюстрация",
+        "id": "s005"
+      },
+      "learnSkills": [
+        {
+          "name": "Креативное письмо",
+          "category": "Творчество и искусство",
+          "subcategory": "Креативное письмо"
+        },
+        {
+          "name": "Тайм-менеджмент",
+          "category": "Бизнес и карьера",
+          "subcategory": "Тайм-менеджмент"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=49"
+    },
+    {
+      "id": "u006",
+      "name": "Алексей Морозов",
+      "email": "alexey.morozov@example.com",
+      "birthDate": "1997-01-08",
+      "gender": "male",
+      "city": "kazan",
+      "likesCount": 93,
+      "aboutMe": "Люблю готовить, изучаю испанский и хожу в походы.",
+      "createdAt": "2023-11-11T16:10:00Z",
+      "teachSkill": {
+        "name": "Домашняя паста",
+        "category": "Дом и уют",
+        "subcategory": "Приготовление еды",
+        "id": "s006"
+      },
+      "learnSkills": [
+        {
+          "name": "Испанский для общения",
+          "category": "Иностранные языки",
+          "subcategory": "Испанский"
+        },
+        {
+          "name": "Функциональные тренировки",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Физические тренировки"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=13"
+    },
+    {
+      "id": "u007",
+      "name": "Софья Соколова",
+      "email": "sofia.sokolova@example.com",
+      "birthDate": "2000-05-16",
+      "gender": "female",
+      "city": "nizhny-novgorod",
+      "likesCount": 145,
+      "aboutMe": "Учусь работать со звуком и обожаю японскую культуру.",
+      "createdAt": "2024-05-07T11:40:00Z",
+      "teachSkill": {
+        "name": "Основы японского",
+        "category": "Иностранные языки",
+        "subcategory": "Японский",
+        "id": "s007"
+      },
+      "learnSkills": [
+        {
+          "name": "Запись и обработка звука",
+          "category": "Творчество и искусство",
+          "subcategory": "Музыка и звук"
+        },
+        {
+          "name": "Скорочтение",
+          "category": "Образование и развитие",
+          "subcategory": "Скорочтение"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=44"
+    },
+    {
+      "id": "u008",
+      "name": "Максим Фёдоров",
+      "email": "maxim.fedorov@example.com",
+      "birthDate": "1994-12-04",
+      "gender": "male",
+      "city": "chelyabinsk",
+      "likesCount": 64,
+      "aboutMe": "Менеджер проектов, ценю порядок в делах и дома.",
+      "createdAt": "2022-08-18T07:25:00Z",
+      "teachSkill": {
+        "name": "Планирование проектов",
+        "category": "Бизнес и карьера",
+        "subcategory": "Проектное управление",
+        "id": "s008"
+      },
+      "learnSkills": [
+        {
+          "name": "Организация пространства",
+          "category": "Дом и уют",
+          "subcategory": "Уборка и организация"
+        },
+        {
+          "name": "Немецкий: базовый уровень",
+          "category": "Иностранные языки",
+          "subcategory": "Немецкий"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=14"
+    },
+    {
+      "id": "u009",
+      "name": "Полина Белова",
+      "email": "polina.belova@example.com",
+      "birthDate": "1996-03-27",
+      "gender": "female",
+      "city": "samara",
+      "likesCount": 112,
+      "aboutMe": "Коуч, помогаю ставить достижимые цели без выгорания.",
+      "createdAt": "2023-02-14T13:05:00Z",
+      "teachSkill": {
+        "name": "Постановка целей",
+        "category": "Образование и развитие",
+        "subcategory": "Коучинг",
+        "id": "s009"
+      },
+      "learnSkills": [
+        {
+          "name": "Личный бренд",
+          "category": "Бизнес и карьера",
+          "subcategory": "Личный бренд"
+        },
+        {
+          "name": "Сон и восстановление",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Сон и восстановление"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=32"
+    },
+    {
+      "id": "u010",
+      "name": "Сергей Никитин",
+      "email": "sergey.nikitin@example.com",
+      "birthDate": "1988-08-09",
+      "gender": "male",
+      "city": "sochi",
+      "likesCount": 77,
+      "aboutMe": "Преподаватель, люблю объяснять сложное простыми словами.",
+      "createdAt": "2021-10-29T15:35:00Z",
+      "teachSkill": {
+        "name": "Навыки преподавания",
+        "category": "Образование и развитие",
+        "subcategory": "Навыки преподавания",
+        "id": "s010"
+      },
+      "learnSkills": [
+        {
+          "name": "Маркетинг для экспертов",
+          "category": "Бизнес и карьера",
+          "subcategory": "Маркетинг и реклама"
+        },
+        {
+          "name": "Рисование скетчей",
+          "category": "Творчество и искусство",
+          "subcategory": "Рисование и иллюстрация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=15"
+    },
+    {
+      "id": "u011",
+      "name": "Ольга Васильева",
+      "email": "olga.vasilieva@example.com",
+      "birthDate": "1992-06-11",
+      "gender": "female",
+      "city": "rostov-on-don",
+      "likesCount": 159,
+      "aboutMe": "Психолог и сторонница бережного отношения к себе.",
+      "createdAt": "2022-12-03T10:50:00Z",
+      "teachSkill": {
+        "name": "Практики осознанности",
+        "category": "Здоровье и лайфстайл",
+        "subcategory": "Осознанность",
+        "id": "s011"
+      },
+      "learnSkills": [
+        {
+          "name": "Французский для начинающих",
+          "category": "Иностранные языки",
+          "subcategory": "Французский"
+        },
+        {
+          "name": "Актёрская речь",
+          "category": "Творчество и искусство",
+          "subcategory": "Актёрское мастерство"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=36"
+    },
+    {
+      "id": "u012",
+      "name": "Артём Козлов",
+      "email": "artem.kozlov@example.com",
+      "birthDate": "1999-10-25",
+      "gender": "male",
+      "city": "ufa",
+      "likesCount": 48,
+      "aboutMe": "Снимаю короткие ролики и изучаю продюсирование.",
+      "createdAt": "2024-02-01T09:30:00Z",
+      "teachSkill": {
+        "name": "Монтаж коротких видео",
+        "category": "Творчество и искусство",
+        "subcategory": "Видеомонтаж",
+        "id": "s012"
+      },
+      "learnSkills": [
+        {
+          "name": "Продажи услуг",
+          "category": "Бизнес и карьера",
+          "subcategory": "Продажи и переговоры"
+        },
+        {
+          "name": "Китайский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Китайский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=16"
+    },
+    {
+      "id": "u013",
+      "name": "Дарья Романова",
+      "email": "daria.romanova@example.com",
+      "birthDate": "1997-02-20",
+      "gender": "female",
+      "city": "krasnoyarsk",
+      "likesCount": 130,
+      "aboutMe": "Люблю уютный дом, керамику и неспешные прогулки.",
+      "createdAt": "2023-07-16T17:00:00Z",
+      "teachSkill": {
+        "name": "Организация хранения",
+        "category": "Дом и уют",
+        "subcategory": "Хранение вещей",
+        "id": "s013"
+      },
+      "learnSkills": [
+        {
+          "name": "Декор интерьера",
+          "category": "Творчество и искусство",
+          "subcategory": "Декор и DIY"
+        },
+        {
+          "name": "Домашний бюджет",
+          "category": "Дом и уют",
+          "subcategory": "Домашние финансы"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=38"
+    },
+    {
+      "id": "u014",
+      "name": "Никита Павлов",
+      "email": "nikita.pavlov@example.com",
+      "birthDate": "1990-04-06",
+      "gender": "male",
+      "city": "perm",
+      "likesCount": 71,
+      "aboutMe": "Инженер, который любит чинить вещи своими руками.",
+      "createdAt": "2022-03-22T12:10:00Z",
+      "teachSkill": {
+        "name": "Мелкий ремонт дома",
+        "category": "Дом и уют",
+        "subcategory": "Ремонт",
+        "id": "s014"
+      },
+      "learnSkills": [
+        {
+          "name": "Управление личным временем",
+          "category": "Бизнес и карьера",
+          "subcategory": "Тайм-менеджмент"
+        },
+        {
+          "name": "Медитация",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Йога и медитация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=17"
+    },
+    {
+      "id": "u015",
+      "name": "Виктория Алексеева",
+      "email": "viktoria.alekseeva@example.com",
+      "birthDate": "1995-01-29",
+      "gender": "female",
+      "city": "voronezh",
+      "likesCount": 189,
+      "aboutMe": "HR-специалист, люблю помогать людям находить своё дело.",
+      "createdAt": "2022-06-05T08:20:00Z",
+      "teachSkill": {
+        "name": "Подготовка к собеседованию",
+        "category": "Бизнес и карьера",
+        "subcategory": "Резюме и собеседование",
+        "id": "s015"
+      },
+      "learnSkills": [
+        {
+          "name": "Коучинговые вопросы",
+          "category": "Образование и развитие",
+          "subcategory": "Коучинг"
+        },
+        {
+          "name": "Скетчинг",
+          "category": "Творчество и искусство",
+          "subcategory": "Рисование и иллюстрация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=41"
+    },
+    {
+      "id": "u016",
+      "name": "Михаил Егоров",
+      "email": "mikhail.egorov@example.com",
+      "birthDate": "1987-09-15",
+      "gender": "male",
+      "city": "vladivostok",
+      "likesCount": 54,
+      "aboutMe": "Люблю море, бег и дисциплину в повседневных привычках.",
+      "createdAt": "2021-04-09T06:55:00Z",
+      "teachSkill": {
+        "name": "Беговая подготовка",
+        "category": "Здоровье и лайфстайл",
+        "subcategory": "Физические тренировки",
+        "id": "s016"
+      },
+      "learnSkills": [
+        {
+          "name": "Приготовление рыбы",
+          "category": "Дом и уют",
+          "subcategory": "Приготовление еды"
+        },
+        {
+          "name": "Английский разговорный",
+          "category": "Иностранные языки",
+          "subcategory": "Английский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=18"
+    },
+    {
+      "id": "u017",
+      "name": "Ксения Громова",
+      "email": "ksenia.gromova@example.com",
+      "birthDate": "1999-06-03",
+      "gender": "female",
+      "city": "kaliningrad",
+      "likesCount": 167,
+      "aboutMe": "Пишу рассказы и учусь замечать интересное вокруг.",
+      "createdAt": "2024-03-12T14:25:00Z",
+      "teachSkill": {
+        "name": "Тексты для блога",
+        "category": "Творчество и искусство",
+        "subcategory": "Креативное письмо",
+        "id": "s017"
+      },
+      "learnSkills": [
+        {
+          "name": "Ментальное здоровье",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Ментальное здоровье"
+        },
+        {
+          "name": "Французский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Французский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=42"
+    },
+    {
+      "id": "u018",
+      "name": "Павел Белов",
+      "email": "pavel.belov@example.com",
+      "birthDate": "1993-12-17",
+      "gender": "male",
+      "city": "moscow",
+      "likesCount": 105,
+      "aboutMe": "Музыкант, записываю треки дома и люблю живые концерты.",
+      "createdAt": "2023-09-01T18:05:00Z",
+      "teachSkill": {
+        "name": "Домашняя звукозапись",
+        "category": "Творчество и искусство",
+        "subcategory": "Музыка и звук",
+        "id": "s018"
+      },
+      "learnSkills": [
+        {
+          "name": "Личный бренд музыканта",
+          "category": "Бизнес и карьера",
+          "subcategory": "Личный бренд"
+        },
+        {
+          "name": "Организация рабочего места",
+          "category": "Дом и уют",
+          "subcategory": "Уборка и организация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=19"
+    },
+    {
+      "id": "u019",
+      "name": "Наталья Фомина",
+      "email": "natalia.fomina@example.com",
+      "birthDate": "1989-05-14",
+      "gender": "female",
+      "city": "saint-petersburg",
+      "likesCount": 220,
+      "aboutMe": "Работаю с привычками и помогаю находить баланс.",
+      "createdAt": "2021-08-26T11:15:00Z",
+      "teachSkill": {
+        "name": "Баланс жизни и работы",
+        "category": "Здоровье и лайфстайл",
+        "subcategory": "Баланс жизни и работы",
+        "id": "s019"
+      },
+      "learnSkills": [
+        {
+          "name": "Навыки обучения",
+          "category": "Образование и развитие",
+          "subcategory": "Навыки обучения"
+        },
+        {
+          "name": "Итальянская кухня дома",
+          "category": "Дом и уют",
+          "subcategory": "Приготовление еды"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=43"
+    },
+    {
+      "id": "u020",
+      "name": "Роман Захаров",
+      "email": "roman.zakharov@example.com",
+      "birthDate": "1996-08-23",
+      "gender": "male",
+      "city": "arkhangelsk",
+      "likesCount": 69,
+      "aboutMe": "Маркетолог, снимаю городские сюжеты на плёнку.",
+      "createdAt": "2023-04-28T10:00:00Z",
+      "teachSkill": {
+        "name": "Контент-маркетинг",
+        "category": "Бизнес и карьера",
+        "subcategory": "Маркетинг и реклама",
+        "id": "s020"
+      },
+      "learnSkills": [
+        {
+          "name": "Плёночная фотография",
+          "category": "Творчество и искусство",
+          "subcategory": "Фотография"
+        },
+        {
+          "name": "Японский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Японский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=20"
+    },
+    {
+      "id": "u021",
+      "name": "Ирина Титова",
+      "email": "irina.titova@example.com",
+      "birthDate": "1994-03-05",
+      "gender": "female",
+      "city": "novosibirsk",
+      "likesCount": 118,
+      "aboutMe": "Люблю учиться, вести заметки и структурировать знания.",
+      "createdAt": "2022-11-20T07:45:00Z",
+      "teachSkill": {
+        "name": "Конспектирование",
+        "category": "Образование и развитие",
+        "subcategory": "Навыки обучения",
+        "id": "s021"
+      },
+      "learnSkills": [
+        {
+          "name": "Скорочтение",
+          "category": "Образование и развитие",
+          "subcategory": "Скорочтение"
+        },
+        {
+          "name": "Основы проектного управления",
+          "category": "Бизнес и карьера",
+          "subcategory": "Проектное управление"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=46"
+    },
+    {
+      "id": "u022",
+      "name": "Андрей Савельев",
+      "email": "andrey.saveliev@example.com",
+      "birthDate": "1992-10-12",
+      "gender": "male",
+      "city": "yekaterinburg",
+      "likesCount": 82,
+      "aboutMe": "Руководитель и отец, интересуюсь коучингом и саморазвитием.",
+      "createdAt": "2022-02-17T13:30:00Z",
+      "teachSkill": {
+        "name": "Обратная связь в команде",
+        "category": "Бизнес и карьера",
+        "subcategory": "Управление командой",
+        "id": "s022"
+      },
+      "learnSkills": [
+        {
+          "name": "Коучинг",
+          "category": "Образование и развитие",
+          "subcategory": "Коучинг"
+        },
+        {
+          "name": "Сон и восстановление",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Сон и восстановление"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=21"
+    },
+    {
+      "id": "u023",
+      "name": "Юлия Мельникова",
+      "email": "yulia.melnikova@example.com",
+      "birthDate": "1998-11-28",
+      "gender": "female",
+      "city": "kazan",
+      "likesCount": 140,
+      "aboutMe": "Пробую себя в актёрском мастерстве и видеоформатах.",
+      "createdAt": "2024-04-04T16:20:00Z",
+      "teachSkill": {
+        "name": "Сценическая речь",
+        "category": "Творчество и искусство",
+        "subcategory": "Актёрское мастерство",
+        "id": "s023"
+      },
+      "learnSkills": [
+        {
+          "name": "Видеомонтаж",
+          "category": "Творчество и искусство",
+          "subcategory": "Видеомонтаж"
+        },
+        {
+          "name": "Навыки самопрезентации",
+          "category": "Бизнес и карьера",
+          "subcategory": "Резюме и собеседование"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=33"
+    },
+    {
+      "id": "u024",
+      "name": "Егор Власов",
+      "email": "egor.vlasov@example.com",
+      "birthDate": "1990-07-07",
+      "gender": "male",
+      "city": "nizhny-novgorod",
+      "likesCount": 61,
+      "aboutMe": "Финансист, люблю планирование и рациональный подход.",
+      "createdAt": "2021-09-13T12:35:00Z",
+      "teachSkill": {
+        "name": "Личный бюджет",
+        "category": "Дом и уют",
+        "subcategory": "Домашние финансы",
+        "id": "s024"
+      },
+      "learnSkills": [
+        {
+          "name": "Предпринимательство",
+          "category": "Бизнес и карьера",
+          "subcategory": "Предпринимательство"
+        },
+        {
+          "name": "Немецкий язык",
+          "category": "Иностранные языки",
+          "subcategory": "Немецкий"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=22"
+    },
+    {
+      "id": "u025",
+      "name": "Алина Сергеева",
+      "email": "alina.sergeeva@example.com",
+      "birthDate": "2001-02-09",
+      "gender": "female",
+      "city": "chelyabinsk",
+      "likesCount": 97,
+      "aboutMe": "Дизайнер, экспериментирую с декором и коллажами.",
+      "createdAt": "2024-06-18T08:40:00Z",
+      "teachSkill": {
+        "name": "Декор своими руками",
+        "category": "Творчество и искусство",
+        "subcategory": "Декор и DIY",
+        "id": "s025"
+      },
+      "learnSkills": [
+        {
+          "name": "Домашние растения",
+          "category": "Дом и уют",
+          "subcategory": "Домашние растения"
+        },
+        {
+          "name": "Осознанность",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Осознанность"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=29"
+    },
+    {
+      "id": "u026",
+      "name": "Вадим Гусев",
+      "email": "vadim.gusev@example.com",
+      "birthDate": "1988-01-31",
+      "gender": "male",
+      "city": "samara",
+      "likesCount": 73,
+      "aboutMe": "Люблю выстраивать процессы и доводить проекты до результата.",
+      "createdAt": "2020-12-10T09:10:00Z",
+      "teachSkill": {
+        "name": "Agile-практики",
+        "category": "Бизнес и карьера",
+        "subcategory": "Проектное управление",
+        "id": "s026"
+      },
+      "learnSkills": [
+        {
+          "name": "Когнитивные техники",
+          "category": "Образование и развитие",
+          "subcategory": "Когнитивные техники"
+        },
+        {
+          "name": "Физические тренировки",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Физические тренировки"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=23"
+    },
+    {
+      "id": "u027",
+      "name": "Екатерина Лебедева",
+      "email": "ekaterina.lebedeva@example.com",
+      "birthDate": "1993-04-22",
+      "gender": "female",
+      "city": "sochi",
+      "likesCount": 154,
+      "aboutMe": "Работаю с текстами и учу не бояться чистого листа.",
+      "createdAt": "2022-07-27T15:50:00Z",
+      "teachSkill": {
+        "name": "Креативное письмо",
+        "category": "Творчество и искусство",
+        "subcategory": "Креативное письмо",
+        "id": "s027"
+      },
+      "learnSkills": [
+        {
+          "name": "Публичные выступления",
+          "category": "Бизнес и карьера",
+          "subcategory": "Продажи и переговоры"
+        },
+        {
+          "name": "Ментальное здоровье",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Ментальное здоровье"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=34"
+    },
+    {
+      "id": "u028",
+      "name": "Кирилл Данилов",
+      "email": "kirill.danilov@example.com",
+      "birthDate": "1997-06-30",
+      "gender": "male",
+      "city": "rostov-on-don",
+      "likesCount": 88,
+      "aboutMe": "Изучаю языки и люблю готовить для друзей.",
+      "createdAt": "2023-08-09T17:30:00Z",
+      "teachSkill": {
+        "name": "Испанский разговорный",
+        "category": "Иностранные языки",
+        "subcategory": "Испанский",
+        "id": "s028"
+      },
+      "learnSkills": [
+        {
+          "name": "Домашняя выпечка",
+          "category": "Дом и уют",
+          "subcategory": "Приготовление еды"
+        },
+        {
+          "name": "Маркетинг",
+          "category": "Бизнес и карьера",
+          "subcategory": "Маркетинг и реклама"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=24"
+    },
+    {
+      "id": "u029",
+      "name": "Татьяна Воронова",
+      "email": "tatiana.voronova@example.com",
+      "birthDate": "1991-09-04",
+      "gender": "female",
+      "city": "ufa",
+      "likesCount": 176,
+      "aboutMe": "Практикую йогу и рассказываю о внимательном образе жизни.",
+      "createdAt": "2021-11-15T06:30:00Z",
+      "teachSkill": {
+        "name": "Йога утром",
+        "category": "Здоровье и лайфстайл",
+        "subcategory": "Йога и медитация",
+        "id": "s029"
+      },
+      "learnSkills": [
+        {
+          "name": "Китайский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Китайский"
+        },
+        {
+          "name": "Скорочтение",
+          "category": "Образование и развитие",
+          "subcategory": "Скорочтение"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=35"
+    },
+    {
+      "id": "u030",
+      "name": "Денис Жуков",
+      "email": "denis.zhukov@example.com",
+      "birthDate": "1995-03-19",
+      "gender": "male",
+      "city": "krasnoyarsk",
+      "likesCount": 66,
+      "aboutMe": "Занимаюсь ремонтом и знаю, как сделать дом удобнее.",
+      "createdAt": "2022-05-21T10:25:00Z",
+      "teachSkill": {
+        "name": "Базовый ремонт",
+        "category": "Дом и уют",
+        "subcategory": "Ремонт",
+        "id": "s030"
+      },
+      "learnSkills": [
+        {
+          "name": "Хранение вещей",
+          "category": "Дом и уют",
+          "subcategory": "Хранение вещей"
+        },
+        {
+          "name": "Тайм-менеджмент",
+          "category": "Бизнес и карьера",
+          "subcategory": "Тайм-менеджмент"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=25"
+    },
+    {
+      "id": "u031",
+      "name": "Людмила Борисова",
+      "email": "lyudmila.borisova@example.com",
+      "birthDate": "1987-12-01",
+      "gender": "female",
+      "city": "perm",
+      "likesCount": 132,
+      "aboutMe": "Преподаватель английского, люблю книги и театр.",
+      "createdAt": "2020-09-04T14:10:00Z",
+      "teachSkill": {
+        "name": "Английская грамматика",
+        "category": "Иностранные языки",
+        "subcategory": "Английский",
+        "id": "s031"
+      },
+      "learnSkills": [
+        {
+          "name": "Актёрское мастерство",
+          "category": "Творчество и искусство",
+          "subcategory": "Актёрское мастерство"
+        },
+        {
+          "name": "Личностное развитие",
+          "category": "Образование и развитие",
+          "subcategory": "Личностное развитие"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=37"
+    },
+    {
+      "id": "u032",
+      "name": "Степан Комаров",
+      "email": "stepan.komarov@example.com",
+      "birthDate": "1998-05-11",
+      "gender": "male",
+      "city": "voronezh",
+      "likesCount": 59,
+      "aboutMe": "Люблю фотографировать людей и учусь работать со светом.",
+      "createdAt": "2023-10-02T12:00:00Z",
+      "teachSkill": {
+        "name": "Уличная фотография",
+        "category": "Творчество и искусство",
+        "subcategory": "Фотография",
+        "id": "s032"
+      },
+      "learnSkills": [
+        {
+          "name": "Обработка звука",
+          "category": "Творчество и искусство",
+          "subcategory": "Музыка и звук"
+        },
+        {
+          "name": "Личный бренд",
+          "category": "Бизнес и карьера",
+          "subcategory": "Личный бренд"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=26"
+    },
+    {
+      "id": "u033",
+      "name": "Вероника Жданова",
+      "email": "veronika.zhdanova@example.com",
+      "birthDate": "1996-01-24",
+      "gender": "female",
+      "city": "vladivostok",
+      "likesCount": 163,
+      "aboutMe": "Люблю порядок в доме и свободу в планах.",
+      "createdAt": "2022-04-13T11:05:00Z",
+      "teachSkill": {
+        "name": "Расхламление дома",
+        "category": "Дом и уют",
+        "subcategory": "Уборка и организация",
+        "id": "s033"
+      },
+      "learnSkills": [
+        {
+          "name": "Планирование бюджета",
+          "category": "Дом и уют",
+          "subcategory": "Домашние финансы"
+        },
+        {
+          "name": "Медитация",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Йога и медитация"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=39"
+    },
+    {
+      "id": "u034",
+      "name": "Антон Крылов",
+      "email": "anton.krylov@example.com",
+      "birthDate": "1994-08-18",
+      "gender": "male",
+      "city": "kaliningrad",
+      "likesCount": 79,
+      "aboutMe": "Продуктовый менеджер, люблю учиться на реальных задачах.",
+      "createdAt": "2022-10-06T09:45:00Z",
+      "teachSkill": {
+        "name": "Планирование продукта",
+        "category": "Бизнес и карьера",
+        "subcategory": "Проектное управление",
+        "id": "s034"
+      },
+      "learnSkills": [
+        {
+          "name": "Личностное развитие",
+          "category": "Образование и развитие",
+          "subcategory": "Личностное развитие"
+        },
+        {
+          "name": "Французский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Французский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=27"
+    },
+    {
+      "id": "u035",
+      "name": "Светлана Мартынова",
+      "email": "svetlana.martynova@example.com",
+      "birthDate": "1990-02-26",
+      "gender": "female",
+      "city": "moscow",
+      "likesCount": 195,
+      "aboutMe": "Психолог-консультант, ценю честный разговор и заботу о себе.",
+      "createdAt": "2021-06-30T08:15:00Z",
+      "teachSkill": {
+        "name": "Эмоциональная саморегуляция",
+        "category": "Здоровье и лайфстайл",
+        "subcategory": "Ментальное здоровье",
+        "id": "s035"
+      },
+      "learnSkills": [
+        {
+          "name": "Навыки преподавания",
+          "category": "Образование и развитие",
+          "subcategory": "Навыки преподавания"
+        },
+        {
+          "name": "Креативное письмо",
+          "category": "Творчество и искусство",
+          "subcategory": "Креативное письмо"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=40"
+    },
+    {
+      "id": "u036",
+      "name": "Глеб Фролов",
+      "email": "gleb.frolov@example.com",
+      "birthDate": "1999-09-22",
+      "gender": "male",
+      "city": "saint-petersburg",
+      "likesCount": 52,
+      "aboutMe": "Изучаю дизайн, люблю скетчи и полезные привычки.",
+      "createdAt": "2024-01-05T15:00:00Z",
+      "teachSkill": {
+        "name": "Основы скетчинга",
+        "category": "Творчество и искусство",
+        "subcategory": "Рисование и иллюстрация",
+        "id": "s036"
+      },
+      "learnSkills": [
+        {
+          "name": "Режим сна",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Сон и восстановление"
+        },
+        {
+          "name": "Немецкий язык",
+          "category": "Иностранные языки",
+          "subcategory": "Немецкий"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=28"
+    },
+    {
+      "id": "u037",
+      "name": "Валерия Никифорова",
+      "email": "valeria.nikiforova@example.com",
+      "birthDate": "1997-07-13",
+      "gender": "female",
+      "city": "arkhangelsk",
+      "likesCount": 147,
+      "aboutMe": "Помогаю готовиться к экзаменам и не терять мотивацию.",
+      "createdAt": "2023-01-22T10:35:00Z",
+      "teachSkill": {
+        "name": "Подготовка к IELTS",
+        "category": "Иностранные языки",
+        "subcategory": "Подготовка к экзаменам (IELTS, TOEFL)",
+        "id": "s037"
+      },
+      "learnSkills": [
+        {
+          "name": "Когнитивные техники",
+          "category": "Образование и развитие",
+          "subcategory": "Когнитивные техники"
+        },
+        {
+          "name": "Работа с личным брендом",
+          "category": "Бизнес и карьера",
+          "subcategory": "Личный бренд"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=30"
+    },
+    {
+      "id": "u038",
+      "name": "Олег Гаврилов",
+      "email": "oleg.gavrilov@example.com",
+      "birthDate": "1989-06-08",
+      "gender": "male",
+      "city": "novosibirsk",
+      "likesCount": 90,
+      "aboutMe": "Люблю готовить, выращивать зелень и экспериментировать с рецептами.",
+      "createdAt": "2021-03-18T07:20:00Z",
+      "teachSkill": {
+        "name": "Домашняя выпечка",
+        "category": "Дом и уют",
+        "subcategory": "Приготовление еды",
+        "id": "s038"
+      },
+      "learnSkills": [
+        {
+          "name": "Домашние растения",
+          "category": "Дом и уют",
+          "subcategory": "Домашние растения"
+        },
+        {
+          "name": "Предпринимательство",
+          "category": "Бизнес и карьера",
+          "subcategory": "Предпринимательство"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=31"
+    },
+    {
+      "id": "u039",
+      "name": "Марина Карпова",
+      "email": "marina.karpova@example.com",
+      "birthDate": "1992-12-29",
+      "gender": "female",
+      "city": "yekaterinburg",
+      "likesCount": 184,
+      "aboutMe": "Помогаю людям уверенно рассказывать о себе.",
+      "createdAt": "2022-01-12T13:10:00Z",
+      "teachSkill": {
+        "name": "Самопрезентация",
+        "category": "Бизнес и карьера",
+        "subcategory": "Резюме и собеседование",
+        "id": "s039"
+      },
+      "learnSkills": [
+        {
+          "name": "Публичные выступления",
+          "category": "Бизнес и карьера",
+          "subcategory": "Продажи и переговоры"
+        },
+        {
+          "name": "Актёрское мастерство",
+          "category": "Творчество и искусство",
+          "subcategory": "Актёрское мастерство"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=48"
+    },
+    {
+      "id": "u040",
+      "name": "Руслан Ильин",
+      "email": "ruslan.ilyin@example.com",
+      "birthDate": "1991-03-01",
+      "gender": "male",
+      "city": "kazan",
+      "likesCount": 68,
+      "aboutMe": "Интересуюсь самообучением, памятью и эффективными методиками.",
+      "createdAt": "2021-12-22T16:45:00Z",
+      "teachSkill": {
+        "name": "Мнемотехники",
+        "category": "Образование и развитие",
+        "subcategory": "Когнитивные техники",
+        "id": "s040"
+      },
+      "learnSkills": [
+        {
+          "name": "Японский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Японский"
+        },
+        {
+          "name": "Планирование проектов",
+          "category": "Бизнес и карьера",
+          "subcategory": "Проектное управление"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=50"
+    },
+    {
+      "id": "u041",
+      "name": "Карина Юдина",
+      "email": "karina.yudina@example.com",
+      "birthDate": "2000-10-10",
+      "gender": "female",
+      "city": "nizhny-novgorod",
+      "likesCount": 109,
+      "aboutMe": "Иллюстратор и любительница домашних джунглей.",
+      "createdAt": "2024-05-22T09:20:00Z",
+      "teachSkill": {
+        "name": "Акварельная иллюстрация",
+        "category": "Творчество и искусство",
+        "subcategory": "Рисование и иллюстрация",
+        "id": "s041"
+      },
+      "learnSkills": [
+        {
+          "name": "Уход за комнатными растениями",
+          "category": "Дом и уют",
+          "subcategory": "Домашние растения"
+        },
+        {
+          "name": "Осознанность",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Осознанность"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=51"
+    },
+    {
+      "id": "u042",
+      "name": "Борис Рябов",
+      "email": "boris.ryabov@example.com",
+      "birthDate": "1986-11-19",
+      "gender": "male",
+      "city": "chelyabinsk",
+      "likesCount": 74,
+      "aboutMe": "Предприниматель, ценю ясность, цифры и сильные договорённости.",
+      "createdAt": "2020-08-14T11:55:00Z",
+      "teachSkill": {
+        "name": "Переговоры с клиентами",
+        "category": "Бизнес и карьера",
+        "subcategory": "Продажи и переговоры",
+        "id": "s042"
+      },
+      "learnSkills": [
+        {
+          "name": "Домашние финансы",
+          "category": "Дом и уют",
+          "subcategory": "Домашние финансы"
+        },
+        {
+          "name": "Физические тренировки",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Физические тренировки"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=52"
+    },
+    {
+      "id": "u043",
+      "name": "Инна Шестакова",
+      "email": "inna.shestakova@example.com",
+      "birthDate": "1994-04-15",
+      "gender": "female",
+      "city": "samara",
+      "likesCount": 156,
+      "aboutMe": "Помогаю выстраивать комфортные рабочие процессы без перегрузок.",
+      "createdAt": "2022-09-27T14:00:00Z",
+      "teachSkill": {
+        "name": "Тайм-менеджмент",
+        "category": "Бизнес и карьера",
+        "subcategory": "Тайм-менеджмент",
+        "id": "s043"
+      },
+      "learnSkills": [
+        {
+          "name": "Баланс жизни и работы",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Баланс жизни и работы"
+        },
+        {
+          "name": "Французский язык",
+          "category": "Иностранные языки",
+          "subcategory": "Французский"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=53"
+    },
+    {
+      "id": "u044",
+      "name": "Фёдор Осипов",
+      "email": "fedor.osipov@example.com",
+      "birthDate": "1996-06-24",
+      "gender": "male",
+      "city": "sochi",
+      "likesCount": 63,
+      "aboutMe": "Снимаю видео о путешествиях и люблю открывать новые города.",
+      "createdAt": "2023-05-13T12:50:00Z",
+      "teachSkill": {
+        "name": "Съёмка на смартфон",
+        "category": "Творчество и искусство",
+        "subcategory": "Видеомонтаж",
+        "id": "s044"
+      },
+      "learnSkills": [
+        {
+          "name": "Английский для путешествий",
+          "category": "Иностранные языки",
+          "subcategory": "Английский"
+        },
+        {
+          "name": "Маркетинг в соцсетях",
+          "category": "Бизнес и карьера",
+          "subcategory": "Маркетинг и реклама"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=54"
+    },
+    {
+      "id": "u045",
+      "name": "Диана Ершова",
+      "email": "diana.ershova@example.com",
+      "birthDate": "1998-08-07",
+      "gender": "female",
+      "city": "rostov-on-don",
+      "likesCount": 171,
+      "aboutMe": "Люблю поддерживать людей на пути к новым навыкам и уверенности.",
+      "createdAt": "2023-12-08T10:10:00Z",
+      "teachSkill": {
+        "name": "Личностное развитие",
+        "category": "Образование и развитие",
+        "subcategory": "Личностное развитие",
+        "id": "s045"
+      },
+      "learnSkills": [
+        {
+          "name": "Навыки преподавания",
+          "category": "Образование и развитие",
+          "subcategory": "Навыки преподавания"
+        },
+        {
+          "name": "Питание и ЗОЖ",
+          "category": "Здоровье и лайфстайл",
+          "subcategory": "Питание и ЗОЖ"
+        }
+      ],
+      "avatar": "https://i.pravatar.cc/300?img=55"
+    }
+  ]
+}
