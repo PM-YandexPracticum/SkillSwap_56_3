@@ -20,11 +20,6 @@
   object-fit: cover;
 }
 
-.name {
-  font-family: Jost, sans-serif;
-  font-weight: 600;
-}
-
 .info {
   display: flex;
   flex-direction: column;
@@ -34,6 +29,8 @@
 
 .name {
   overflow-wrap: anywhere;
+  font-family: Jost, sans-serif;
+  font-weight: 600;
   font-size: var(--font-size-2xl);
   line-height: 28px;
 }
