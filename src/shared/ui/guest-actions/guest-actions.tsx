@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import styles from './guest-actions.module.css';
 import { Button } from '../button';
+import { ROUTES } from '@/shared/lib/constants';
 
 export const GuestActions = () => {
   return (
     <div className={styles.wrapper}>
-      <Link to="/login">
+      <Link to={ROUTES.LOGIN}>
         <Button extraClass={`${styles.btn} ${styles.login}`}>
           Войти
         </Button>
       </Link>
 
-      <Link to="/register">
+      <Link to={ROUTES.REGISTER}>
         <Button extraClass={`${styles.btn} ${styles.register}`}>
           Зарегистрироваться
         </Button>
