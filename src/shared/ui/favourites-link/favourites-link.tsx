@@ -1,13 +1,14 @@
+import { ROUTES } from '@/shared/lib/constants';
 import { Link } from 'react-router-dom';
+import { Icon } from '../icon/Icon';
 
 export const FavouritesLink = () => {
   return (
     <Link
-      to="/profile/favourites"
+      to={ROUTES.FAVORITES}
       aria-label="Избранное"
     >
-      {/*ЗАМЕНИТЬ НА ICON*/}
-      <img src='src/icons/like.svg'/>
+      <Icon name='heart' size={24}/>
     </Link>
   );
 };
