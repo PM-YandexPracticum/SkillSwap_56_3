@@ -1,14 +1,14 @@
-.teachSkillBlock {
+.teachSkill {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
+  min-width: 0;
 }
 
-.label {
+.title {
+  color: #253017;
   font-family: Roboto, sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 24px;
-  letter-spacing: 0.32px; /* 2% от 16px */
-  color: #253017;
 }
