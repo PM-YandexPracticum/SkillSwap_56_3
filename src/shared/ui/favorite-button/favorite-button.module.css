@@ -7,7 +7,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  color: #71766f;
+  color: #21291b;
   border-radius: 50%;
   cursor: pointer;
   outline: none;
@@ -24,7 +24,7 @@
 }
 
 .active {
-  color: #e55c5c;
+  color: #abd27a;
 }
 
 .button:disabled {

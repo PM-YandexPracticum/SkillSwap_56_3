@@ -102,6 +102,7 @@
       {
         "id": "business-career",
         "name": "Бизнес и карьера",
+        "icon": "",
         "subcategories": [
           {
             "id": "team-management",
@@ -140,6 +141,7 @@
       {
         "id": "creativity-art",
         "name": "Творчество и искусство",
+        "icon": "",
         "subcategories": [
           {
             "id": "drawing-illustration",
@@ -178,6 +180,7 @@
       {
         "id": "foreign-languages",
         "name": "Иностранные языки",
+        "icon": "",
         "subcategories": [
           {
             "id": "english",
@@ -212,6 +215,7 @@
       {
         "id": "education-development",
         "name": "Образование и развитие",
+        "icon": "",
         "subcategories": [
           {
             "id": "personal-development",
@@ -242,6 +246,7 @@
       {
         "id": "home-comfort",
         "name": "Дом и уют",
+        "icon": "",
         "subcategories": [
           {
             "id": "cleaning-organization",
@@ -272,6 +277,7 @@
       {
         "id": "health-lifestyle",
         "name": "Здоровье и лайфстайл",
+        "icon": "",
         "subcategories": [
           {
             "id": "yoga-meditation",
