@@ -56,3 +56,46 @@ export type Category = {
   icon: string;
   subcategories: Subcategory[]
 };
+
+// ─── Filters ────────────────────────────────────────────────
+
+export interface WantFilterOption {
+  id: WantFilter
+  name: string
+}
+
+export interface GenderOption {
+  id: Gender
+  name: string
+}
+
+export interface CityOption {
+  id: string
+  name: string
+}
+
+export interface Meta {
+  wantFilter: WantFilterOption[]
+  genders: GenderOption[]
+  cities: CityOption[]
+  categories: Category[]
+}
+
+export interface TeachSkill {
+  id: string
+  name: string
+  category: string
+  subcategory: string
+}
+
+export interface LearnSkill {
+  name: string
+  category: string
+  subcategory: string
+}
+
+export type SortOrder = 'newest' | 'oldest'
+
+export type WantFilter = 'all' | 'learn' | 'teach'
+
+export type Gender = 'unspecified' | 'male' | 'female'
