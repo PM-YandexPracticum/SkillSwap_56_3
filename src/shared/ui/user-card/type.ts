@@ -1,7 +1,7 @@
-import type { UserCard as UserCardType } from '@/shared/types'
+import type { UserCard } from '@/shared/types'
 
 export interface UserCardProps {
   isCatalog: boolean,
-  user: UserCardType
+  user: UserCard
   onMore?: (userId: string) => void
 }
