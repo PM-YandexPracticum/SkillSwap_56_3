@@ -58,6 +58,13 @@ export type Category = {
 };
 
 // ─── Filters ────────────────────────────────────────────────
+export type SortOrder = 'newest' | 'oldest'
+
+export type WantFilter = 'all' | 'learn' | 'teach'
+
+export type Gender = 'unspecified' | 'male' | 'female'
+
+// ─── Users ────────────────────────────────────────────────
 
 export interface WantFilterOption {
   id: WantFilter
@@ -74,13 +81,6 @@ export interface CityOption {
   name: string
 }
 
-export interface Meta {
-  wantFilter: WantFilterOption[]
-  genders: GenderOption[]
-  cities: CityOption[]
-  categories: Category[]
-}
-
 export interface TeachSkill {
   id: string
   name: string
@@ -94,8 +94,29 @@ export interface LearnSkill {
   subcategory: string
 }
 
-export type SortOrder = 'newest' | 'oldest'
+export interface UsersResponse {
+  meta: Meta
+  data: UserCard[]
+}
 
-export type WantFilter = 'all' | 'learn' | 'teach'
+export interface Meta {
+  wantFilter: WantFilterOption[]
+  genders: GenderOption[]
+  cities: CityOption[]
+  categories: Category[]
+}
 
-export type Gender = 'unspecified' | 'male' | 'female'
+export interface UserCard {
+  id: string
+  name: string
+  email: string
+  birthDate: string
+  gender: 'male' | 'female' | 'unspecified'
+  city: string
+  likesCount: number
+  aboutMe: string
+  createdAt: string
+  teachSkill: TeachSkill
+  learnSkills: LearnSkill[]
+  avatar: string
+}
