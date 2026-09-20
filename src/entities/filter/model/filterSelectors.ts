@@ -1,16 +1,16 @@
 import { RootState } from "@/store"
 
-export const selectFilters = (state: RootState) => state.filters
-export const selectWantFilter = (state: RootState) => state.filters.wantFilter
-export const selectCategories = (state: RootState) => state.filters.categories
-export const selectSubcategories = (state: RootState) => state.filters.subcategories
-export const selectGender = (state: RootState) => state.filters.gender
-export const selectCities = (state: RootState) => state.filters.cities
-export const selectSearchQuery = (state: RootState) => state.filters.searchQuery
-export const selectSortOrder = (state: RootState) => state.filters.sortOrder
+export const selectFilters = (state: RootState) => state.filter
+export const selectWantFilter = (state: RootState) => state.filter.wantFilter
+export const selectCategories = (state: RootState) => state.filter.categories
+export const selectSubcategories = (state: RootState) => state.filter.subcategories
+export const selectGender = (state: RootState) => state.filter.gender
+export const selectCities = (state: RootState) => state.filter.cities
+export const selectSearchQuery = (state: RootState) => state.filter.searchQuery
+export const selectSortOrder = (state: RootState) => state.filter.sortOrder
 
 export const selectFiltersCount = (state: RootState): number => {
-  const filters = state.filters
+  const filters = state.filter
   let count = 0
   if (filters.wantFilter !== 'all') count++
   if (filters.gender !== 'unspecified') count++
