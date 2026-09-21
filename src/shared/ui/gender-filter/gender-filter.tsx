@@ -1,23 +1,24 @@
 import { useId, useState } from 'react'
-import type { WantFilter as WantId} from '@/shared/types'
+import type { Gender } from '@/shared/types'
 import { CheckOption } from '@/shared/ui/check-option'
-import styles from './want-filter.module.css'
-import type { WantFilterProps } from './type'
+import styles from './gender-filter.module.css'
+import type { GenderFilterProps } from './type'
 
-export const WantFilter = ({
+export const GenderFilter = ({
   options,
   value,
-  defaultValue = 'all',
+  defaultValue = 'unspecified',
   onChange,
   name,
+  title = 'Пол автора',
   extraClass = '',
-}: WantFilterProps) => {
+}: GenderFilterProps) => {
   const generatedName = useId()
-  const [ownValue, setOwnValue] = useState<WantId>(defaultValue)
+  const [ownValue, setOwnValue] = useState<Gender>(defaultValue)
   const currentValue = value ?? ownValue
   const groupName = name ?? generatedName
 
-  const handleSelect = (next: WantId) => {
+  const handleSelect = (next: Gender) => {
     if (value === undefined) {
       setOwnValue(next)
     }
@@ -26,7 +27,7 @@ export const WantFilter = ({
 
   return (
     <fieldset className={`${styles.group} ${extraClass}`.trim()}>
-      <legend className={styles.legend}>Что показывать</legend>
+      <legend className={styles.title}>{title}</legend>
 
       <div className={styles.list}>
         {options.map((option) => (
