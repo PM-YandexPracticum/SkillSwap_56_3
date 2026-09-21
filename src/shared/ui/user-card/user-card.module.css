@@ -20,13 +20,6 @@
   gap: 4px;
 }
 
-.likesCount {
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-  line-height: 1;
-}
-
 .description {
   font-family: Roboto, sans-serif;
   font-weight: 400;
