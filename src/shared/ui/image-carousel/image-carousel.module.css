@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 820px;
+  box-sizing: border-box;
+  aspect-ratio: 16 / 10;
+}
+
+.mainWrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f1f3ed;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 80%);
+  color: #21291b;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.arrowButton:hover {
+  background-color: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.arrowLeft {
+  left: 16px;
+}
+
+.arrowRight {
+  right: 16px;
+}
+
+.thumbnailsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 140px;
+  height: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.thumbItem {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.thumbItem:hover {
+  opacity: 0.9;
+}
+
+.activeThumb {
+  border-color: #abd27a;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.moreOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 45%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  background-color: #f6f8f4;
+  color: #71766f;
+  border: 2px dashed #dbe0d5;
+}
+
+.placeholderText {
+  font-size: 15px;
+}
