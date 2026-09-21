@@ -1,10 +1,10 @@
 .container {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
   max-width: 820px;
   box-sizing: border-box;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 110 / 81;
 }
 
 .mainWrapper {
@@ -32,8 +32,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -61,8 +61,8 @@
 .thumbnailsCol {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 140px;
+  gap: 24px;
+  width: 92px;
   height: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
