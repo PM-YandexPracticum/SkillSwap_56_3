@@ -2,7 +2,13 @@ import { useEffect, useRef } from 'react'
 import style from './popover.module.css'
 import { PopoverProps } from './type'
 
-export function Popover({ isOpen, isOpenChange, trigger, children }: PopoverProps) {
+export function Popover({
+  className = 'popover',
+  isOpen,
+  isOpenChange,
+  trigger,
+  children,
+}: PopoverProps) {
   const triggerRef = useRef<HTMLDivElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
 
@@ -38,7 +44,7 @@ export function Popover({ isOpen, isOpenChange, trigger, children }: PopoverProp
         {trigger}
       </div>
 
-      <div className={style.panel} ref={panelRef} hidden={!isOpen}>
+      <div className={`${style.panel} ${className}`} ref={panelRef} hidden={!isOpen}>
         {children}
       </div>
     </div>
