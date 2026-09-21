@@ -5,4 +5,5 @@ export type IconName =
   | 'heart-filled'
   | 'chevron-left'
   | 'chevron-right'
-  | 'image-placeholder';
+  | 'image-placeholder'
+  | 'chevron-down'

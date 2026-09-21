@@ -59,6 +59,15 @@ const paths: Record<IconName, ReactNode> = {
       <path d="m21 15-5-5L5 21" strokeWidth="2" strokeLinecap="round" />
     </>
   ),
+
+  'chevron-down': (
+    <path
+      d="m6 9.5 6 5.5 6-5.5"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
 };
 
 type IconProps = {
