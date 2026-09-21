@@ -10,7 +10,7 @@ import { selectMeta, selectLikedUserIds } from '@/entities/user/model/usersSelec
 import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
 
-export const UserCard = ({ user, onMore, isCatalog = false }: UserCardProps) => {
+export const UserCard = ({ user, onMore, isCatalog = true }: UserCardProps) => {
   const dispatch = useAppDispatch()
   const meta = useAppSelector(selectMeta)
   const likedUserIds = useAppSelector(selectLikedUserIds)
@@ -51,8 +51,8 @@ export const UserCard = ({ user, onMore, isCatalog = false }: UserCardProps) => 
           <FavoriteButton
             isFavorite={isFavorite}
             onToggle={handleToggleFavorite}
+            count={user.likesCount}
           />
-          <span className={styles.likesCount}>{user.likesCount}</span>
         </div>
       )}
       <UserInfo
