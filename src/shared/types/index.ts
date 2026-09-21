@@ -56,3 +56,25 @@ export type Category = {
   icon: string;
   subcategories: Subcategory[]
 };
+
+// ─── City ────────────────────────────────────────────────
+export type City = {
+  id: string
+  name: string
+}
+
+// ─── Gender ──────────────────────────────────────────────
+export type GenderId = 'all' | 'male' | 'female'
+
+export type GenderOption = {
+  id: GenderId
+  name: string
+}
+
+// ─── Want ────────────────────────────────────────────────
+export type WantId = 'all' | 'learn' | 'teach'
+
+export type WantOption = {
+  id: WantId
+  name: string
+}
