@@ -8,7 +8,7 @@ import { SearchInput } from '@/shared/ui/search-input'
 
 export const MainHeader = () => {
   const [openPanel, setOpenPanel] = useState<HeaderPanel | null>(null)
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState('')
 
   function getPanelProps(name: HeaderPanel): PanelProps {
     return {
@@ -27,10 +27,10 @@ export const MainHeader = () => {
   }
 
   return (
-    <header className={styles.header && styles.header__inner}>
+    <header className={`${styles.header} && ${styles.header__inner}`}>
       <Logo />
       <HeaderNavigation {...getPanelProps('skills')} />
-      <SearchInput onChange={setSearchValue} value={searchValue}/>
+      <SearchInput onChange={setSearchValue} value={searchValue} />
       <GuestActions />
     </header>
   )
