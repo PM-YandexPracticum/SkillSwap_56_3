@@ -1,0 +1,98 @@
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  color: #253017;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkBox {
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #253017;
+  border-radius: 5px;
+  transition:
+    background-color 0.12s,
+    border-color 0.12s;
+}
+
+.checkBox::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: no-repeat center / 12px 12px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.input:checked + .checkBox,
+.input:indeterminate + .checkBox {
+  background-color: #abd27a;
+  border-color: #abd27a;
+}
+
+.input:checked + .checkBox::after {
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 6.2 4.4 9 10.5 2.6'/%3E%3C/svg%3E");
+}
+
+.input:indeterminate + .checkBox::after {
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2.5 6h7'/%3E%3C/svg%3E");
+}
+
+.radioBox {
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #253017;
+  border-radius: 50%;
+  transition: border-color 0.12s;
+}
+
+.radioBox::after {
+  content: '';
+  position: absolute;
+  inset: 50%;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background-color: #508826;
+  transform: scale(0);
+  transition: transform 0.12s;
+}
+
+.input:checked + .radioBox::after {
+  transform: scale(1);
+}
+
+.input:focus-visible + .checkBox,
+.input:focus-visible + .radioBox {
+  outline: 2px solid #508826;
+  outline-offset: 2px;
+}
+
+.input:disabled + .checkBox,
+.input:disabled + .radioBox {
+  border-color: #e4e8df;
+}
+
+.input:disabled ~ .text {
+  color: #9ca197;
+}

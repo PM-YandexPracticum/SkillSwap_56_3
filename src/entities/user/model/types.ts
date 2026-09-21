@@ -1,12 +1,9 @@
-import type { Meta, UserCard } from "@/shared/types"
+import type { User, AuthUser } from '@/shared/types'
+
+export type { User, AuthUser }
 
 export interface UsersState {
-  meta: Meta | null
-  users: UserCard[]
-  likedUserIds: string[]
-  currentUser: UserCard | null
+  users: User[]
   isLoading: boolean
-  isLoadingCurrent: boolean
   error: string | null
-  errorCurrent: string | null
 }

@@ -1,4 +1,3 @@
-import { formatAge } from '@/shared/lib/helpers'
 import { UserInfoProps } from './type'
 import style from './user-info.module.css'
 
@@ -27,7 +26,7 @@ export const UserInfo = (props: UserInfoProps) => {
       <div className={style.info}>
         <p className={style.name}>{props.name}</p>
         <p className={style.details}>
-          {`${props.city}, ${formatAge(props.age)}`}
+          {`${props.city}, ${(props.age)}`} {/*Добавить сюда обработку возраста вместо props.age */}
         </p>
       </div>
     </div>

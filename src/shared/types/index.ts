@@ -57,66 +57,24 @@ export type Category = {
   subcategories: Subcategory[]
 };
 
-// ─── Filters ────────────────────────────────────────────────
-export type SortOrder = 'newest' | 'oldest'
-
-export type WantFilter = 'all' | 'learn' | 'teach'
-
-export type Gender = 'unspecified' | 'male' | 'female'
-
-// ─── Users ────────────────────────────────────────────────
-
-export interface WantFilterOption {
-  id: WantFilter
-  name: string
-}
-
-export interface GenderOption {
-  id: Gender
-  name: string
-}
-
-export interface CityOption {
+// ─── City ────────────────────────────────────────────────
+export type City = {
   id: string
   name: string
 }
 
-export interface TeachSkill {
-  id: string
+// ─── Gender ──────────────────────────────────────────────
+export type GenderId = 'all' | 'male' | 'female'
+
+export type GenderOption = {
+  id: GenderId
   name: string
-  category: string
-  subcategory: string
 }
 
-export interface LearnSkill {
+// ─── Want ────────────────────────────────────────────────
+export type WantId = 'all' | 'learn' | 'teach'
+
+export type WantOption = {
+  id: WantId
   name: string
-  category: string
-  subcategory: string
-}
-
-export interface UsersResponse {
-  meta: Meta
-  data: UserCard[]
-}
-
-export interface Meta {
-  wantFilter: WantFilterOption[]
-  genders: GenderOption[]
-  cities: CityOption[]
-  categories: Category[]
-}
-
-export interface UserCard {
-  id: string
-  name: string
-  email: string
-  birthDate: string
-  gender: 'male' | 'female' | 'unspecified'
-  city: string
-  likesCount: number
-  aboutMe: string
-  createdAt: string
-  teachSkill: TeachSkill
-  learnSkills: LearnSkill[]
-  avatar: string
 }
