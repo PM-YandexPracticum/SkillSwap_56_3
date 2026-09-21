@@ -1,0 +1,49 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--space-xl);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.link,
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 40px;
+  padding-block: var(--space-sm);
+  color: inherit;
+}
+
+.link:hover,
+.button:hover {
+  color: var(--color-accent)
+}
+
+.button {
+  gap: var(--space-sm);
+}
+
+.link:focus-visible,
+.button:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+  inline-size: 16px;
+  block-size: 16px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.buttonIconOpen {
+  transform: rotate(180deg);
+}
