@@ -32,7 +32,7 @@ export function getAgeFromBirth(birth: string): number {
   const [year, month, day] = birth.split('-').map(Number)
   const today = new Date()
 
-  let age = today.getFullYear() - year
+  const age = today.getFullYear() - year
   const currentMonth = today.getMonth() + 1
   const birthdayIsAhead = currentMonth < month || (currentMonth === month && today.getDate() < day)
 
