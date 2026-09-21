@@ -27,7 +27,7 @@ export const MainHeader = () => {
   }
 
   return (
-    <header className={`${styles.header} && ${styles.header__inner}`}>
+    <header className={`${styles.header} ${styles.header__inner}`}>
       <Logo />
       <HeaderNavigation {...getPanelProps('skills')} />
       <SearchInput onChange={setSearchValue} value={searchValue} />
