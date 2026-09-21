@@ -7,3 +7,4 @@ export type IconName =
   | 'chevron-right'
   | 'image-placeholder'
   | 'chevron-down'
+  | 'cross'

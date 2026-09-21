@@ -32,6 +32,7 @@ const paths: Record<IconName, ReactNode> = {
       d="M12 20.954c-.288 0-.567-.038-.8-.121-3.553-1.219-9.2-5.545-9.2-11.935 0-3.256 2.633-5.898 5.87-5.898A5.78 5.78 0 0 1 12 4.712a5.78 5.78 0 0 1 4.13-1.712c3.237 0 5.87 2.651 5.87 5.898 0 6.4-5.646 10.716-9.2 11.935-.233.083-.512.12-.8.12"
     />
   ),
+
   'chevron-left': (
     <path
       d="m15 18-6-6 6-6"
@@ -68,6 +69,17 @@ const paths: Record<IconName, ReactNode> = {
       strokeLinejoin="round"
     />
   ),
+
+  cross: (
+    <>
+      <path
+        d="M5 5L19 19M19 5L5 19"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  )
 };
 
 type IconProps = {

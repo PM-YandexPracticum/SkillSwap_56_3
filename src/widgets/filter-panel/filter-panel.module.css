@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  background-color: #fff;
+  inline-size: 324px;
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+  align-items: center;
+}
+
+.reset {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: #508826;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  vertical-align: middle;
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.1%;
+  vertical-align: middle;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
