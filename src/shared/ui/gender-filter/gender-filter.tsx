@@ -7,7 +7,7 @@ import type { GenderFilterProps } from './type'
 export const GenderFilter = ({
   options,
   value,
-  defaultValue = 'unspecified',
+  defaultValue = 'all',
   onChange,
   name,
   title = 'Пол автора',
