@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+}
+
+.panel {
+  position: absolute;
+  z-index: 100;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm);
+  overflow: auto;
+  overflow-wrap: anywhere;
+  color: var(--color-text);
+  background-color: #fff;
+  inset-block-start: calc(100% + var(--space-sm));
+  inset-inline-start: 0;
+  inline-size: max-content;
+  max-inline-size: calc(100vw - 2 * var(--space-md));
+  max-block-size: var(--popover-max-height, calc(100dvh - 2 * var(--space-md)));
+  overscroll-behavior: contain;
+}
+
+.panel[hidden] {
+  display: none;
+}
