@@ -26,3 +26,15 @@ export function formatAge(age: number): string {
 
   return `${age} ${word}`
 }
+
+/** Получает age из birthDate */
+export function getAgeFromBirth(birth: string): number {
+  const [year, month, day] = birth.split('-').map(Number)
+  const today = new Date()
+
+  let age = today.getFullYear() - year
+  const currentMonth = today.getMonth() + 1
+  const birthdayIsAhead = currentMonth < month || (currentMonth === month && today.getDate() < day)
+
+  return birthdayIsAhead ? age - 1 : age
+}
