@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { ROUTES } from '@/shared/lib/constants'
 import { MainHeader } from '@/widgets/header/ui/header'
@@ -13,22 +13,10 @@ const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 const TestAndreyPage = lazy(() => import('@/pages/TestAndreyPage'))
 
-const ROUTES_WITHOUT_HEADER: string[] = [ROUTES.TEST_ANDREY]
-
-function Header() {
-  const { pathname } = useLocation()
-
-  if (ROUTES_WITHOUT_HEADER.includes(pathname)) {
-    return null
-  }
-
-  return <MainHeader />
-}
-
 export function AppRouter() {
   return (
     <BrowserRouter>
-    <Header/>
+    <MainHeader/>
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
@@ -41,7 +29,7 @@ export function AppRouter() {
           <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
           <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
 
-		  {/* Для тестирования */}
+          {/* Для тестирования */}
           <Route path={ROUTES.TEST_ANDREY} element={<TestAndreyPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
