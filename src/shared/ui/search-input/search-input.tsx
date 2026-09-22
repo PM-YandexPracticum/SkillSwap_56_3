@@ -2,7 +2,7 @@ import { Icon } from '@/shared/ui/icon/Icon';
 import type { SearchInputProps } from './type';
 import styles from './search-input.module.css';
 
-export function SearchInput({ value, onChange, placeholder = 'Поиск' }: SearchInputProps) {
+export function SearchInput({ value, onChange, placeholder = 'Искать навык' }: SearchInputProps) {
   return (
     <div className={styles.root} role="search">
       <Icon name="search" size={20} />
