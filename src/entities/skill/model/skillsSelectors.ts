@@ -1,5 +1,5 @@
+import { Skill } from '@/shared/types'
 import type { RootState } from '@/store'
-import type { Skill } from '@/shared/types'
 
 // Все навыки из стора
 export const selectAllSkills = (state: RootState): Skill[] => state.skills.skills
