@@ -20,7 +20,7 @@ export const SutableOffersSection = ({
       </div>
 
       {users.length === 0 ? (
-        <p className={styles.empty}>Ничего не найдено. Попробуйте изменить фильтры.</p>
+        <div className={styles.empty}>Ничего не найдено. Попробуйте изменить фильтры</div>
       ) : (
         <div className={styles.grid}>
           {users.map((user) => (
