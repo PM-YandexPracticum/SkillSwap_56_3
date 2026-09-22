@@ -4,13 +4,13 @@ import { PopoverProps } from './type'
 
 export function Popover({
   className = 'popover',
-  isOpen,
-  isOpenChange,
+  panel,
   trigger,
   children,
 }: PopoverProps) {
   const triggerRef = useRef<HTMLDivElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
+  const { isOpen, isOpenChange } = panel
 
   useEffect(() => {
     if (!isOpen) return

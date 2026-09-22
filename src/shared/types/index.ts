@@ -6,7 +6,7 @@ export interface Skill {
   title: string
   description: string
   type: SkillType
-  category: string
+  subcategory: string
   tags: string[]
   imageUrl: string | null
   authorId: string
@@ -62,7 +62,7 @@ export type SortOrder = 'newest' | 'oldest'
 
 export type WantFilter = 'all' | 'learn' | 'teach'
 
-export type Gender = 'unspecified' | 'male' | 'female'
+export type Gender = 'all' | 'male' | 'female'
 
 // ─── Users ────────────────────────────────────────────────
 
@@ -111,7 +111,7 @@ export interface UserCard {
   name: string
   email: string
   birthDate: string
-  gender: 'male' | 'female' | 'unspecified'
+  gender: Gender
   city: string
   likesCount: number
   aboutMe: string
@@ -119,4 +119,17 @@ export interface UserCard {
   teachSkill: TeachSkill
   learnSkills: LearnSkill[]
   avatar: string
+}
+
+
+export interface Skill {
+  id: string
+  type: SkillType
+  title: string
+  category: string
+  subcategory: string
+  description: string
+  tags: string[]
+  images: string[]
+  authorId: string
 }

@@ -1,1 +1,11 @@
-export type IconName = 'logo' | 'search' | 'heart' | 'heart-filled';
+export type IconName =
+  | 'logo'
+  | 'search'
+  | 'heart'
+  | 'heart-filled'
+  | 'chevron-left'
+  | 'chevron-right'
+  | 'image-placeholder'
+  | 'chevron-down'
+  | 'cross'
+  | 'sort'

@@ -32,6 +32,62 @@ const paths: Record<IconName, ReactNode> = {
       d="M12 20.954c-.288 0-.567-.038-.8-.121-3.553-1.219-9.2-5.545-9.2-11.935 0-3.256 2.633-5.898 5.87-5.898A5.78 5.78 0 0 1 12 4.712a5.78 5.78 0 0 1 4.13-1.712c3.237 0 5.87 2.651 5.87 5.898 0 6.4-5.646 10.716-9.2 11.935-.233.083-.512.12-.8.12"
     />
   ),
+
+  'chevron-left': (
+    <path
+      d="m15 18-6-6 6-6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
+  'chevron-right': (
+    <path
+      d="m9 18 6-6-6-6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
+  'image-placeholder': (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="3" strokeWidth="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none" />
+      <path d="m21 15-5-5L5 21" strokeWidth="2" strokeLinecap="round" />
+    </>
+  ),
+
+  'chevron-down': (
+    <path
+      d="m6 9.5 6 5.5 6-5.5"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
+  cross: (
+    <>
+      <path
+        d="M5 5L19 19M19 5L5 19"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+
+  sort: (
+    <>
+      <path fill="currentColor" stroke="none" d="M7.564 4.822a.69.69 0 0 1-.49-.203L4.127 1.672 1.18 4.62a.697.697 0 0 1-.98 0 .697.697 0 0 1 0-.98L3.638.204a.69.69 0 0 1 .98 0L8.053 3.64a.697.697 0 0 1 0 .979.69.69 0 0 1-.49.203"/>
+      <path fill="currentColor" stroke="none" d="M4.127 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.7.7 0 0 1-.693.693M13.873 18.013a.7.7 0 0 1-.49-.203l-3.436-3.436a.697.697 0 0 1 0-.98.697.697 0 0 1 .979 0l2.947 2.947 2.947-2.947a.697.697 0 0 1 .979 0 .697.697 0 0 1 0 .98l-3.436 3.436a.7.7 0 0 1-.49.203"/>
+      <path fill="currentColor" stroke="none" d="M13.864 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.69.69 0 0 1-.693.693"/>
+    </>
+  )
 };
 
 type IconProps = {
