@@ -18,9 +18,20 @@
   width: fit-content;
 }
 
-.list {
+.viewport {
+  overflow: hidden;
+}
+
+.track {
   display: flex;
-  gap: 24px;
+  width: max-content;
+  transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    transition: none;
+  }
 }
 
 .arrow {

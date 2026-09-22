@@ -7,6 +7,9 @@ import styles from './similar-section.module.css'
 import { SimilarSectionProps } from './type'
 
 const VISIBLE_COUNT = 4
+const CARD_WIDTH = 324
+const GAP = 24
+const STEP = CARD_WIDTH + GAP
 
 export function SimilarSection({ subcategory, excludeAuthorId }: SimilarSectionProps) {
   const users = useAppSelector((state) => selectSimilarUsers(state, subcategory, excludeAuthorId))
@@ -16,7 +19,6 @@ export function SimilarSection({ subcategory, excludeAuthorId }: SimilarSectionP
     return null
   }
 
-  const visibleUsers = users.slice(startIndex, startIndex + VISIBLE_COUNT)
   const hasNext = startIndex + VISIBLE_COUNT < users.length
   const canScroll = users.length > VISIBLE_COUNT
 
@@ -28,10 +30,18 @@ export function SimilarSection({ subcategory, excludeAuthorId }: SimilarSectionP
     <section className={styles.section}>
       <h2 className={styles.title}>Похожие предложения</h2>
       <div className={styles.slider}>
-        <div className={styles.list}>
-          {visibleUsers.map((user) => (
-            <UserCard key={user.id} user={user} isCatalog />
-          ))}
+        <div
+          className={styles.viewport}
+          style={{ maxWidth: VISIBLE_COUNT * CARD_WIDTH + (VISIBLE_COUNT - 1) * GAP }}
+        >
+          <div
+            className={styles.track}
+            style={{ gap: GAP, transform: `translateX(-${startIndex * STEP}px)` }}
+          >
+            {users.map((user) => (
+              <UserCard key={user.id} user={user} isCatalog />
+            ))}
+          </div>
         </div>
         {canScroll && (
           <button
