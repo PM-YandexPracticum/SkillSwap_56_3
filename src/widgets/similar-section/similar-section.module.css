@@ -1,0 +1,44 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #253017;
+}
+
+.slider {
+  position: relative;
+  width: fit-content;
+}
+
+.list {
+  display: flex;
+  gap: 24px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 100px;
+  background-color: #e4e8df;
+  color: #69735d;
+  transform: translateY(-50%);
+}
+
+.arrow:disabled {
+  opacity: 0.4;
+}
