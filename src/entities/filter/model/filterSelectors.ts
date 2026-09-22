@@ -60,6 +60,7 @@ export const selectFilteredUsers = createSelector(
 
     return users
       .filter((user) => {
+        //категории
         const hasSubcategoryFilter =
           filters.categories.length > 0 || filters.subcategories.length > 0
 
@@ -67,8 +68,10 @@ export const selectFilteredUsers = createSelector(
           const matchesTeach = skillMatchesFilters(user.teachSkill)
           const matchesLearn = user.learnSkills.some(skillMatchesFilters)
 
+           // Могу научить - ищем того, кто может научиться
           if (filters.wantFilter === 'teach') {
             if (!matchesLearn) return false
+            // Хочу научиться - ищем того, кто может научить
           } else if (filters.wantFilter === 'learn') {
             if (!matchesTeach) return false
           } else {
@@ -76,14 +79,17 @@ export const selectFilteredUsers = createSelector(
           }
         }
 
+        //пол
         if (filters.gender !== 'all' && user.gender !== filters.gender) {
           return false
         }
 
+        //город
         if (filters.cities.length > 0 && !filters.cities.includes(user.city)) {
           return false
         }
 
+        //поисковый запрос
         if (filters.searchQuery.trim()) {
           const query = filters.searchQuery.trim().toLowerCase()
 
@@ -92,12 +98,21 @@ export const selectFilteredUsers = createSelector(
             item.name.toLowerCase().includes(query)
           )
 
-          if (!matchesTeach && !matchesLearn) return false
+          if (filters.wantFilter === 'learn') {
+            // Хочу научиться - ищем того, кто может научить
+            if (!matchesTeach) return false
+          } else if (filters.wantFilter === 'teach') {
+            // Могу научить - ищем того, кто может научиться
+            if (!matchesLearn) return false
+          } else {
+            // 'all' - ищем везде
+            if (!matchesTeach && !matchesLearn) return false
+          }
         }
-
+        
         return true
       })
-      .sort((a, b) => {
+      .sort((a, b) => { 
         const da = new Date(a.createdAt).getTime()
         const db = new Date(b.createdAt).getTime()
         return filters.sortOrder === 'newest' ? db - da : da - db

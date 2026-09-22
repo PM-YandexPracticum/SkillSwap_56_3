@@ -8,8 +8,12 @@ import { SearchInput } from '@/shared/ui/search-input'
 import { useAppSelector } from '@/store/hooks'
 import { selectMeta } from '@/entities/user/model/usersSelectors'
 import { PanelProps } from '@/shared/ui/popover/type'
+import { useAppDispatch } from '@/store/hooks'
+import { setSearchQuery } from '@/entities/filter/model/filterSlice'
 
 export const MainHeader = () => {
+  const dispatch = useAppDispatch()
+
   const [openPanel, setOpenPanel] = useState<HeaderPanel | null>(null)
   const [searchValue, setSearchValue] = useState('')
   const categories = useAppSelector(selectMeta)?.categories ?? []
@@ -30,11 +34,16 @@ export const MainHeader = () => {
     }
   }
 
+  const handleSearchChange = (value: string) => {
+    setSearchValue(value)
+    dispatch(setSearchQuery(value))
+  }
+
   return (
     <header className={`${styles.header} ${styles.header__inner}`}>
       <Logo />
       <MainNavigation categories={categories} panel={getPanelProps('skills')} variant="header" />
-      <SearchInput onChange={setSearchValue} value={searchValue} />
+      <SearchInput onChange={handleSearchChange} value={searchValue} />
       <GuestActions />
     </header>
   )
