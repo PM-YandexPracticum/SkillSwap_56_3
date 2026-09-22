@@ -24,6 +24,8 @@ export const FavoriteButton = ({
 
   return (
     <div className={styles.wrapper}>
+      {<span className={styles.count}>{count}</span>}
+      
       <button
         type="button"
         disabled={disabled}
@@ -34,8 +36,6 @@ export const FavoriteButton = ({
       >
         <Icon name={iconName} size={24} />
       </button>
-
-      {<span className={styles.count}>{count}</span>}
     </div>
   )
 }

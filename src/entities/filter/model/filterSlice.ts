@@ -5,7 +5,7 @@ const initialState: FiltersState = {
   wantFilter: 'all',
   categories: [],
   subcategories: [],
-  gender: 'unspecified',
+  gender: 'all',
   cities: [],
   searchQuery: '',
   sortOrder: 'newest',

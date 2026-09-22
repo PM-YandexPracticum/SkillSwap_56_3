@@ -1,0 +1,61 @@
+.navigation {
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-xl);
+  white-space: nowrap;
+}
+
+.link,
+.button {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+}
+
+.header .link,
+.header .button {
+  min-block-size: 40px;
+  padding-block: var(--space-sm);
+}
+
+.button {
+  gap: var(--space-sm);
+}
+
+.link:hover,
+.button:hover {
+  color: var(--color-accent);
+}
+
+.link:focus-visible,
+.button:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 2px solid currentcolor;
+  outline-offset: 4px;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+  inline-size: 16px;
+  block-size: 16px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.buttonIconOpen {
+  transform: rotate(180deg);
+}
+
+.header .panel {
+  padding: 8px 40px;
+  inset-inline-start: 0;
+}

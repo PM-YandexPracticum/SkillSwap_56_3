@@ -48,11 +48,53 @@ const paths: Record<IconName, ReactNode> = {
   moon: (
     <path
       d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+  'chevron-left': (
+    <path
+      d="m15 18-6-6 6-6"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
   ),
+
+  'chevron-right': (
+    <path
+      d="m9 18 6-6-6-6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
+  'image-placeholder': (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="3" strokeWidth="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none" />
+      <path d="m21 15-5-5L5 21" strokeWidth="2" strokeLinecap="round" />
+    </>
+  ),
+
+  'chevron-down': (
+    <path
+      d="m6 9.5 6 5.5 6-5.5"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
+  cross: (
+    <>
+      <path
+        d="M5 5L19 19M19 5L5 19"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  )
 };
 
 type IconProps = {
