@@ -13,7 +13,7 @@ export const selectFiltersCount = (state: RootState): number => {
   const filters = state.filter
   let count = 0
   if (filters.wantFilter !== 'all') count++
-  if (filters.gender !== 'unspecified') count++
+  if (filters.gender !== 'all') count++
   count += filters.categories.length
   count += filters.subcategories.length
   count += filters.cities.length

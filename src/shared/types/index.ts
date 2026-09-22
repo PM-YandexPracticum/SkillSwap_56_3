@@ -62,7 +62,7 @@ export type SortOrder = 'newest' | 'oldest'
 
 export type WantFilter = 'all' | 'learn' | 'teach'
 
-export type Gender = 'unspecified' | 'male' | 'female'
+export type Gender = 'all' | 'male' | 'female'
 
 // ─── Users ────────────────────────────────────────────────
 
@@ -111,7 +111,7 @@ export interface UserCard {
   name: string
   email: string
   birthDate: string
-  gender: 'male' | 'female' | 'unspecified'
+  gender: Gender
   city: string
   likesCount: number
   aboutMe: string
