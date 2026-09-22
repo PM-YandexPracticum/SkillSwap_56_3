@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { WantFilter } from '@/shared/ui/want-filter'
 import { SkillFilter } from '@/shared/ui/skill-filter'
 import { GenderFilter } from '@/shared/ui/gender-filter'
@@ -24,16 +24,16 @@ import { Button } from '@/shared/ui/button'
 import { Icon } from '@/shared/ui/icon/Icon'
 
 export const FilterPanel = () => {
-  const dispatch = useDispatch()
-  const meta = useSelector(selectMeta)
+  const dispatch = useAppDispatch()
+  const meta = useAppSelector(selectMeta)
 
-  const wantFilter = useSelector(selectWantFilter)
-  const subcategories = useSelector(selectSubcategories)
-  const gender = useSelector(selectGender)
-  const cities = useSelector(selectCities)
+  const wantFilter = useAppSelector(selectWantFilter)
+  const subcategories = useAppSelector(selectSubcategories)
+  const gender = useAppSelector(selectGender)
+  const cities = useAppSelector(selectCities)
 
-  const isFiltering = useSelector(selectIsFiltering)
-  const filtersCount = useSelector(selectFiltersCount)
+  const isFiltering = useAppSelector(selectIsFiltering)
+  const filtersCount = useAppSelector(selectFiltersCount)
 
   if (!meta) return null
 
