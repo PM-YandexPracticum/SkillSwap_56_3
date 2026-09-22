@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import type { IconName } from './types';
+import type { ReactNode } from 'react'
+import type { IconName } from './types'
 
 const paths: Record<IconName, ReactNode> = {
   logo: (
@@ -36,7 +36,6 @@ const paths: Record<IconName, ReactNode> = {
   sun: (
     <>
       <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
-
       <path
         d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93"
         strokeWidth="2"
@@ -48,6 +47,12 @@ const paths: Record<IconName, ReactNode> = {
   moon: (
     <path
       d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
   'chevron-left': (
     <path
       d="m15 18-6-6 6-6"
@@ -77,38 +82,38 @@ const paths: Record<IconName, ReactNode> = {
   ),
 
   'chevron-down': (
-    <path
-      d="m6 9.5 6 5.5 6-5.5"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="m6 9.5 6 5.5 6-5.5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   ),
 
   cross: (
-    <>
-      <path
-        d="M5 5L19 19M19 5L5 19"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </>
+    <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   ),
 
   sort: (
     <>
-      <path fill="currentColor" stroke="none" d="M7.564 4.822a.69.69 0 0 1-.49-.203L4.127 1.672 1.18 4.62a.697.697 0 0 1-.98 0 .697.697 0 0 1 0-.98L3.638.204a.69.69 0 0 1 .98 0L8.053 3.64a.697.697 0 0 1 0 .979.69.69 0 0 1-.49.203"/>
-      <path fill="currentColor" stroke="none" d="M4.127 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.7.7 0 0 1-.693.693M13.873 18.013a.7.7 0 0 1-.49-.203l-3.436-3.436a.697.697 0 0 1 0-.98.697.697 0 0 1 .979 0l2.947 2.947 2.947-2.947a.697.697 0 0 1 .979 0 .697.697 0 0 1 0 .98l-3.436 3.436a.7.7 0 0 1-.49.203"/>
-      <path fill="currentColor" stroke="none" d="M13.864 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.69.69 0 0 1-.693.693"/>
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M7.564 4.822a.69.69 0 0 1-.49-.203L4.127 1.672 1.18 4.62a.697.697 0 0 1-.98 0 .697.697 0 0 1 0-.98L3.638.204a.69.69 0 0 1 .98 0L8.053 3.64a.697.697 0 0 1 0 .979.69.69 0 0 1-.49.203"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M4.127 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.7.7 0 0 1-.693.693M13.873 18.013a.7.7 0 0 1-.49-.203l-3.436-3.436a.697.697 0 0 1 0-.98.697.697 0 0 1 .979 0l2.947 2.947 2.947-2.947a.697.697 0 0 1 .979 0 .697.697 0 0 1 0 .98l-3.436 3.436a.7.7 0 0 1-.49.203"
+      />
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M13.864 18.014a.7.7 0 0 1-.693-.693V.693c0-.379.314-.693.693-.693s.693.314.693.693V17.32a.69.69 0 0 1-.693.693"
+      />
     </>
-  )
-};
+  ),
+}
 
 type IconProps = {
-  name: IconName;
-  size?: number;
-};
+  name: IconName
+  size?: number
+}
 
 export function Icon({ name, size = 24 }: IconProps) {
   return (
@@ -122,5 +127,5 @@ export function Icon({ name, size = 24 }: IconProps) {
     >
       {paths[name]}
     </svg>
-  );
+  )
 }
