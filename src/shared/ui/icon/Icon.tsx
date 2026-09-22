@@ -32,6 +32,27 @@ const paths: Record<IconName, ReactNode> = {
       d="M12 20.954c-.288 0-.567-.038-.8-.121-3.553-1.219-9.2-5.545-9.2-11.935 0-3.256 2.633-5.898 5.87-5.898A5.78 5.78 0 0 1 12 4.712a5.78 5.78 0 0 1 4.13-1.712c3.237 0 5.87 2.651 5.87 5.898 0 6.4-5.646 10.716-9.2 11.935-.233.083-.512.12-.8.12"
     />
   ),
+
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+
+      <path
+        d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+
+  moon: (
+    <path
+      d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
 };
 
 type IconProps = {
