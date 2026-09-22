@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fetchSkills } from '@/api/skills'
-import type { Skill, SkillsState } from './types'
+import { fetchSkillById, fetchSkills } from '@/api/skills'
+import type { SkillsState } from './types'
+import type { Skill } from '@/shared/types'
 
 export const loadSkills = createAsyncThunk<
   Skill[],
@@ -15,8 +16,7 @@ export const loadSkills = createAsyncThunk<
       const skills = await fetchSkills()
       return skills as unknown as Skill[]
     } catch (error) {
-      const message =
-        error instanceof Error ? error.message : 'Не удалось загрузить навыки'
+      const message = error instanceof Error ? error.message : 'Не удалось загрузить навыки'
       return rejectWithValue(message)
     }
   },
@@ -27,3 +27,21 @@ export const loadSkills = createAsyncThunk<
     },
   },
 )
+
+export const loadSkillById = createAsyncThunk<
+  Skill,
+  string,
+  { skills: SkillsState; rejectValue: string }
+>('skills/getById', async (id, { rejectWithValue }) => {
+  try {
+    const skill = await fetchSkillById(id)
+
+    if (!skill) {
+      return rejectWithValue('Навык не найден')
+    }
+    return skill
+  } catch (e) {
+    const message = e instanceof Error ? e.message : 'Не удалось загрузить навык'
+    return rejectWithValue(message)
+  }
+})
