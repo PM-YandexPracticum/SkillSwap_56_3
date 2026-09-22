@@ -9,3 +9,4 @@ export type IconName =
   | 'image-placeholder'
   | 'chevron-down'
   | 'cross'
+  | 'sort'
