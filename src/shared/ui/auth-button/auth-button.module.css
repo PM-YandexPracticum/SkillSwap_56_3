@@ -1,0 +1,19 @@
+.authButton {
+  width: 100%;
+  min-height: 84px;
+  padding: 20px;
+  border: none;
+  border-radius: 24px;
+  background-color: #abd477;
+  color: #26321d;
+  font: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.authButton:disabled {
+  background-color: #e6e9df;
+  color: #afb3aa;
+  cursor: not-allowed;
+}

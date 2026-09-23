@@ -9,9 +9,9 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      className={`${styles.button} ${extraClass}`}
       type={type}
       onClick={onClick}
-      className={`${styles.button} ${extraClass}`.trim()}
     >
       {children}
     </button>
