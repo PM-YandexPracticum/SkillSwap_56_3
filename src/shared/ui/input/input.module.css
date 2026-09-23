@@ -26,22 +26,20 @@
 
 .input:focus-visible {
   border-color: var(--color-accent);
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  border: 1px solid var(--color-accent);
+  outline: none;
 }
 
 .input:read-only {
   background-color: var(--color-bg-secondary);
 }
 
-.input[aria-invalid='true']:not(:disabled) {
+.input[aria-invalid='true'] {
   border-color: var(--color-error);
   outline-color: var(--color-error);
 }
 
-.input:disabled {
-  opacity: 0.6;
-  color: var(--color-text-secondary);
-  background-color: var(--color-bg-secondary);
-  cursor: not-allowed;
+.input:focus-visible {
+  border-color: var(--color-accent);
+  outline: 1px solid var(--color-accent);
 }
