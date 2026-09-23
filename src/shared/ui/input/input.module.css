@@ -20,14 +20,12 @@
   color: var(--color-text-secondary);
 }
 
-.input:hover:not(:disabled, :read-only, [aria-invalid='true']) {
+.input:hover {
   border-color: var(--color-accent);
 }
 
 .input:focus-visible {
-  border-color: var(--color-accent);
-  border: 1px solid var(--color-accent);
-  outline: none;
+  outline: 1px solid var(--color-accent);
 }
 
 .input:read-only {
@@ -37,9 +35,4 @@
 .input[aria-invalid='true'] {
   border-color: var(--color-error);
   outline-color: var(--color-error);
-}
-
-.input:focus-visible {
-  border-color: var(--color-accent);
-  outline: 1px solid var(--color-accent);
 }
