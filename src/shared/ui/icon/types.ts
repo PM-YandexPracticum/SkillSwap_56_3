@@ -9,3 +9,5 @@ export type IconName =
   | 'chevron-down'
   | 'cross'
   | 'sort'
+  | 'google'
+  | 'apple'
