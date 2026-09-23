@@ -157,9 +157,9 @@ const paths: Record<IconName, ReactNode> = {
 
        M2 22 L22 2"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   ),
   google: (
