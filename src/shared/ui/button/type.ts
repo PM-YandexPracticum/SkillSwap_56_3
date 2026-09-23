@@ -1,8 +1,5 @@
-import type { MouseEvent, ReactNode } from 'react';
+import type { ComponentProps } from 'react';
 
-export type ButtonProps = {
-  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-  children?: ReactNode;
-  type?: 'button' | 'submit' | 'reset';
+export type ButtonProps = ComponentProps<'button'> & {
   extraClass?: string;
 };

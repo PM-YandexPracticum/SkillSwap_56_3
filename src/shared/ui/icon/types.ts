@@ -11,5 +11,7 @@ export type IconName =
   | 'chevron-down'
   | 'cross'
   | 'sort'
+  | 'eye'
+  | 'eyeClosed'
   | 'google'
   | 'apple'
