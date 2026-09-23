@@ -33,6 +33,26 @@ const paths: Record<IconName, ReactNode> = {
     />
   ),
 
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+      <path
+        d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+
+  moon: (
+    <path
+      d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+
   'chevron-left': (
     <path
       d="m15 18-6-6 6-6"
@@ -66,6 +86,10 @@ const paths: Record<IconName, ReactNode> = {
   ),
 
   cross: (
+    <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  ),
+
+  sort: (
     <>
       <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </>
@@ -73,6 +97,11 @@ const paths: Record<IconName, ReactNode> = {
 
   sort: (
     <>
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M7.564 4.822a.69.69 0 0 1-.49-.203L4.127 1.672 1.18 4.62a.697.697 0 0 1-.98 0 .697.697 0 0 1 0-.98L3.638.204a.69.69 0 0 1 .98 0L8.053 3.64a.697.697 0 0 1 0 .979.69.69 0 0 1-.49.203"
+      />
       <path
         fill="currentColor"
         stroke="none"
@@ -131,6 +160,36 @@ const paths: Record<IconName, ReactNode> = {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+  google: (
+    <>
+      <path
+        fill="#4285F4"
+        stroke="none"
+        d="M21.6 12.23c0-.7-.06-1.37-.18-2.02H12v3.82h5.38a4.6 4.6 0 0 1-2 3.02v2.5h3.24c1.9-1.74 2.98-4.3 2.98-7.32Z"
+      />
+      <path
+        fill="#34A853"
+        stroke="none"
+        d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.24-2.51c-.9.6-2.04.96-3.38.96-2.6 0-4.8-1.76-5.6-4.12H3.07v2.6A10 10 0 0 0 12 22Z"
+      />
+      <path
+        fill="#FBBC05"
+        stroke="none"
+        d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3.07a10 10 0 0 0 0 9l3.33-2.6Z"
+      />
+      <path
+        fill="#EA4335"
+        stroke="none"
+        d="M12 5.98c1.47 0 2.79.5 3.83 1.5l2.87-2.87C16.95 2.99 14.7 2 12 2a10 10 0 0 0-8.93 5.5L6.4 10.1c.8-2.36 3-4.12 5.6-4.12Z"
+      />
+    </>
+  ),
+
+  apple: (
+    <path
+      fill="currentColor"
+      stroke="none"
+      d="M17.05 12.54c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.84 3.34-.84 1.56 0 2 .84 3.37.81 1.39-.02 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.92-.03-.01-2.7-1.04-2.73-4.12ZM14.5 4.88c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.3-.58 3.02-1.43Z"
     />
   ),
 }
