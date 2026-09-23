@@ -1,0 +1,41 @@
+.authStepper {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #253017;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.step {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #e4e8df;
+}
+
+.stepDone {
+  background-color: #abd27a;
+}
+
+@media (width <= 719px) {
+  .authStepper {
+    margin-bottom: 16px;
+  }
+
+  .step {
+    width: 40px;
+  }
+}
