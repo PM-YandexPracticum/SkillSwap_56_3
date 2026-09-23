@@ -3,6 +3,8 @@ export type IconName =
   | 'search'
   | 'heart'
   | 'heart-filled'
+  | 'sun'
+  | 'moon'
   | 'chevron-left'
   | 'chevron-right'
   | 'image-placeholder'
