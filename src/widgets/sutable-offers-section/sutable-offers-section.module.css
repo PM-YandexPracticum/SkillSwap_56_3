@@ -29,3 +29,10 @@
   gap: 24px;
   width: 100%;
 }
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}

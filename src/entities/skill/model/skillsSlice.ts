@@ -1,11 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { loadSkills } from './skillsThunks'
+import { loadSkillById, loadSkills } from './skillsThunks'
 import type { SkillsState } from './types'
 
 const initialState: SkillsState = {
   skills: [],
   isLoading: false,
   error: null,
+  isLoadingCurrent: false,
+  errorCurrent: null,
+  currentSkill: null,
 }
 
 const skillsSlice = createSlice({
@@ -28,6 +31,19 @@ const skillsSlice = createSlice({
         state.isLoading = false
         state.error = action.payload ?? action.error.message ?? 'Неизвестная ошибка'
         // state.skills НЕ трогаем — старые данные сохраняются
+      })
+      .addCase(loadSkillById.pending, (state) => {
+        state.isLoadingCurrent = true
+        state.errorCurrent = null
+        state.currentSkill = null
+      })
+      .addCase(loadSkillById.fulfilled, (state, action) => {
+        state.isLoadingCurrent = false
+        state.currentSkill = action.payload
+      })
+      .addCase(loadSkillById.rejected, (state, action) => {
+        state.isLoadingCurrent = false
+        state.errorCurrent = action.payload ?? action.error.message ?? 'Не удалось загрузить навык'
       })
   },
 })
