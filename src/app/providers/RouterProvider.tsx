@@ -4,6 +4,7 @@ import { ROUTES } from '@/shared/lib/constants'
 import { MainHeader } from '@/widgets/header/ui/header'
 import { useAppDispatch } from '@/store/hooks'
 import { loadUsers } from '@/entities/user/model/usersThunks'
+import { Footer } from '@/widgets/footer'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -39,6 +40,7 @@ export function AppRouter() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      <Footer/>
     </BrowserRouter>
   )
 }
