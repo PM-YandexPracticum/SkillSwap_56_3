@@ -29,12 +29,6 @@ export const FormLayout = ({
       <header className={styles.header}>
         <Logo />
 
-        {headerCenter && (
-          <div className={styles.headerCenter}>
-            {headerCenter}
-          </div>
-        )}
-
         <Button
           onClick={handleClose}
           extraClass={styles.closeButton}
@@ -44,6 +38,12 @@ export const FormLayout = ({
           <Icon name="cross" size={13} />
         </Button>
       </header>
+
+      {headerCenter && (
+          <div className={styles.headerCenter}>
+            {headerCenter}
+          </div>
+        )}
 
       <main className={styles.contentWrapper}>
         <div className={styles.columnsGrid}>

@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 40px;
+  padding: 24px 40px 0px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -66,7 +66,7 @@
 .column {
   background-color: #fff;
   padding: 40px 48px;
-  min-height: 600px;
+  min-height: 692px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
