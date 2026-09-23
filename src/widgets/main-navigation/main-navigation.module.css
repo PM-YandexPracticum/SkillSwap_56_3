@@ -14,8 +14,17 @@
   white-space: nowrap;
 }
 
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  grid-auto-flow: column;
+  gap: 12px var(--space-lg);
+}
+
 .link,
-.button {
+.button,
+.navigation a {
   display: inline-flex;
   align-items: center;
   color: inherit;
@@ -32,12 +41,14 @@
 }
 
 .link:hover,
-.button:hover {
+.button:hover,
+.navigation a:hover {
   color: var(--color-accent);
 }
 
 .link:focus-visible,
-.button:focus-visible {
+.button:focus-visible,
+.navigation a:focus-visible {
   border-radius: var(--radius-sm);
   outline: 2px solid currentcolor;
   outline-offset: 4px;
@@ -55,7 +66,26 @@
   transform: rotate(180deg);
 }
 
+.panel {
+  overflow: auto;
+}
+
 .header .panel {
   padding: 60px;
   inset-inline-start: 0;
+}
+
+.footer .panel {
+  inset-inline: 36px auto;
+  inset-block: auto 100%;
+  padding: 60px;
+  inline-size: 1136px;
+  max-block-size: min(70vh, 1040px);
+}
+
+/* skills-popover-content задаёт жёсткую ширину 1136px - снимаем её,
+иначе на узком экране появляется горизонтальная прокрутка */
+.footer .panel > * {
+  inline-size: auto;
+  max-inline-size: 100%;
 }
