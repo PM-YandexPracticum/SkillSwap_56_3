@@ -89,11 +89,11 @@ const paths: Record<IconName, ReactNode> = {
     <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   ),
 
-  sort: (
-    <>
-      <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </>
-  ),
+  // sort: (
+  //   <>
+  //     <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  //   </>
+  // ),
 
   sort: (
     <>
@@ -160,6 +160,8 @@ const paths: Record<IconName, ReactNode> = {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+    />
+  ),
   google: (
     <>
       <path
