@@ -1,13 +1,14 @@
 import { Icon } from '@/shared/ui/icon/Icon';
 import type { SearchInputProps } from './type';
 import styles from './search-input.module.css';
+import { Input } from '../input';
 
 export function SearchInput({ value, onChange, placeholder = 'Искать навык' }: SearchInputProps) {
   return (
     <div className={styles.root} role="search">
       <Icon name="search" size={20} />
 
-      <input
+      <Input
         className={styles.input}
         type="search"
         aria-label="Поиск"
