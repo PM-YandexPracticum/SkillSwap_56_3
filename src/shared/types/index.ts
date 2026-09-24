@@ -6,7 +6,7 @@ export interface Skill {
   title: string
   description: string
   type: SkillType
-  category: string
+  subcategory: string
   tags: string[]
   imageUrl: string | null
   authorId: string
@@ -119,4 +119,17 @@ export interface UserCard {
   teachSkill: TeachSkill
   learnSkills: LearnSkill[]
   avatar: string
+}
+
+
+export interface Skill {
+  id: string
+  type: SkillType
+  title: string
+  category: string
+  subcategory: string
+  description: string
+  tags: string[]
+  images: string[]
+  authorId: string
 }
