@@ -17,3 +17,5 @@ export type IconName =
   | 'apple'
   | 'share'
   | 'moreSquare'
+  | 'avatar-placeholder'
+  | 'plus'
