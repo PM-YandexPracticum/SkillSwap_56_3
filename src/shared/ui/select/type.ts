@@ -1,3 +1,5 @@
+import type { ComponentProps } from 'react'
+
 export interface SelectOption {
   id: string
   label: string
@@ -5,15 +7,16 @@ export interface SelectOption {
 
 export type SelectValue = string | string[] | null
 
-export interface SelectProps {
+export type SelectProps = Omit<
+  ComponentProps<'div'>,
+  'onChange' | 'defaultValue'
+> & {
   options: SelectOption[]
   value: SelectValue
   onChange: (value: SelectValue) => void
   multiple?: boolean
   searchable?: boolean
   placeholder?: string
-  disabled?: boolean
-  extraClass?: string
   emptyText?: string
   error?: string
   label?: string
