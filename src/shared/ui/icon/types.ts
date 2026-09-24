@@ -15,3 +15,4 @@ export type IconName =
   | 'eyeClosed'
   | 'google'
   | 'apple'
+  | 'edit-image'
