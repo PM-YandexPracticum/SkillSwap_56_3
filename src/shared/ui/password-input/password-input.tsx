@@ -11,17 +11,20 @@ export const PasswordInput = ({ className, ...props }: PasswordInputProps) => {
   const inputClassName = [style.input, className].filter(Boolean).join(' ')
 
   return (
-    <div className={style.root}>
-      <Input {...props} className={inputClassName} type={isVisible ? 'text' : 'password'} />
-
-      <Button
-        type="button"
-        extraClass={style.toggle}
-        aria-label={isVisible ? 'Скрыть пароль' : 'Показать пароль'}
-        onClick={() => setIsVisible((current) => !current)}
-      >
-        {isVisible ? <Icon name="eyeClosed" size={24} /> : <Icon name="eye" size={24} />}
-      </Button>
-    </div>
+    <Input
+      {...props}
+      label='Пароль'
+      className={inputClassName}
+      type={isVisible ? 'text' : 'password'}
+      rightSlot={
+        <Button
+          type="button"
+          aria-label={isVisible ? 'Скрыть пароль' : 'Показать пароль'}
+          onClick={() => setIsVisible((current) => !current)}
+        >
+          {isVisible ? <Icon name="eyeClosed" size={24} /> : <Icon name="eye" size={24} />}
+        </Button>
+      }
+    />
   )
 }
