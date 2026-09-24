@@ -9,7 +9,7 @@ const emptyDraft: RegistrationDraft = {
   password: '',
   name: '',
   birthDate: '',
-  gender: 'male',
+  gender: 'all',
   city: '',
   learnCategory: '',
   learnSubcategory: '',
