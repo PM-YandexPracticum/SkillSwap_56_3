@@ -1,10 +1,15 @@
-import styles from './button.module.css'
-import { ButtonProps } from './type'
+import styles from './button.module.css';
+import { ButtonProps } from './type';
 
-export const Button = ({ onClick, children, type = 'button', extraClass = '' }: ButtonProps) => {
+export const Button = ({
+  ...props
+}: ButtonProps) => {
   return (
-    <button className={`${styles.button} ${extraClass}`} type={type} onClick={onClick}>
-      {children}
+    <button
+      {...props}
+      className={`${styles.button} ${props.extraClass}`}
+    >
+      {props.children}
     </button>
-  )
-}
+  );
+};
