@@ -15,3 +15,5 @@ export type IconName =
   | 'eyeClosed'
   | 'google'
   | 'apple'
+  | 'share'
+  | 'moreSquare'
