@@ -118,7 +118,7 @@
   outline-offset: 2px;
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .dropzone {
     block-size: 128px;
   }
