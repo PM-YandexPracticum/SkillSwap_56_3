@@ -9,7 +9,7 @@ export type SelectValue = string | string[] | null
 
 export type SelectProps = Omit<
   ComponentProps<'div'>,
-  'onChange' | 'defaultValue'
+  'onChange' | 'defaultValue' | 'children'
 > & {
   options: SelectOption[]
   value: SelectValue
@@ -18,6 +18,6 @@ export type SelectProps = Omit<
   searchable?: boolean
   placeholder?: string
   emptyText?: string
-  error?: string
   label?: string
+  error?: string
 }
