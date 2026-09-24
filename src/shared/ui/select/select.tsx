@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from '@/shared/ui/icon/Icon'
 import { CheckOption } from '@/shared/ui/check-option'
+import { Button } from '@/shared/ui/button'
 import styles from './select.module.css'
 import type { SelectProps } from './type'
-import { Button } from '../button'
 
 export const Select = ({
   options,
@@ -12,10 +12,11 @@ export const Select = ({
   multiple = false,
   searchable = false,
   placeholder = 'Выберите...',
-  extraClass = '',
   emptyText = 'Ничего не найдено',
   error = '',
   label,
+  className,
+  ...props
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -36,8 +37,12 @@ export const Select = ({
   }, [isOpen])
 
   const selectedValues = multiple
-    ? Array.isArray(value) ? value : []
-    : typeof value === 'string' ? [value] : []
+    ? Array.isArray(value)
+      ? value
+      : []
+    : typeof value === 'string'
+      ? [value]
+      : []
 
   const filteredOptions = query.trim()
     ? options.filter((option) =>
@@ -49,7 +54,7 @@ export const Select = ({
     ? selectedValues.length > 0
       ? `Выбрано: ${selectedValues.length}`
       : ''
-    : options.find((option) => option.id === value)?.label ?? ''
+    : (options.find((option) => option.id === value)?.label ?? '')
 
   const handleSelect = (id: string, checked: boolean) => {
     if (multiple) {
@@ -62,7 +67,7 @@ export const Select = ({
   }
 
   return (
-    <div ref={rootRef} className={`${styles.root} ${extraClass}`.trim()}>
+    <div ref={rootRef} className={`${styles.root} ${className}`.trim()} {...props}>
       {label && <label className={styles.label}>{label}</label>}
 
       <div
