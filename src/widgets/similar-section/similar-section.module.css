@@ -15,7 +15,6 @@
 
 .slider {
   position: relative;
-  width: fit-content;
 }
 
 .viewport {
@@ -24,8 +23,16 @@
 
 .track {
   display: flex;
-  width: max-content;
+  gap: 24px;
   transition: transform 0.3s ease;
+}
+
+.slide {
+  flex: 0 0 calc((100% - 72px) / 4);
+}
+
+.slide > * {
+  inline-size: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -37,7 +44,6 @@
 .arrow {
   position: absolute;
   top: 50%;
-  right: -16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +54,14 @@
   background-color: #e4e8df;
   color: #69735d;
   transform: translateY(-50%);
+}
+
+.arrowPrev {
+  left: -16px;
+}
+
+.arrowNext {
+  right: -16px;
 }
 
 .arrow:disabled {
