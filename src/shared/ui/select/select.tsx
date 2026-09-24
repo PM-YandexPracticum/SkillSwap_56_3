@@ -66,8 +66,16 @@ export const Select = ({
     }
   }
 
+  const selectClassName = [
+    styles.field,
+    hasError ? styles.fieldError : '',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
-    <div ref={rootRef} className={`${styles.root} ${className}`.trim()} {...props}>
+    <div ref={rootRef} className={styles.root} {...props}>
       {label && <label className={styles.label}>{label}</label>}
 
       <div
@@ -75,12 +83,7 @@ export const Select = ({
           isOpen ? styles.fieldWrapperOpen : ''
         }`.trim()}
       >
-        <div
-          className={`${styles.field} ${
-            hasError ? styles.fieldError : ''
-          }`.trim()}
-          onClick={() => setIsOpen(true)}
-        >
+        <div className={selectClassName} onClick={() => setIsOpen(true)}>
           {searchable ? (
             <input
               className={styles.input}
@@ -140,7 +143,6 @@ export const Select = ({
           </div>
         )}
       </div>
-
       {hasError && <p className={styles.error}>{error}</p>}
     </div>
   )
