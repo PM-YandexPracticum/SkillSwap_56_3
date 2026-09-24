@@ -9,14 +9,15 @@ import {
 } from './authUtils'
 import {
   validateEmail,
-  validatePassword,
-  validateStep1,
+  validateStep1AndLogin,
   validateStep2,
   validateStep3,
+  hasErrors
 } from '../lib/validation'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchUsers } from '@/api/users'
 import { fetchCredentialsByEmail } from '@/api/credentials'
+import { FieldErrors } from './types'
 
 const FAKE_DELAY = 500
 
@@ -30,17 +31,17 @@ interface UpdateProfilePayload {
   email: string
 }
 
-export const login = createAsyncThunk<AuthUser, LoginPayload, { rejectValue: string }>(
+export const login = createAsyncThunk<
+  AuthUser,
+  LoginPayload,
+  { rejectValue: FieldErrors }
+>(
   'auth/login',
   async ({ email, password }, { rejectWithValue }) => {
-    const emailError = validateEmail(email)
-    if (emailError) {
-      return rejectWithValue(emailError)
-    }
+    const errors = validateStep1AndLogin({ email, password })
 
-    const passwordError = validatePassword(password)
-    if (passwordError) {
-      return rejectWithValue(passwordError)
+    if (hasErrors(errors)) {
+      return rejectWithValue(errors)
     }
 
     try {
@@ -50,12 +51,8 @@ export const login = createAsyncThunk<AuthUser, LoginPayload, { rejectValue: str
         getRegisteredCredentials().find((item) => item.email === email) ??
         (await fetchCredentialsByEmail(email))
 
-      if (!credentials) {
-        return rejectWithValue('Пользователь с таким email не найден')
-      }
-
-      if (credentials.password !== password) {
-        return rejectWithValue('Неверный пароль')
+      if (!credentials || credentials.password !== password) {
+        return rejectWithValue({ form: 'Неверный логин или пароль' })
       }
 
       const { data } = await fetchUsers()
@@ -64,14 +61,14 @@ export const login = createAsyncThunk<AuthUser, LoginPayload, { rejectValue: str
         data.find((user) => user.email === email)
 
       if (!found) {
-        return rejectWithValue('Пользователь с таким email не найден')
+        return rejectWithValue({ form: 'Пользователь с таким email не найден' })
       }
 
       return saveAuthUser({ id: found.id, name: found.name, email: found.email })
     } catch {
-      return rejectWithValue('Не удалось выполнить вход')
+      return rejectWithValue({ form: 'Не удалось выполнить вход' })
     }
-  },
+  }
 )
 
 export const getUser = createAsyncThunk<AuthUser | null, void>('auth/getUser', async () =>
@@ -110,13 +107,21 @@ function draftToUser(draft: RegistrationDraft): UserCard {
   }
 }
 
-export const register = createAsyncThunk<AuthUser, RegistrationDraft, { rejectValue: string }>(
+export const register = createAsyncThunk<
+  AuthUser,
+  RegistrationDraft,
+  { rejectValue: FieldErrors }
+>(
   'auth/register',
   async (draft, { rejectWithValue }) => {
-    const stepError = validateStep1(draft) ?? validateStep2(draft) ?? validateStep3(draft)
+    const errors = {
+      ...validateStep1AndLogin(draft),
+      ...validateStep2(draft),
+      ...validateStep3(draft),
+    }
 
-    if (stepError) {
-      return rejectWithValue(stepError)
+    if (hasErrors(errors)) {
+      return rejectWithValue(errors)
     }
 
     try {
@@ -126,7 +131,7 @@ export const register = createAsyncThunk<AuthUser, RegistrationDraft, { rejectVa
       const registered = getRegisteredCredentials()
 
       if (existing || registered.some((item) => item.email === draft.email)) {
-        return rejectWithValue('Email уже используется')
+        return rejectWithValue({ email: 'Email уже используется' })
       }
 
       const user = draftToUser(draft)
@@ -134,9 +139,9 @@ export const register = createAsyncThunk<AuthUser, RegistrationDraft, { rejectVa
 
       return saveAuthUser({ id: user.id, name: user.name, email: user.email })
     } catch {
-      return rejectWithValue('Не удалось зарегистрироваться')
+      return rejectWithValue({ form: 'Не удалось зарегистрироваться' })
     }
-  },
+  }
 )
 
 export const updateUserProfile = createAsyncThunk<

@@ -4,10 +4,12 @@ export const selectAuthState = (state: RootState) => state.auth
 export const selectUser = (state: RootState) => state.auth.user
 export const selectIsAuthenticated = (state: RootState) => state.auth.isAuthenticated
 export const selectAuthLoading = (state: RootState) => state.auth.isLoading
-export const selectAuthError = (state: RootState) => state.auth.error
+export const selectDraftErrors = (state: RootState) => state.auth.draftErrors
+export const selectLoginErrors = (state: RootState) => state.auth.loginErrors
 export const selectUserEmail = (state: RootState) => state.auth.user?.email ?? null
 export const selectUserId = (state: RootState) => state.auth.user?.id ?? null
 export const selectRegistrationDraft = (state: RootState) => state.auth.draft
+
 export const selectDraftStep1 = (state: RootState) => {
   const { email, password } = state.auth.draft
   return { email, password }

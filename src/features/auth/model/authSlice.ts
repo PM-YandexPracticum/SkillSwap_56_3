@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { AuthUser, RegistrationDraft } from '@/shared/types'
 import type { AuthState } from './types'
+import type { FieldErrors } from './types'
 import { login, register, getUser, logoutUser, updateUserProfile } from './authThunks'
 
 const emptyDraft: RegistrationDraft = {
@@ -8,7 +9,7 @@ const emptyDraft: RegistrationDraft = {
   password: '',
   name: '',
   birthDate: '',
-  gender: 'all',
+  gender: 'male',
   city: '',
   learnCategory: '',
   learnSubcategory: '',
@@ -26,6 +27,8 @@ const initialState: AuthState = {
   isLoading: false,
   error: null,
   draft: emptyDraft,
+  draftErrors: {},
+  loginErrors: {},
 }
 
 const authSlice = createSlice({
@@ -47,43 +50,75 @@ const authSlice = createSlice({
     },
     updateDraft(state, action: PayloadAction<Partial<RegistrationDraft>>) {
       state.draft = { ...state.draft, ...action.payload }
+      Object.keys(action.payload).forEach((key) => {
+        delete state.draftErrors[key]
+      })
     },
     resetDraft(state) {
       state.draft = emptyDraft
+      state.draftErrors = {}
     },
     setError(state, action: PayloadAction<string | null>) {
       state.error = action.payload
     },
+    setDraftErrors(state, action: PayloadAction<FieldErrors>) {
+      state.draftErrors = action.payload
+    },
+    clearDraftErrors(state) {
+      state.draftErrors = {}
+    },
+    setLoginErrors(state, action: PayloadAction<FieldErrors>) {
+      state.loginErrors = action.payload
+    },
+    clearLoginErrors(state) {
+      state.loginErrors = {}
+},
   },
   extraReducers: (builder) => {
     builder
+      // login
       .addCase(login.pending, (state) => {
         state.isLoading = true
         state.error = null
+        state.loginErrors = {}
       })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false
         state.user = action.payload
         state.isAuthenticated = true
+        state.loginErrors = {}
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false
-        state.error = action.payload ?? 'Не удалось выполнить вход'
+        if (action.payload && typeof action.payload === 'object') {
+          state.loginErrors = action.payload
+        } else {
+          state.error = action.error.message ?? 'Не удалось выполнить вход'
+        }
       })
+
+      // register
       .addCase(register.pending, (state) => {
         state.isLoading = true
         state.error = null
+        state.draftErrors = {}
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false
         state.user = action.payload
         state.isAuthenticated = true
         state.draft = emptyDraft
+        state.draftErrors = {}
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
-        state.error = action.payload ?? 'Не удалось зарегистрироваться'
+        if (action.payload && typeof action.payload === 'object') {
+          state.draftErrors = action.payload
+        } else {
+          state.error = action.error.message ?? 'Не удалось зарегистрироваться'
+        }
       })
+
       .addCase(getUser.fulfilled, (state, action) => {
         state.user = action.payload
         state.isAuthenticated = action.payload !== null
@@ -102,6 +137,17 @@ const authSlice = createSlice({
   },
 })
 
-export const { setUser, updateUser, logout, updateDraft, resetDraft, setError } = authSlice.actions
+export const {
+  setUser,
+  updateUser,
+  logout,
+  updateDraft,
+  resetDraft,
+  setError,
+  setDraftErrors,
+  clearDraftErrors,
+  setLoginErrors,
+  clearLoginErrors,
+} = authSlice.actions
 
 export default authSlice.reducer
