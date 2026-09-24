@@ -1,29 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
-
+import { ImagePreview } from './type'
 import { Icon } from '../icon'
 import type { ImageUploadProps } from './type'
 import style from './image-upload.module.css'
-
-type ImagePreview = {
-  id: string
-  file: File
-  previewUrl: string
-}
-
-let previewId = 0
-
-const isImageFile = (file: File) => file.type.startsWith('image/')
-
-const createImagePreview = (file: File): ImagePreview => {
-  previewId += 1
-
-  return {
-    id: `${file.name}-${file.lastModified}-${previewId}`,
-    file,
-    previewUrl: URL.createObjectURL(file),
-  }
-}
 
 export const ImageUpload = ({
   value,
@@ -41,6 +21,20 @@ export const ImageUpload = ({
   const dropzoneClassName = [style.dropzone, isDragging && style.dropzoneDragging]
     .filter(Boolean)
     .join(' ')
+
+    let previewId = 0
+
+  const isImageFile = (file: File) => file.type.startsWith('image/')
+
+  const createImagePreview = (file: File): ImagePreview => {
+    previewId += 1
+
+    return {
+      id: `${file.name}-${file.lastModified}-${previewId}`,
+      file,
+      previewUrl: URL.createObjectURL(file),
+    }
+  }
 
   useEffect(() => {
     const currentFiles = new Set(value)

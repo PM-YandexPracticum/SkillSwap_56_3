@@ -6,3 +6,9 @@ export type ImageUploadProps = {
   multiple?: boolean
   accept?: string
 }
+
+export type ImagePreview = {
+  id: string
+  file: File
+  previewUrl: string
+}
