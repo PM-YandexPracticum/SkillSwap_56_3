@@ -1,0 +1,195 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  inline-size: 100%;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inline-size: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: #fff;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.input:hover {
+  border-color: var(--color-accent);
+}
+
+.value {
+  color: var(--color-text);
+}
+
+.placeholder {
+  color: var(--color-text-secondary);
+}
+
+.inputOpen .placeholder {
+  color: transparent;
+}
+
+.calendar {
+  position: absolute;
+  z-index: 100;
+  inset-block-start: calc(100% + var(--space-sm));
+  inset-inline-start: 0;
+  inline-size: 320px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: var(--space-lg);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.calendar :global(.react-datepicker) {
+  border: none;
+  font-family: var(--font-sans);
+  inline-size: 100%;
+}
+
+.calendar :global(.react-datepicker__header) {
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+}
+
+.calendar :global(.react-datepicker__current-month),
+.calendar :global(.react-datepicker__month-select),
+.calendar :global(.react-datepicker__year-select) {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+  margin-block-end: var(--space-md);
+}
+
+.selectWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+}
+
+.select {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  padding-inline-end: var(--space-md);
+  font-family: inherit;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: center;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.calendar :global(.react-datepicker__month) {
+  margin: 0;
+}
+
+.calendar :global(.react-datepicker__month-container) {
+  float: none;
+  inline-size: 100%;
+}
+
+.calendar :global(.react-datepicker__week) {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar :global(.react-datepicker__day-names) {
+  display: flex;
+  justify-content: center;
+  margin-block-end: var(--space-sm);
+}
+
+.calendar :global(.react-datepicker__day-name) {
+  color: var(--color-accent);
+  inline-size: 36px;
+  line-height: 36px;
+  margin: 0;
+  text-align: center;
+}
+
+.calendar :global(.react-datepicker__day) {
+  color: var(--color-text);
+  inline-size: 36px;
+  line-height: 36px;
+  margin: 0;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.calendar :global(.react-datepicker__day--outside-month) {
+  color: var(--color-text-secondary);
+}
+
+.calendar :global(.react-datepicker__day--disabled) {
+  color: var(--color-text);
+  cursor: not-allowed;
+}
+
+.calendar :global(.react-datepicker__day:hover) {
+  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 50%;
+}
+
+.calendar :global(.react-datepicker__day--selected),
+.calendar :global(.react-datepicker__day--selected:hover) {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.calendar :global(.react-datepicker__day--keyboard-selected) {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-block-start: var(--space-lg);
+}
+
+.cancelButton,
+.confirmButton {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 12px;
+  font-size: var(--font-size-base);
+  text-align: center;
+  color: #000;
+  background: #fff;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.confirmButton {
+  background: var(--color-accent);
+}
+
+.confirmButton:hover {
+  background: color-mix(in srgb, var(--color-accent) 85%, black);
+}

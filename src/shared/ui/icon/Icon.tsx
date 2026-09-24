@@ -33,6 +33,17 @@ const paths: Record<IconName, ReactNode> = {
     />
   ),
 
+  calendar: (
+  <path
+    d="M6.5 2v2M13.5 2v2M3 9h14M5 4h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+),
+
   'chevron-left': (
     <path
       d="m15 18-6-6 6-6"
