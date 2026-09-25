@@ -1,4 +1,5 @@
-/* ─── Обёртка и инпут ─────────────────────────────── */
+/* stylelint-disable selector-pseudo-class-no-unknown */
+
 .wrapper {
   position: relative;
   display: inline-block;
@@ -35,7 +36,6 @@
   color: var(--color-text-secondary);
 }
 
-/* Невалидная дата — красная рамка (перебивает :hover и :focus) */
 .inputInvalid,
 .inputInvalid:hover,
 .inputInvalid:focus {
@@ -55,7 +55,6 @@
   color: var(--color-text);
 }
 
-/* ─── Календарь ───────────────────────────────────── */
 .calendar {
   position: absolute;
   z-index: 100;
@@ -87,7 +86,6 @@
   display: none;
 }
 
-/* ─── Header ──────────────────────────────────────── */
 .header {
   display: flex;
   justify-content: center;
@@ -121,7 +119,6 @@
   outline: none;
 }
 
-/* ─── Сетка дней ──────────────────────────────────── */
 .calendar :global(.react-datepicker__month) {
   margin: 0;
 }
@@ -184,7 +181,6 @@
   color: var(--color-text);
 }
 
-/* ─── Футер ───────────────────────────────────────── */
 .footer {
   display: flex;
   justify-content: center;
@@ -218,7 +214,6 @@
   background: color-mix(in srgb, var(--color-accent) 85%, black);
 }
 
-/* ─── Поле с лейблом ──────────────────────────────── */
 .field {
   display: flex;
   flex-direction: column;
