@@ -4,13 +4,17 @@ export type SkillType = 'teach' | 'learn'
 export interface Skill {
   id: string
   title: string
+  category: string
+  subcategory: string
   description: string
   type: SkillType
-  subcategory: string
   tags: string[]
-  imageUrl: string | null
+  images: string[]
+  imageUrl?: string | null
   authorId: string
-  createdAt: string
+  createdAt?: string
+  likesCount?: number
+  isFavorite?: boolean
 }
 
 // ─── User ────────────────────────────────────────────────
