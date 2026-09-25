@@ -1,40 +1,61 @@
+/* ─── Обёртка и инпут ─────────────────────────────── */
 .wrapper {
   position: relative;
   display: inline-block;
   inline-size: 100%;
 }
 
-.input {
+.inputWrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  inline-size: 100%;
+}
+
+.input {
   inline-size: 100%;
   padding: var(--space-md);
+  padding-inline-end: 44px;
   border: 1px solid var(--color-border);
   border-radius: 20px;
   background: #fff;
   color: var(--color-text);
   font-size: var(--font-size-base);
-  text-align: left;
+  font-family: inherit;
   transition: border-color 0.2s ease;
 }
 
-.input:hover {
+.input:hover,
+.input:focus {
+  outline: none;
   border-color: var(--color-accent);
 }
 
-.value {
-  color: var(--color-text);
-}
-
-.placeholder {
+.input::placeholder {
   color: var(--color-text-secondary);
 }
 
-.inputOpen .placeholder {
-  color: transparent;
+/* Невалидная дата — красная рамка (перебивает :hover и :focus) */
+.inputInvalid,
+.inputInvalid:hover,
+.inputInvalid:focus {
+  border-color: var(--color-error);
 }
 
+.iconButton {
+  position: absolute;
+  inset-inline-end: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* ─── Календарь ───────────────────────────────────── */
 .calendar {
   position: absolute;
   z-index: 100;
@@ -66,6 +87,7 @@
   display: none;
 }
 
+/* ─── Header ──────────────────────────────────────── */
 .header {
   display: flex;
   justify-content: center;
@@ -99,6 +121,7 @@
   outline: none;
 }
 
+/* ─── Сетка дней ──────────────────────────────────── */
 .calendar :global(.react-datepicker__month) {
   margin: 0;
 }
@@ -161,6 +184,7 @@
   color: var(--color-text);
 }
 
+/* ─── Футер ───────────────────────────────────────── */
 .footer {
   display: flex;
   justify-content: center;
@@ -192,4 +216,19 @@
 
 .confirmButton:hover {
   background: color-mix(in srgb, var(--color-accent) 85%, black);
+}
+
+/* ─── Поле с лейблом ──────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  inline-size: 100%;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: #253017;
 }

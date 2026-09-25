@@ -2,18 +2,14 @@ import styles from './button.module.css';
 import { ButtonProps } from './type';
 
 export const Button = ({
-  onClick,
-  children,
-  type = 'button',
-  extraClass = '',
+  ...props
 }: ButtonProps) => {
   return (
     <button
-      type={type}
-      onClick={onClick}
-      className={`${styles.button} ${extraClass}`.trim()}
+      {...props}
+      className={`${styles.button} ${props.extraClass}`}
     >
-      {children}
+      {props.children}
     </button>
   );
 };

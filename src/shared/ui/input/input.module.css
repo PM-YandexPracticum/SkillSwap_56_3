@@ -1,0 +1,91 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.label {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  color: #253017;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid #69735d;
+  border-radius: var(--radius-lg);
+  padding: 12px var(--space-md);
+  color: var(--color-text);
+  font: inherit;
+  line-height: 1.5;
+  background: transparent;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 40px;
+  position: relative;
+}
+
+.input::placeholder {
+  opacity: 1;
+  color: var(--color-text-secondary);
+}
+
+.input:hover {
+  border-color: var(--color-accent);
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input:read-only {
+  background-color: var(--color-bg-secondary);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--color-error);
+  outline-color: var(--color-error);
+}
+
+.inputError {
+  border-color: #bf3920;
+}
+
+.error {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #bf3920;
+}
+
+.withRightSlot {
+  padding-right: 44px;
+}
+
+.rightSlot {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: var(--radius-md);
+  padding: 0;
+  color: var(--color-text);
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
