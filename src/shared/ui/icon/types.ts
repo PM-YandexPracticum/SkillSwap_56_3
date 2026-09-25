@@ -16,3 +16,7 @@ export type IconName =
   | 'google'
   | 'apple'
   | 'edit-image'
+  | 'share'
+  | 'moreSquare'
+  | 'avatar-placeholder'
+  | 'plus'

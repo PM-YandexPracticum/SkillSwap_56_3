@@ -1,0 +1,135 @@
+.root {
+  display: grid;
+  gap: 16px;
+  inline-size: 100%;
+  max-inline-size: 600px;
+}
+
+.input {
+  display: none;
+}
+
+.dropzone {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  inline-size: 100%;
+  block-size: 132px;
+  padding: 16px;
+  border: 1px dashed #85887f;
+  border-radius: 12px;
+  color: #85887f;
+  font: inherit;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.dropzone:hover:not(:disabled),
+.dropzoneDragging {
+  border-color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
+}
+
+.dropzone:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.dropzone:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dropzoneText {
+  color: #85887f;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.chooseImages {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #77a94f;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.previewList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.previewItem {
+  position: relative;
+  flex: 0 0 auto;
+  inline-size: 80px;
+  block-size: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--color-bg-secondary);
+}
+
+.previewImage {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.removeButton {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-end: 4px;
+  display: grid;
+  place-items: center;
+  inline-size: 24px;
+  block-size: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #253017;
+  background-color: rgb(255 255 255 / 85%);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  color: var(--color-error);
+  background-color: #fff;
+}
+
+.removeButton:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (width <= 640px) {
+  .dropzone {
+    block-size: 128px;
+  }
+
+  .dropzoneText,
+  .chooseImages {
+    font-size: 16px;
+  }
+
+  .previewItem {
+    inline-size: 72px;
+    block-size: 72px;
+  }
+}
