@@ -17,7 +17,6 @@ function shuffleArray<T>(items: T[]): T[] {
 }
 
 export const RecommendedSection = ({
-  onMore,
   extraClass = '',
 }: RecommendedSectionProps) => {
   const users = useAppSelector(selectUsers);
@@ -48,7 +47,6 @@ export const RecommendedSection = ({
             key={user.id}
             user={user}
             isCatalog
-            onMore={onMore}
           />
         ))}
       </div>

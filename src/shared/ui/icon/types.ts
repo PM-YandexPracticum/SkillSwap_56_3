@@ -22,4 +22,4 @@ export type IconName =
   | 'avatar-placeholder'
   | 'plus'
   | 'skill-sharing'
-
+  | 'pencil'

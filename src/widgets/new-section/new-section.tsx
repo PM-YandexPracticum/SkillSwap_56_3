@@ -10,7 +10,6 @@ const INITIAL_LIMIT = 3;
 const EXPANDED_LIMIT = 9;
 
 export const NewSection = ({
-  onMore,
   extraClass = '',
 }: NewSectionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -46,7 +45,6 @@ export const NewSection = ({
             key={user.id}
             user={user}
             isCatalog
-            onMore={onMore}
           />
         ))}
       </div>

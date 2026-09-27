@@ -3,4 +3,5 @@ export type IconsBlockProps = {
   isFavorite: boolean
   onShare?: () => void
   onMoreClick?: () => void
+  count: number
 }
