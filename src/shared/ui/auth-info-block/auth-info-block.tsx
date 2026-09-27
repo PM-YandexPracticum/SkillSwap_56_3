@@ -1,13 +1,6 @@
-import type { ReactNode } from 'react';
-
 import styles from './auth-info-block.module.css';
+import { AuthInfoBlockProps } from './type';
 
-type AuthInfoBlockProps = {
-  image: ReactNode;
-  title: string;
-  description: string;
-  extraClass?: string;
-};
 
 export const AuthInfoBlock = ({
   image,
