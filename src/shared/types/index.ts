@@ -48,18 +48,18 @@ export interface AuthUser {
 }
 
 // ─── Subcategory ────────────────────────────────────────────────
-export type Subcategory = { 
-  id: string;
-  name: string 
-};
+export type Subcategory = {
+  id: string
+  name: string
+}
 
 // ─── Category ────────────────────────────────────────────────
 export type Category = {
-  id: string;
-  name: string;
-  icon: string;
+  id: string
+  name: string
+  icon: string
   subcategories: Subcategory[]
-};
+}
 
 // ─── Filters ────────────────────────────────────────────────
 export type SortOrder = 'newest' | 'oldest'
@@ -125,7 +125,6 @@ export interface UserCard {
   avatar: string
 }
 
-
 export interface Skill {
   id: string
   type: SkillType
@@ -136,4 +135,27 @@ export interface Skill {
   tags: string[]
   images: string[]
   authorId: string
+}
+
+// ─── Registration ────────────────────────────────────────
+export interface Credentials {
+  email: string
+  password: string
+}
+
+export interface RegistrationDraft {
+  email: string
+  password: string
+  name: string
+  birthDate: string
+  gender: Gender
+  city: string
+  learnCategory: string
+  learnSubcategory: string
+  avatar: string
+  teachSkillName: string
+  teachCategory: string
+  teachSubcategory: string
+  teachDescription: string
+  teachImages: string[]
 }

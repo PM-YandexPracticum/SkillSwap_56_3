@@ -7,6 +7,7 @@
   border-radius: 12px;
   background: #fff;
   inline-size: 100%;
+  block-size: 100%;
   justify-content: space-between;
 }
 

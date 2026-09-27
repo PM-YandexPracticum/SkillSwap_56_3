@@ -15,6 +15,7 @@ export type IconName =
   | 'eyeClosed'
   | 'google'
   | 'apple'
+  | 'edit-image'
   | 'share'
   | 'moreSquare'
   | 'avatar-placeholder'
