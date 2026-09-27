@@ -5,6 +5,7 @@ import {
   selectUsersError,
 } from '@/entities/user/model/usersSelectors'
 import { selectIsFiltering } from '@/entities/filter/model/filterSelectors'
+import { ActiveFiltersBar } from '@/entities/filter/ui/active-filters-bar'
 import { FilterPanel } from '@/widgets/filter-panel'
 import { SutableOffersSection } from '@/widgets/sutable-offers-section'
 import { PopularSection } from '@/widgets/popular-section'
@@ -41,6 +42,7 @@ export default function CatalogPage() {
         <div className={styles.content}>
           {isFiltering ? (
             <>
+              <ActiveFiltersBar />
               <SutableOffersSection />
             </>
           ) : (
