@@ -40,7 +40,9 @@ export default function CatalogPage() {
 
         <div className={styles.content}>
           {isFiltering ? (
-            <SutableOffersSection />
+            <>
+              <SutableOffersSection />
+            </>
           ) : (
             <>
               <PopularSection />

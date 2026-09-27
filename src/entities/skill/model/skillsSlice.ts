@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { loadSkillById, loadSkills } from './skillsThunks'
 import type { SkillsState } from './types'
 
@@ -14,30 +14,7 @@ const initialState: SkillsState = {
 const skillsSlice = createSlice({
   name: 'skills',
   initialState,
-  reducers: {
-    incrementLike: (state, action: PayloadAction<string>) => {
-      const skillId = action.payload
-
-      if (state.currentSkill && state.currentSkill.id === skillId) {
-        const nextIsFavorite = !state.currentSkill.isFavorite
-        state.currentSkill.isFavorite = nextIsFavorite
-        const currentLikes = state.currentSkill.likesCount ?? 0
-        state.currentSkill.likesCount = nextIsFavorite
-          ? currentLikes + 1
-          : Math.max(0, currentLikes - 1)
-      }
-
-      const skillInList = state.skills.find((item) => item.id === skillId)
-      if (skillInList) {
-        const nextIsFavorite = !skillInList.isFavorite
-        skillInList.isFavorite = nextIsFavorite
-        const currentLikes = skillInList.likesCount ?? 0
-        skillInList.likesCount = nextIsFavorite
-          ? currentLikes + 1
-          : Math.max(0, currentLikes - 1)
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(loadSkills.pending, (state) => {
@@ -69,5 +46,4 @@ const skillsSlice = createSlice({
   },
 })
 
-export const { incrementLike } = skillsSlice.actions
 export default skillsSlice.reducer

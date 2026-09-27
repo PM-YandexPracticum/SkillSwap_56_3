@@ -7,6 +7,4 @@ export interface SkillsState {
   isLoadingCurrent: boolean
   errorCurrent: string | null
   currentSkill: Skill | null
-  likesCount?: number
-  isFavorite?: boolean
 }

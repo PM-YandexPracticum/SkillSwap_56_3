@@ -1,6 +1,7 @@
-import { useState, type FC } from 'react'
-import { useAppDispatch } from '@/store/hooks'
-import { incrementLike } from '@/entities/skill/model/skillsSlice'
+import { type FC } from 'react'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { toggleLike } from '@/entities/user/model/usersSlice'
+import { selectLikedUserIds, selectUserById } from '@/entities/user/model/usersSelectors'
 import { IconsBlock } from '@/shared/ui/icons-block'
 import { ImageCarousel } from '@/shared/ui/image-carousel'
 import { OfferExchangeButton } from '@/shared/ui/offer-exchange-button'
@@ -16,19 +17,24 @@ export const SkillCard: FC<SkillCardProps> = ({
   extraClass = '',
 }) => {
   const dispatch = useAppDispatch()
-  const [isFav, setIsFav] = useState(Boolean(skill.isFavorite))
+  const likedUserIds = useAppSelector(selectLikedUserIds)
+  const isFavorite = likedUserIds.includes(skill.authorId)
+
+  const author = useAppSelector((state) =>
+    selectUserById(state, skill.authorId)
+  )
 
   const handleFavoriteChange = () => {
-    setIsFav((prev) => !prev)
-    dispatch(incrementLike(skill.id))
+    dispatch(toggleLike(skill.authorId))
   }
 
   return (
     <article className={`${styles.card} ${extraClass}`.trim()}>
       <div className={styles.topActions}>
         <IconsBlock
-          isFavorite={isFav}
+          isFavorite={isFavorite}
           onFavoriteChange={handleFavoriteChange}
+          count={author?.likesCount as number}
           onShare={onShare}
           onMoreClick={onMoreClick}
         />
