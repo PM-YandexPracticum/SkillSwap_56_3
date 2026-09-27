@@ -1,4 +1,4 @@
-import { EditableTextarea } from './editable-textarea'
+import { Textarea } from '../textarea'
 import type { EditableTextareaProps } from './type'
 
 export function DescriptionTextarea({
@@ -6,5 +6,5 @@ export function DescriptionTextarea({
   placeholder = 'Коротко опишите, чему можете научить',
   ...props
 }: EditableTextareaProps) {
-  return <EditableTextarea {...props} label={label} placeholder={placeholder} />
+  return <Textarea {...props} label={label} placeholder={placeholder} />
 }
