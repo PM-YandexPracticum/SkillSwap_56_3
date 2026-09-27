@@ -6,8 +6,21 @@ import {
 } from '@/entities/skill/model/skillsSelectors'
 import { SkillCard } from '@/widgets/skill-card'
 import { Loader } from '@/shared/ui/loader'
+import { useParams } from 'react-router-dom'
+import { useAppDispatch } from '@/store/hooks'
+import { useEffect } from 'react'
+import { loadSkillById } from '@/entities/skill/model/skillsThunks'
 
 export default function SkillPage() {
+  const { id } = useParams<{ id: string }>()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (id) {
+      dispatch(loadSkillById(id))
+    }
+  }, [id, dispatch])
+
   const skill = useAppSelector(selectCurrentSkill)
   const isLoading = useAppSelector(selectCurrentSkillLoading)
   const error = useAppSelector(selectCurrentSkillError)

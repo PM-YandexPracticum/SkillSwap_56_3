@@ -32,6 +32,7 @@ export const loadSkillById = createAsyncThunk<Skill, string, { rejectValue: stri
   'skills/getById',
   async (id, { rejectWithValue }) => {
     try {
+      await new Promise((resolve) => setTimeout(resolve, 500))
       const skill = await fetchSkillById(id)
 
       if (!skill) {
