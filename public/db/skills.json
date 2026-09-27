@@ -205,7 +205,12 @@
     "subcategory": "work-life-balance",
     "description": "Помогу заметить перегрузку, расставить приоритеты и выстроить более устойчивый распорядок.",
     "tags": ["баланс", "привычки", "восстановление"],
-    "images": [],
+    "images": [
+      "https://tcson.by/wp-content/uploads/2025/10/the-silent-battle-conquering-stress-and-finding-balance-in-business.webp",
+      "https://semantica-media.ru/wp-content/uploads/2024/12/image-4.jpeg",
+      "https://media.istockphoto.com/id/468780196/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C-%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81.jpg?s=612x612&w=0&k=20&c=GVLRRHVml4jacbkufHtb_ubNIj3i3ve7lSY5hpV63Co=",
+      "https://avatars.mds.yandex.net/i?id=0144364c6f39b2470dbfd0c28d79f59e_l-6221753-images-thumbs&n=13"
+    ],
     "authorId": "u019"
   },
   {

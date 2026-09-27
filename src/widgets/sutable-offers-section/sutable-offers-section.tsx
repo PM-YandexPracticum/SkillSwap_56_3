@@ -6,7 +6,6 @@ import type { SutableOffersProps } from './type'
 import styles from './sutable-offers-section.module.css'
 
 export const SutableOffersSection = ({
-  onMore,
   extraClass = '',
 }: SutableOffersProps) => {
   const users = useAppSelector(selectFilteredUsers)
@@ -28,7 +27,6 @@ export const SutableOffersSection = ({
               key={user.id}
               user={user}
               isCatalog
-              onMore={onMore}
             />
           ))}
         </div>
