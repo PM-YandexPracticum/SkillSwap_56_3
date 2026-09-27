@@ -492,6 +492,7 @@ const paths: Record<IconName, ReactNode> = {
         fill="#DEEBC5"
       />
     </svg>
+  ),
 
   pencil: (
     <g transform="translate(0.6 1.2) scale(1.1)" fill="currentColor" stroke="none">
