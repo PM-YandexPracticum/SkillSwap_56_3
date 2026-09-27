@@ -9,11 +9,12 @@ export const IconsBlock = ({
   isFavorite,
   onShare,
   onMoreClick,
+  count
 }: IconsBlockProps) => {
   return (
     <ul className={style.list}>
       <li className={style.item}>
-        <FavoriteButton onToggle={onFavoriteChange} isFavorite={isFavorite} />
+        <FavoriteButton onToggle={onFavoriteChange} isFavorite={isFavorite} count={count}/>
       </li>
       <li className={style.item}>
         <Button type="button" onClick={onShare} aria-label="Поделиться">

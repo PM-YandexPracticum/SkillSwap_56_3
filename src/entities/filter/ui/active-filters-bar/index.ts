@@ -1,0 +1,1 @@
+export { ActiveFiltersBar } from './active-filters-bar'

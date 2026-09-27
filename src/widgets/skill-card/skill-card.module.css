@@ -1,0 +1,39 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1120px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.topActions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  gap: 32px;
+}
+
+.rightCol {
+  width: 100%;
+}
+
+.buttonWrapper {
+  width: 100%;
+}
