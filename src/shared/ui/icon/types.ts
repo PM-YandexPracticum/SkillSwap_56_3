@@ -21,4 +21,5 @@ export type IconName =
   | 'moreSquare'
   | 'avatar-placeholder'
   | 'plus'
+  | 'skill-sharing'
   | 'pencil'
