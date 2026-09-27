@@ -4,6 +4,7 @@ import {
   selectSubcategories,
   selectGender,
   selectCities,
+  selectSearchQuery,
 } from '@/entities/filter/model/filterSelectors'
 import { selectMeta } from '@/entities/user/model/usersSelectors'
 import {
@@ -11,6 +12,7 @@ import {
   setGender,
   toggleSubcategory,
   toggleCity,
+  setSearchQuery,
 } from '@/entities/filter/model/filterSlice'
 import { FilterChip } from '@/shared/ui/filter-chip'
 import styles from './active-filters-bar.module.css'
@@ -21,6 +23,7 @@ export function ActiveFiltersBar() {
   const subcategories = useAppSelector(selectSubcategories)
   const gender = useAppSelector(selectGender)
   const cities = useAppSelector(selectCities)
+  const searchQuery = useAppSelector(selectSearchQuery)
   const meta = useAppSelector(selectMeta)
 
   if (!meta) return null
@@ -46,7 +49,8 @@ export function ActiveFiltersBar() {
     wantFilter !== 'all' ||
     gender !== 'all' ||
     subcategories.length > 0 ||
-    cities.length > 0
+    cities.length > 0 ||
+    searchQuery.trim().length > 0
 
   if (!hasFilters) return null
 
@@ -81,6 +85,13 @@ export function ActiveFiltersBar() {
           onRemove={() => dispatch(toggleCity(id))}
         />
       ))}
+
+      {searchQuery.trim() && (
+        <FilterChip
+          label={`Поиск: ${searchQuery.trim()}`}
+          onRemove={() => dispatch(setSearchQuery(''))}
+        />
+      )}
     </div>
   )
 }
