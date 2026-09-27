@@ -40,19 +40,19 @@ export default function CatalogPage() {
         </aside>
 
         <div className={styles.content}>
-  {isFiltering ? (
-    <>
-      <ActiveFiltersBar />
-      <SutableOffersSection />
-    </>
-  ) : (
-    <>
-      <PopularSection />
-      <NewSection />
-      <RecommendedSection />
-    </>
-  )}
-</div>
+          {isFiltering ? (
+            <>
+              <ActiveFiltersBar />
+              <SutableOffersSection />
+            </>
+          ) : (
+            <>
+              <PopularSection />
+              <NewSection />
+              <RecommendedSection />
+            </>
+          )}
+        </div>
       </div>
     </main>
   )
