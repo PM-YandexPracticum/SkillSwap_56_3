@@ -20,7 +20,6 @@ const skillsSlice = createSlice({
       .addCase(loadSkills.pending, (state) => {
         state.isLoading = true
         state.error = null
-        // state.skills НЕ трогаем — старые данные сохраняются
       })
       .addCase(loadSkills.fulfilled, (state, action) => {
         state.isLoading = false
@@ -30,7 +29,6 @@ const skillsSlice = createSlice({
       .addCase(loadSkills.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload ?? action.error.message ?? 'Неизвестная ошибка'
-        // state.skills НЕ трогаем — старые данные сохраняются
       })
       .addCase(loadSkillById.pending, (state) => {
         state.isLoadingCurrent = true
