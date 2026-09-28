@@ -163,3 +163,8 @@ export interface Section {
   label: string
   path?: string
 }
+
+export interface ExchangeNotification {
+  userId: string
+  createdAt: string
+}
