@@ -1,0 +1,118 @@
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #253017;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  block-size: 100%;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline: 0;
+  block-size: 1px;
+  background-color: #e4e8df;
+}
+
+.dividerText {
+  position: relative;
+  padding: 0 12px;
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  color: #253017;
+}
+
+.invalid {
+  border-color: #bf3920;
+}
+
+.formError {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  color: #bf3920;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block-start: auto;
+}
+
+.submit {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background-color: #abd27a;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  color: #253017;
+}
+
+.registerLink {
+  align-self: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  color: #508826;
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.promoImage {
+  inline-size: 300px;
+  block-size: 300px;
+  max-inline-size: 100%;
+}
+
+.promoTitle {
+  margin-block-start: 40px;
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #253017;
+}
+
+.promoText {
+  margin-block-start: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  color: #253017;
+}

@@ -24,3 +24,7 @@ export type IconName =
   | 'skill-sharing'
   | 'pencil'
   | 'page404'
+  | 'requests'
+  | 'exchanges'
+  | 'skills'
+  | 'profile'
