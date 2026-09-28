@@ -14,6 +14,6 @@ export function useInfiniteScroll<T extends Element>(
     })
 
     observer.observe(ref.current)
-    return observer.disconnect()
+    return () => observer.disconnect()
   }, [ref, callback])
 }
