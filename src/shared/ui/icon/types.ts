@@ -23,3 +23,8 @@ export type IconName =
   | 'plus'
   | 'skill-sharing'
   | 'pencil'
+  | 'page404'
+  | 'requests'
+  | 'exchanges'
+  | 'skills'
+  | 'profile'

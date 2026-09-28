@@ -3,7 +3,7 @@
   /* Colors */
   --color-primary: #6366f1;
   --color-primary-hover: #4f46e5;
-  --color-bg: #F9FAF7;
+  --color-bg: #f9faf7;
   --color-bg-secondary: #f9fafb;
   --color-text: #111827;
   --color-text-secondary: #6b7280;
@@ -60,13 +60,22 @@
 body {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
   line-height: 1.5;
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
-  margin-inline: 36px;
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 a {
@@ -75,13 +84,13 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 button {
-  cursor: pointer;
   border: none;
-  background: none;
   font: inherit;
+  background: none;
+  cursor: pointer;
 }

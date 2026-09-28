@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense, useEffect } from 'react'
 import { ROUTES } from '@/shared/lib/constants'
-import { MainHeader } from '@/widgets/header/ui/header'
 import { useAppDispatch } from '@/store/hooks'
 import { loadUsers } from '@/entities/user/model/usersThunks'
-import { Footer } from '@/widgets/footer'
 import { ProtectedRoute } from './ProtectedRoute'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
@@ -25,7 +23,6 @@ export function AppRouter() {
 
   return (
     <BrowserRouter>
-    <MainHeader/>
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
@@ -43,7 +40,6 @@ export function AppRouter() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-      <Footer/>
     </BrowserRouter>
   )
 }
