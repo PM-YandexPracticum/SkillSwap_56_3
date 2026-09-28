@@ -157,3 +157,9 @@ export interface RegistrationDraft {
   teachDescription: string
   teachImages: string[]
 }
+
+export interface Section {
+  id: string
+  label: string
+  path?: string
+}
