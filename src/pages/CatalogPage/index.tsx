@@ -12,6 +12,9 @@ import { NewSection } from '@/widgets/new-section'
 import { RecommendedSection } from '@/widgets/recommended-section'
 import { Loader } from '@/shared/ui/loader'
 import styles from './catalog-page.module.css'
+import { MainHeader } from '@/widgets/header/ui'
+import { Footer } from '@/widgets/footer'
+import { ActiveFiltersBar } from '@/entities/filter/ui/active-filters-bar'
 
 export default function CatalogPage() {
   const users = useAppSelector(selectUsers)
@@ -19,37 +22,66 @@ export default function CatalogPage() {
   const error = useAppSelector(selectUsersError)
   const isFiltering = useAppSelector(selectIsFiltering)
 
-  return isLoading && users.length === 0 ? (
-    <main className={styles.containerMain}>
-      <Loader size="large" />
-    </main>
-  ) : error && users.length === 0 ? (
-    <main className={styles.containerMain}>
-      <div className={styles.message}>{error}</div>
-    </main>
-  ) : !isLoading && !error && users.length === 0 ? (
-    <main className={styles.containerMain}>
-      <div className={styles.message}>Нет пользователей</div>
-    </main>
-  ) : (
-    <main className={`${styles.containerMain} ${styles.withCards}`}>
-      <div className={styles.layout}>
-        <aside className={styles.sidebar}>
-          <FilterPanel />
-        </aside>
+  const isInitialLoading = isLoading && users.length === 0
+  const isEmpty = !isLoading && !error && users.length === 0
+  const isError = Boolean(error) && users.length === 0
 
-        <div className={styles.content}>
-          {isFiltering ? (
-            <SutableOffersSection />
-          ) : (
-            <>
-              <PopularSection />
-              <NewSection />
-              <RecommendedSection />
-            </>
-          )}
+  const main = () => {
+    if (isInitialLoading) {
+      return (
+        <main className={styles.containerMain}>
+          <Loader size="large" />
+        </main>
+      )
+    }
+
+    if (isError) {
+      return (
+        <main className={styles.containerMain}>
+          <div className={styles.message}>{error}</div>
+        </main>
+      )
+    }
+
+    if (isEmpty) {
+      return (
+        <main className={styles.containerMain}>
+          <div className={styles.message}>Нет пользователей</div>
+        </main>
+      )
+    }
+
+    return (
+      <main className={`${styles.containerMain} ${styles.withCards}`}>
+        <div className={styles.layout}>
+          <aside className={styles.sidebar}>
+            <FilterPanel />
+          </aside>
+
+          <div className={styles.content}>
+            {isFiltering ? (
+              <>
+                <ActiveFiltersBar />
+                <SutableOffersSection />
+              </>
+            ) : (
+              <>
+                <PopularSection />
+                <NewSection />
+                <RecommendedSection />
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    )
+  }
+
+  return (
+    <>
+      <MainHeader />
+      {main()}
+      <Footer />
+    </>
   )
 }

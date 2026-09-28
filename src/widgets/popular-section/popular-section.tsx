@@ -10,7 +10,6 @@ const INITIAL_LIMIT = 3;
 const EXPANDED_LIMIT = 9;
 
 export const PopularSection = ({
-  onMore,
   extraClass = '',
 }: PopularSectionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -46,7 +45,6 @@ export const PopularSection = ({
             key={user.id}
             user={user}
             isCatalog
-            onMore={onMore}
           />
         ))}
       </div>
