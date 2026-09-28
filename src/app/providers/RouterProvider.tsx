@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { ROUTES } from '@/shared/lib/constants'
 import { useAppDispatch } from '@/store/hooks'
 import { loadUsers } from '@/entities/user/model/usersThunks'
+import { ProtectedRoute } from './ProtectedRoute'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -27,13 +28,15 @@ export function AppRouter() {
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
           <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
-          <Route path={ROUTES.LOGIN} element={<LoginPage />} />
-          <Route path={ROUTES.REGISTER} element={<LoginPage />} />
+          <Route element={<ProtectedRoute onlyUnAuth/>}>
+            <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+            <Route path={ROUTES.REGISTER} element={<LoginPage />} />
+          </Route>
 
-          {/* Защищённые маршруты — добавь PrivateRoute обёртку */}
-          <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
-          <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
-
+          <Route element={<ProtectedRoute />}>
+            <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
+            <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
+          </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
