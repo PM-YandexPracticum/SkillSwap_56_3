@@ -1,0 +1,92 @@
+.section {
+  display: grid;
+  grid-template-columns: 297px 1fr;   /* ← было 280px, стало 324px */
+  gap: 24px;                            /* ← было 48px, стало 24px */
+  margin-block-end: 48px;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 24px;
+}
+
+.skill {
+  position: relative;
+  padding: 32px;
+  padding-left: 52px;
+  padding-right: 52px;
+  background: #fff;
+  border-radius: 24px;
+}
+
+/* Шапка с иконками — правый верхний угол */
+.skillActions {
+  position: absolute;
+  inset-block-start: 32px;
+  inset-inline-end: 52px;
+  display: flex;
+  gap: 16px;
+  z-index: 1;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #253017;
+}
+
+/* Две колонки: контент + галерея */
+.skillBody {
+  display: grid;
+  grid-template-columns: 1fr 440px;   /* 440px — ширина галереи */
+  gap: 77px;
+  padding-block-start: 48px;          /* отступ сверху под иконки */
+}
+
+/* Левая — текст */
+.skillContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skillButton {
+  margin-block-start: auto;   /* ← прижимает к низу */
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+  color: #253017;
+}
+
+.breadcrumbs {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.description {
+  font-size: var(--font-size-base);
+  line-height: 24px;
+  color: #253017;
+}
+
+/* Правая — галерея */
+.gallery {
+  display: flex;
+  align-items: flex-start;
+  inline-size: 440px;
+}
