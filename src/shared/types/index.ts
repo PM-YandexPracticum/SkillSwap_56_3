@@ -4,13 +4,15 @@ export type SkillType = 'teach' | 'learn'
 export interface Skill {
   id: string
   title: string
+  category: string
+  subcategory: string
   description: string
   type: SkillType
-  subcategory: string
   tags: string[]
-  imageUrl: string | null
+  images: string[]
+  imageUrl?: string | null
   authorId: string
-  createdAt: string
+  createdAt?: string
 }
 
 // ─── User ────────────────────────────────────────────────
@@ -154,4 +156,15 @@ export interface RegistrationDraft {
   teachSubcategory: string
   teachDescription: string
   teachImages: string[]
+}
+
+export interface Section {
+  id: string
+  label: string
+  path?: string
+}
+
+export interface ExchangeNotification {
+  userId: string
+  createdAt: string
 }

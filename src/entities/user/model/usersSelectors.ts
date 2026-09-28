@@ -42,3 +42,6 @@ export const selectSimilarUsers = createSelector(
       (user) => user.teachSkill.subcategory === subcategory && user.id !== excludeAuthorId,
     ),
 )
+
+export const selectUserById = (state: RootState, id: string) =>
+  state.users.users.find((user) => user.id === id) ?? null

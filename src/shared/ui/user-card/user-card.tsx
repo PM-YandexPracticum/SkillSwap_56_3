@@ -9,9 +9,12 @@ import { getCategoryTone } from '@/entities/skill/lib/category-tone'
 import { selectMeta, selectLikedUserIds } from '@/entities/user/model/usersSelectors'
 import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
+import { useNavigate } from 'react-router-dom'
 
-export const UserCard = ({ user, onMore, isCatalog = true }: UserCardProps) => {
+export const UserCard = ({ user, isCatalog = true }: UserCardProps) => {
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
+
   const meta = useAppSelector(selectMeta)
   const likedUserIds = useAppSelector(selectLikedUserIds)
   const isFavorite = likedUserIds.includes(user.id)
@@ -41,7 +44,7 @@ export const UserCard = ({ user, onMore, isCatalog = true }: UserCardProps) => {
   }
 
   const handleMore = () => {
-    onMore?.(user.id)
+    navigate(`/skill/${user.teachSkill.id}`)
   }
 
   return (
