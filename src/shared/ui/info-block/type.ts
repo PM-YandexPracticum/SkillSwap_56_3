@@ -1,7 +1,8 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
 export type InfoBlockProps = {
-  image: ReactNode
-  title: string
-  description: string
-}
+  image: ReactNode;
+  title: string;
+  description: string;
+  extraClass?: string;
+};
