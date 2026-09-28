@@ -23,3 +23,4 @@ export type IconName =
   | 'plus'
   | 'skill-sharing'
   | 'pencil'
+  | 'page404'
