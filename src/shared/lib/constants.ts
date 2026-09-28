@@ -1,3 +1,5 @@
+import type { Section } from "../types"
+
 export const ROUTES = {
   HOME: '/',
   SKILL: '/skill/:id',
@@ -30,3 +32,11 @@ export const LOCAL_STORAGE_KEYS = {
 } as const
 
 export const CITIES_VISIBLE_COUNT = 5
+
+export const SECTIONS: Section[] = [
+  { id: 'requests', label: 'Заявки' },
+  { id: 'exchanges', label: 'Мои обмены' },
+  { id: 'heart', label: 'Избранное', path: '/favorites' },
+  { id: 'skills', label: 'Мои навыки' },
+  { id: 'profile', label: 'Личные данные', path: '/profile' },
+]
