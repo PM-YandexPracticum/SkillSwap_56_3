@@ -1,4 +1,4 @@
-import styles from './auth-info-block.module.css';
+import styles from './info-block.module.css';
 import { InfoBlockProps } from './type';
 
 
