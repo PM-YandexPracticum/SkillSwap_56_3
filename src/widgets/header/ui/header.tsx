@@ -10,12 +10,13 @@ import { selectMeta } from '@/entities/user/model/usersSelectors'
 import { PanelProps } from '@/shared/ui/popover/type'
 import { useAppDispatch } from '@/store/hooks'
 import { setSearchQuery } from '@/entities/filter/model/filterSlice'
+import { selectSearchQuery } from '@/entities/filter/model/filterSelectors'
 
 export const MainHeader = () => {
   const dispatch = useAppDispatch()
 
   const [openPanel, setOpenPanel] = useState<HeaderPanel | null>(null)
-  const [searchValue, setSearchValue] = useState('')
+  const searchValue = useAppSelector(selectSearchQuery)
   const categories = useAppSelector(selectMeta)?.categories ?? []
 
   function getPanelProps(name: HeaderPanel): PanelProps {
@@ -35,7 +36,6 @@ export const MainHeader = () => {
   }
 
   const handleSearchChange = (value: string) => {
-    setSearchValue(value)
     dispatch(setSearchQuery(value))
   }
 
