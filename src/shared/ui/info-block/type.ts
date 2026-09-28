@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type AuthInfoBlockProps = {
+export type InfoBlockProps = {
   image: ReactNode;
   title: string;
   description: string;
