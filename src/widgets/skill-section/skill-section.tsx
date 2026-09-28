@@ -42,12 +42,10 @@ export function SkillSection({ skill }: SkillSectionProps) {
   }))
 
   const handleOfferExchange = () => {
-    // TODO: логика предложения обмена
   }
 
   return (
     <section className={styles.section}>
-      {/* Левая колонка — автор */}
       <div className={styles.author}>
         <UserInfo
           name={author.name}
@@ -64,9 +62,7 @@ export function SkillSection({ skill }: SkillSectionProps) {
         </div>
       </div>
 
-      {/* Правая колонка — навык */}
       <div className={styles.skill}>
-        {/* Иконки — правый верхний угол */}
         <div className={styles.skillActions}>
           <button type="button" className={styles.iconButton} aria-label="В избранное">
             <Icon name="heart" size={20} />
@@ -79,7 +75,6 @@ export function SkillSection({ skill }: SkillSectionProps) {
           </button>
         </div>
 
-        {/* Две колонки: контент + галерея */}
         <div className={styles.skillBody}>
           <div className={styles.skillContent}>
             <h1 className={styles.title}>{skill.title}</h1>
@@ -88,7 +83,6 @@ export function SkillSection({ skill }: SkillSectionProps) {
             </p>
             <p className={styles.description}>{skill.description}</p>
 
-            {/* Кнопка — прижата к низу */}
             <div className={styles.skillButton}>
               <OfferExchangeButton onClick={handleOfferExchange} />
             </div>

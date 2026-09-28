@@ -1,7 +1,7 @@
 .section {
   display: grid;
-  grid-template-columns: 297px 1fr;   /* ← было 280px, стало 324px */
-  gap: 24px;                            /* ← было 48px, стало 24px */
+  grid-template-columns: 297px 1fr;
+  gap: 24px;
   margin-block-end: 48px;
 }
 
@@ -23,7 +23,6 @@
   border-radius: 24px;
 }
 
-/* Шапка с иконками — правый верхний угол */
 .skillActions {
   position: absolute;
   inset-block-start: 32px;
@@ -46,15 +45,13 @@
   color: #253017;
 }
 
-/* Две колонки: контент + галерея */
 .skillBody {
   display: grid;
-  grid-template-columns: 1fr 440px;   /* 440px — ширина галереи */
+  grid-template-columns: 1fr 440px;
   gap: 77px;
-  padding-block-start: 48px;          /* отступ сверху под иконки */
+  padding-block-start: 48px;
 }
 
-/* Левая — текст */
 .skillContent {
   display: flex;
   flex-direction: column;
@@ -62,7 +59,7 @@
 }
 
 .skillButton {
-  margin-block-start: auto;   /* ← прижимает к низу */
+  margin-block-start: auto;
 }
 
 .title {
@@ -84,7 +81,6 @@
   color: #253017;
 }
 
-/* Правая — галерея */
 .gallery {
   display: flex;
   align-items: flex-start;
