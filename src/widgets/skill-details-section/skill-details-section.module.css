@@ -1,13 +1,16 @@
 .section {
   display: grid;
-  grid-template-columns: 248px minmax(0, 1fr);
+  grid-template-columns: 324px 1fr;
   gap: 20px;
   width: 100%;
-  align-items: start;
 }
 
 .author {
   min-width: 0;
+}
+
+.user {
+  padding: 42px;
 }
 
 .skillCard {
@@ -15,7 +18,7 @@
   border-radius: 12px;
 }
 
-@media (width >= 768px) {
+@media (width <= 768px) {
   .section {
     grid-template-columns: 1fr;
   }

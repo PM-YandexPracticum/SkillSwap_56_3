@@ -14,6 +14,7 @@ export const SkillDetailsSection = ({
         <UserCard
           user={author}
           isCatalog={false}
+          extraClass={styles.user}
         />
       </aside>
 

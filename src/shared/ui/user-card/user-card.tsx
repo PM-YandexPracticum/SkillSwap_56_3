@@ -11,7 +11,7 @@ import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
 import { useNavigate } from 'react-router-dom'
 
-export const UserCard = ({ user, isCatalog = true }: UserCardProps) => {
+export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardProps) => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
@@ -48,7 +48,7 @@ export const UserCard = ({ user, isCatalog = true }: UserCardProps) => {
   }
 
   return (
-    <article className={styles.userCard}>
+    <article className={`${styles.userCard} ${extraClass}`.trim()}>
       {isCatalog && (
         <div className={styles.favoriteWrapper}>
           <FavoriteButton
