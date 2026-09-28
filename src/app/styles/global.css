@@ -63,6 +63,8 @@ body {
   line-height: 1.5;
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 #root {
