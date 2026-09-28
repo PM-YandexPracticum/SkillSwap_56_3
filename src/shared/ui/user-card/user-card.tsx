@@ -10,6 +10,7 @@ import { selectMeta, selectLikedUserIds } from '@/entities/user/model/usersSelec
 import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
 import { useNavigate } from 'react-router-dom'
+import { getAgeFromBirth } from '@/shared/lib/helpers'
 
 export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardProps) => {
   const navigate = useNavigate()
@@ -62,8 +63,7 @@ export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardPr
         name={user.name}
         avatarUrl={user.avatar}
         city={getCityName(user.city)}
-        /*Добавить сюда обработку возраста когда задача будет готова*/
-        age={30}
+        age={getAgeFromBirth(user.birthDate)}
       />
       {!isCatalog && user.aboutMe && (
         <p className={styles.description}>{user.aboutMe}</p>
