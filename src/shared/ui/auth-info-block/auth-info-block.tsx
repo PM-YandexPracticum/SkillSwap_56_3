@@ -9,14 +9,12 @@ export const AuthInfoBlock = ({
   extraClass = '',
 }: AuthInfoBlockProps) => {
   return (
-    <aside className={`${styles.authInfoBlock} ${extraClass}`.trim()}>
-      <div className={styles.content}>
-        <div className={styles.image}>{image}</div>
+    <div className={`${styles.content} ${extraClass}`}>
+      <div className={styles.image}>{image}</div>
 
-        <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>{title}</h2>
 
-        <p className={styles.description}>{description}</p>
-      </div>
-    </aside>
+      <p className={styles.description}>{description}</p>
+    </div>
   );
 };
