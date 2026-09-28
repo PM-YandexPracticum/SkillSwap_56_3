@@ -1,31 +1,46 @@
-import { useAppSelector } from '@/store/hooks'
+import { useEffect, useMemo } from 'react'
+import { useParams } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { loadSkillById } from '@/entities/skill/model/skillsThunks'
 import {
   selectCurrentSkill,
   selectCurrentSkillLoading,
   selectCurrentSkillError,
 } from '@/entities/skill/model/skillsSelectors'
-import { SkillCard } from '@/widgets/skill-card'
+import { selectMeta, selectUserById } from '@/entities/user/model/usersSelectors'
+import { SkillDetailsSection } from '@/widgets/skill-details-section'
+import { SimilarSection } from '@/widgets/similar-section'
 import { Loader } from '@/shared/ui/loader'
-import { useParams } from 'react-router-dom'
-import { useAppDispatch } from '@/store/hooks'
-import { useEffect } from 'react'
-import { loadSkillById } from '@/entities/skill/model/skillsThunks'
+import styles from './skill-page.module.css'
+import { UserCard } from '@/shared/types'
 import { MainHeader } from '@/widgets/header/ui'
 import { Footer } from '@/widgets/footer'
 
 export default function SkillPage() {
   const { id } = useParams<{ id: string }>()
   const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    if (id) {
-      dispatch(loadSkillById(id))
-    }
-  }, [id, dispatch])
+  const meta = useAppSelector(selectMeta)
 
   const skill = useAppSelector(selectCurrentSkill)
   const isLoading = useAppSelector(selectCurrentSkillLoading)
   const error = useAppSelector(selectCurrentSkillError)
+  const author = useAppSelector((state) =>
+    skill ? selectUserById(state, skill.authorId) : null
+  )
+
+  useEffect(() => {
+    if (id) dispatch(loadSkillById(id))
+  }, [dispatch, id])
+
+  const subcategoryName = useMemo(() => {
+    if (!skill) return ''
+    if (!meta) return skill.subcategory
+    for (const cat of meta.categories) {
+      const sub = cat.subcategories.find((s) => s.id === skill.subcategory)
+      if (sub) return sub.name
+    }
+    return skill.subcategory
+  }, [meta, skill])
 
   const main = () => {
     if (isLoading) {
@@ -36,17 +51,29 @@ export default function SkillPage() {
       )
     }
 
-    if (error || !skill) {
+    if (error) {
       return (
         <main style={{ textAlign: 'center', padding: '60px 0' }}>
-          <p>{error ?? 'Навык не найден'}</p>
+          <div className={styles.message}>{error}</div>
+        </main>
+      )
+    }
+
+    if (!skill) {
+      return (
+        <main style={{ textAlign: 'center', padding: '60px 0' }}>
+          <div className={styles.message}>Навык не найден</div>
         </main>
       )
     }
 
     return (
-      <main style={{ maxWidth: 1120, margin: '40px auto', padding: '0 20px' }}>
-        <SkillCard skill={skill} />
+      <main className={styles.container}>
+        <SkillDetailsSection skill={skill} author={author as UserCard}/>
+        <SimilarSection
+          subcategory={subcategoryName}
+          excludeAuthorId={skill.authorId}
+        />
       </main>
     )
   }
