@@ -6,7 +6,7 @@ import styles from './avatar-upload.module.css'
 export const AvatarUpload = ({
   value,
   onChange,
-  size = 72,
+  size = 54,
   extraClass = '',
 }: AvatarUploadProps) => {
   const [previewUrl, setPreviewUrl] = useState<string | null>(value || null)

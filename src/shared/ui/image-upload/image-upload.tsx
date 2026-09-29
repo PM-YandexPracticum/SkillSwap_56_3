@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import type { ChangeEvent, DragEvent } from 'react'
-import { ImagePreview } from './type'
 import { Icon } from '../icon'
 import type { ImageUploadProps } from './type'
 import style from './image-upload.module.css'
@@ -15,67 +14,23 @@ export const ImageUpload = ({
 }: ImageUploadProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [isDragging, setIsDragging] = useState(false)
-  const [previews, setPreviews] = useState<ImagePreview[]>([])
 
   const rootClassName = [style.root, className].filter(Boolean).join(' ')
   const dropzoneClassName = [style.dropzone, isDragging && style.dropzoneDragging]
     .filter(Boolean)
     .join(' ')
 
-    let previewId = 0
-
   const isImageFile = (file: File) => file.type.startsWith('image/')
-
-  const createImagePreview = (file: File): ImagePreview => {
-    previewId += 1
-
-    return {
-      id: `${file.name}-${file.lastModified}-${previewId}`,
-      file,
-      previewUrl: URL.createObjectURL(file),
-    }
-  }
-
-  useEffect(() => {
-    const currentFiles = new Set(value)
-
-    setPreviews((currentPreviews) => {
-      const removedPreviews = currentPreviews.filter(
-        (preview) => !currentFiles.has(preview.file),
-      )
-
-      removedPreviews.forEach((preview) => {
-        URL.revokeObjectURL(preview.previewUrl)
-      })
-
-      return currentPreviews.filter((preview) => currentFiles.has(preview.file))
-    })
-  }, [value])
-
-  useEffect(() => {
-    return () => {
-      previews.forEach((preview) => {
-        URL.revokeObjectURL(preview.previewUrl)
-      })
-    }
-  }, [previews])
 
   const addFiles = (files: File[]) => {
     const imageFiles = files.filter(isImageFile)
-
-    if (imageFiles.length === 0) {
-      return
-    }
+    if (imageFiles.length === 0) return
 
     const filesToAdd = multiple ? imageFiles : imageFiles.slice(0, 1)
+    const nextUrls = filesToAdd.map((file) => URL.createObjectURL(file))
+    const nextValue = multiple ? [...value, ...nextUrls] : nextUrls
 
-    setPreviews((currentPreviews) => {
-      const nextPreviews = filesToAdd.map(createImagePreview)
-
-      return multiple ? [...currentPreviews, ...nextPreviews] : nextPreviews
-    })
-
-    onChange(multiple ? [...value, ...filesToAdd] : filesToAdd)
+    onChange(nextValue)
   }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -84,48 +39,28 @@ export const ImageUpload = ({
   }
 
   const handleChooseImages = () => {
-    if (!disabled) {
-      inputRef.current?.click()
-    }
+    if (!disabled) inputRef.current?.click()
   }
 
   const handleDragOver = (event: DragEvent<HTMLButtonElement>) => {
     event.preventDefault()
-
-    if (!disabled) {
-      setIsDragging(true)
-    }
+    if (!disabled) setIsDragging(true)
   }
 
-  const handleDragLeave = () => {
-    setIsDragging(false)
-  }
+  const handleDragLeave = () => setIsDragging(false)
 
   const handleDrop = (event: DragEvent<HTMLButtonElement>) => {
     event.preventDefault()
     setIsDragging(false)
-
-    if (!disabled) {
-      addFiles(Array.from(event.dataTransfer.files))
-    }
+    if (!disabled) addFiles(Array.from(event.dataTransfer.files))
   }
 
-  const handleRemoveImage = (previewIdToRemove: string) => {
-    const previewToRemove = previews.find(
-      (preview) => preview.id === previewIdToRemove,
-    )
-
-    if (!previewToRemove) {
-      return
+  const handleRemoveImage = (urlToRemove: string) => {
+    // Освобождаем blob-URL
+    if (urlToRemove.startsWith('blob:')) {
+      URL.revokeObjectURL(urlToRemove)
     }
-
-    URL.revokeObjectURL(previewToRemove.previewUrl)
-
-    setPreviews((currentPreviews) =>
-      currentPreviews.filter((preview) => preview.id !== previewIdToRemove),
-    )
-
-    onChange(value.filter((file) => file !== previewToRemove.file))
+    onChange(value.filter((url) => url !== urlToRemove))
   }
 
   return (
@@ -159,21 +94,21 @@ export const ImageUpload = ({
         </span>
       </button>
 
-      {previews.length > 0 && (
+      {value.length > 0 && (
         <ul className={style.previewList}>
-          {previews.map((preview) => (
-            <li key={preview.id} className={style.previewItem}>
+          {value.map((url) => (
+            <li key={url} className={style.previewItem}>
               <img
                 className={style.previewImage}
-                src={preview.previewUrl}
-                alt={preview.file.name}
+                src={url}
+                alt="Изображение навыка"
               />
 
               <button
                 className={style.removeButton}
                 type="button"
-                aria-label={`Удалить изображение ${preview.file.name}`}
-                onClick={() => handleRemoveImage(preview.id)}
+                aria-label="Удалить изображение"
+                onClick={() => handleRemoveImage(url)}
               >
                 <Icon name="cross" size={16} />
               </button>

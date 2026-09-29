@@ -1,0 +1,71 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 44px 60px;
+  gap: 40px;
+}
+
+.header {
+  justify-self: center;
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.1%;
+  text-align: center;
+  vertical-align: middle;
+  color: #253017;
+}
+
+.subtitle {
+  color: #253017;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 420px 440px;
+  grid-template-rows: 256px min-content;
+  column-gap: 40px;
+  row-gap: 18px;
+}
+
+.info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.carousel {
+  grid-column: 2;
+  grid-row: 1 / 2;
+}
+
+.buttons {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  gap: 12px;
+}
+
+.edit {
+  padding: 12px 27px;
+  border: 1px solid #abd27a;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.confirm {
+  padding: 12px 76px;
+  background-color: #abd27a;
+  border-radius: 12px;
+}

@@ -52,3 +52,12 @@
   background-color: transparent;
   transition: background-color 0.2s ease;
 }
+
+.textareaError {
+  border-color: #bf3920;
+}
+
+.error {
+  font-size: 13px;
+  color: #bf3920;
+}

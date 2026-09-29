@@ -25,7 +25,6 @@ function parseAndValidate(value: string): Date | null {
   const parts = value.split('.')
   if (parts.length !== 3) return null
 
-  // Каждая часть — строго ДД / ММ / ГГГГ
   const [dayStr, monthStr, yearStr] = parts
   if (dayStr.length !== 2 || monthStr.length !== 2 || yearStr.length !== 4) {
     return null
@@ -43,7 +42,6 @@ function parseAndValidate(value: string): Date | null {
 
   const parsed = new Date(year, month - 1, day)
 
-  // Date «перекатывает» невалидные дни (31.02 → 03.03) — отлавливаем
   if (
     parsed.getDate() !== day ||
     parsed.getMonth() !== month - 1 ||
@@ -52,7 +50,6 @@ function parseAndValidate(value: string): Date | null {
     return null
   }
 
-  // Не в будущем
   if (parsed > new Date()) return null
 
   return parsed
@@ -64,6 +61,7 @@ export function DatePicker({
   label,
   placeholder = 'дд.мм.гггг',
   extraClass = '',
+  error = ''
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [tempDate, setTempDate] = useState<Date | null>(value)
@@ -72,6 +70,8 @@ export function DatePicker({
   )
   const [isInvalid, setIsInvalid] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const hasError = Boolean(error) || isInvalid
 
   // Синхронизация: value изменилось снаружи — обновляем инпут
   useEffect(() => {
@@ -113,12 +113,10 @@ export function DatePicker({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
 
-    // Только цифры и точки, максимум 10 символов
     if (!/^[\d.]*$/.test(val) || val.length > 10) return
 
     setInputValue(val)
 
-    // Пока не введено 10 символов — не валидируем
     if (val.length < 10) {
       setIsInvalid(false)
       return
@@ -140,6 +138,14 @@ export function DatePicker({
     setIsInvalid(false)
   }
 
+  const inputClassName = [
+    styles.input,
+    hasError ? styles.inputInvalid : '',
+    extraClass,
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <div className={styles.field}>
       {label && <label className={styles.label}>{label}</label>}
@@ -148,7 +154,7 @@ export function DatePicker({
         <div className={styles.inputWrapper}>
           <input
             type="text"
-            className={`${styles.input} ${isInvalid ? styles.inputInvalid : ''} ${extraClass}`.trim()}
+            className={inputClassName}
             value={inputValue}
             placeholder={placeholder}
             onChange={handleInputChange}
@@ -160,7 +166,7 @@ export function DatePicker({
             onClick={handleOpen}
             aria-label="Открыть календарь"
           >
-            <Icon name="calendar" size={20} />
+            <Icon name="calendar" size={24} />
           </button>
         </div>
 
@@ -174,11 +180,7 @@ export function DatePicker({
               maxDate={new Date()}
               minDate={new Date(MIN_YEAR, 0, 1)}
               openToDate={tempDate ?? new Date()}
-              renderCustomHeader={({
-                date,
-                changeYear,
-                changeMonth,
-              }) => (
+              renderCustomHeader={({ date, changeYear, changeMonth }) => (
                 <div className={styles.header}>
                   <div className={styles.selectWrapper}>
                     <select
@@ -224,6 +226,10 @@ export function DatePicker({
           </div>
         )}
       </div>
+
+      {hasError && (
+        <p className={styles.error}>{error || 'Некорректная дата'}</p>
+      )}
     </div>
   )
 }

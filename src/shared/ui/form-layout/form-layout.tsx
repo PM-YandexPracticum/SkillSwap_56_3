@@ -5,6 +5,8 @@ import { Button } from '@/shared/ui/button';
 import { Icon } from '@/shared/ui/icon/Icon';
 import type { FormLayoutProps } from './type';
 import styles from './form-layout.module.css';
+import { useAppDispatch } from '@/store/hooks';
+import { resetDraft } from '@/features/auth/model/authSlice';
 
 export const FormLayout = ({
   leftContent,
@@ -15,9 +17,11 @@ export const FormLayout = ({
   closeTo = '/',
 }: FormLayoutProps) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
 
   const handleClose = () => {
     navigate(closeTo);
+    dispatch(resetDraft())
   };
 
   const childrenArray = Children.toArray(children);
