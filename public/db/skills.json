@@ -7,7 +7,11 @@
     "subcategory": "english",
     "description": "Помогу освоить полезные английские фразы для поездок: в аэропорту, отеле, кафе и при общении с местными.",
     "tags": ["английский", "путешествия", "разговорная практика"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/94f7f66c-67ee-57c0-b891-66ea4c73215c/02e7cf22-b618-56d1-adf1-6c728d6ec1da.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/50c900fe-12f4-5c22-9fc8-1abef35c84b8/96883699-866f-5a64-a893-721bd7419d5f.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/77207036-6413-5983-8c81-34d6e0489b8a/99f88392-386f-5374-8c64-85b3d6cefb81.jpg"
+    ],
     "authorId": "u001"
   },
   {
@@ -18,7 +22,12 @@
     "subcategory": "team-management",
     "description": "Расскажу, как ставить понятные задачи, проводить встречи и поддерживать рабочий ритм команды.",
     "tags": ["менеджмент", "команда", "лидерство"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/e852e34b-7b67-5813-8222-a8df91ed356b/e0768043-f16d-5667-a3cd-c51a212d68ac.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/021510f5-fa12-54c6-a30c-fe1e9c2d958e/8e6a78a1-7505-56f7-9362-55e1b4ef9c18.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/de4fe53e-e0f9-52f1-b7ec-c3120aba314e/e0768043-f16d-5667-a3cd-c51a212d68ac.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/29f5f088-27ec-5231-8bc9-304cf51eb9b2/0831c2a9-3a2b-5bf7-b70f-05f1d51f5cdb.jpg"
+    ],
     "authorId": "u002"
   },
   {
@@ -29,7 +38,12 @@
     "subcategory": "photography",
     "description": "Научу работать с естественным светом, выбирать ракурс и общаться с человеком в кадре.",
     "tags": ["фотография", "портрет", "свет"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/43e02741-02cd-5684-ba13-e416e4260c1e/4159d4ff-08b7-5807-ac50-990396157d04.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/b12bb868-2f60-5155-b058-d14e4cca74f7/49d57750-ba30-5dda-8ff1-6217d087c948.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6b803ef9-c029-5cf3-b1cd-1a4f2d0bb1e5/9f5c6690-688e-50f2-a3a0-a97eb4fa8b49.jpg"
+    ],
     "authorId": "u003"
   },
   {
@@ -40,7 +54,12 @@
     "subcategory": "entrepreneurship",
     "description": "Помогу превратить идею в понятный план: проверить спрос, посчитать первые расходы и сделать стартовые шаги.",
     "tags": ["бизнес", "стартап", "планирование"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80",
+      "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80",
+      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&q=80",
+      "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=800&q=80"
+    ],
     "authorId": "u004"
   },
   {
@@ -51,7 +70,11 @@
     "subcategory": "drawing-illustration",
     "description": "Покажу базовый процесс создания иллюстрации: от идеи и композиции до цвета и финальных деталей.",
     "tags": ["иллюстрация", "рисование", "digital"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/0fb263a2-a75b-5f6e-9959-3ba767bd21c0/aec8f940-3469-5597-816f-0dd903b3407c.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/9c797756-eb22-5ae2-bb60-5bd85cf56a86/b22c74d1-0273-5a7a-b08c-7802dfeade51.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ca0d211c-59b9-57d3-899f-b6f0dde70afc/5ffbaf00-6f60-5c36-a4d0-620b7cebbf63.jpg"
+    ],
     "authorId": "u005"
   },
   {
@@ -62,7 +85,12 @@
     "subcategory": "cooking",
     "description": "Научу готовить простое тесто для пасты и подбирать быстрые домашние соусы.",
     "tags": ["кулинария", "паста", "домашняя еда"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d4f62550-5c27-5ce5-a814-2190147ba003/c40f2a90-44ac-56bc-b293-0c6e51466d92.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ebf4ed32-80e3-59ba-8285-63b457f95c2c/fc18c111-b3bb-5eb5-9e3b-06175aad6110.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/911f97c0-44aa-5977-b061-f7928d1534f9/625e5bf7-b06f-5559-9e48-adb69fe6b6f7.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fddefbad-2e78-5d2f-aa66-fb2b35693c25/48d3ccc5-d4aa-587d-8842-62c7d5e9b68e.jpg"
+    ],
     "authorId": "u006"
   },
   {
@@ -73,7 +101,12 @@
     "subcategory": "japanese",
     "description": "Познакомлю с хираганой, базовыми фразами и правилами вежливого общения на японском.",
     "tags": ["японский", "языки", "хирагана"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/20109bf4-ce52-5d2e-b706-c35d24a0d648/d8d3b805-ed99-5f61-8e9c-66113cdaae72.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/361dffe7-1855-5b59-9381-25ef743c85f1/0af98422-8d5d-5204-9f00-361f34eddb23.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f8615878-f751-5d53-b6b8-08167fc11273/c7562025-858a-52f9-9b87-56d12b452965.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a89b61e2-85b2-53b9-a0e8-f4602d9d55e2/19fff8e5-c8d2-5bcc-b34c-43e2ef28b80a.jpg"
+    ],
     "authorId": "u007"
   },
   {
@@ -84,7 +117,11 @@
     "subcategory": "project-management",
     "description": "Покажу, как разбивать большую задачу на этапы, определять сроки и контролировать прогресс.",
     "tags": ["проекты", "планирование", "задачи"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f3e946b3-9e8e-53e6-aa85-a7eb11f19dbe/0831c2a9-3a2b-5bf7-b70f-05f1d51f5cdb.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/b1af72d2-78f8-51f5-adf8-f8a769756a12/51ad7052-cf8f-5003-b56d-2829cd2f8137.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ad293473-9dbd-560c-8129-129b4824e467/32889b70-4a2e-5ad6-8781-732deccb8baa.jpg"
+    ],
     "authorId": "u008"
   },
   {
@@ -95,7 +132,12 @@
     "subcategory": "coaching",
     "description": "Помогу сформулировать достижимую цель, разбить её на шаги и сохранить мотивацию в процессе.",
     "tags": ["цели", "коучинг", "мотивация"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/22073756-3821-5510-9492-420d5115a6a5/2ca8929c-cb4e-51e9-8e5a-92d1788ebfbc.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/1829fc48-16fd-5b46-b321-a50f4e25fbcc/10f1907b-2567-564d-b1ad-0ade96af1083.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3088eeba-8333-5d1b-8766-0f0798f676aa/10f1907b-2567-564d-b1ad-0ade96af1083.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/29db65fc-efa7-55f6-a108-189309679fea/168b147b-b566-5361-81d8-a32a4cdf4c8e.jpg"
+    ],
     "authorId": "u009"
   },
   {
@@ -106,7 +148,11 @@
     "subcategory": "teaching-skills",
     "description": "Расскажу, как готовить занятия, объяснять сложное понятным языком и получать обратную связь.",
     "tags": ["преподавание", "обучение", "коммуникация"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a8072870-c036-5f8f-b78c-18df1bc76bd3/d7a37569-7391-50e4-93e4-be5563df98c9.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a7f57e0d-b600-5176-9da9-5386f2447f9d/0831c2a9-3a2b-5bf7-b70f-05f1d51f5cdb.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/b33736cb-b098-5fa1-ba0a-d7ec379420f8/a8821335-2a7c-58f2-944b-cc5f31c71a54.jpg"
+    ],
     "authorId": "u010"
   },
   {
@@ -117,7 +163,12 @@
     "subcategory": "mindfulness",
     "description": "Познакомлю с простыми упражнениями на внимание, которые можно встроить в обычный день.",
     "tags": ["осознанность", "внимание", "практики"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/743c7307-c21c-50e2-ad20-767eaae685ad/7fd5dec9-7d5c-5032-859c-f073cccdce97.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/373f8618-544d-57c2-bd43-178d138746e5/e0768043-f16d-5667-a3cd-c51a212d68ac.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/36da76f4-6e97-5cb4-8eea-107cf8158703/93adb514-eaf8-5a11-afa0-9f5382889afe.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3ebcc879-8726-5edc-8a2c-fa0895cd9af8/949b23ec-f599-5fdc-a86a-e7b7681036c8.jpg"
+    ],
     "authorId": "u011"
   },
   {
@@ -128,7 +179,12 @@
     "subcategory": "video-editing",
     "description": "Покажу, как собрать динамичный короткий ролик: от отбора кадров до музыки, титров и экспорта.",
     "tags": ["видео", "монтаж", "shorts"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/4b4deb4b-a4a2-5304-909a-e056f1f4a9a0/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fb919c02-379b-5e56-89cf-f3fda358fd1f/e0768043-f16d-5667-a3cd-c51a212d68ac.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/1ef57ac6-ecad-5fd6-bdc9-2d0c58fed466/13f9b9f5-07cb-5158-abdd-1d289b480686.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/cd3d97cc-0321-5e05-b5fe-988a9fdebd17/16607889-904f-5962-b328-6773cb79f76d.jpg"
+    ],
     "authorId": "u012"
   },
   {
@@ -139,7 +195,12 @@
     "subcategory": "storage",
     "description": "Помогу организовать хранение вещей так, чтобы нужное легко находилось и пространство не перегружалось.",
     "tags": ["хранение", "порядок", "дом"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/b7e2e59f-8f24-5604-a8cb-e7787dad19b2/e7553eab-7147-545a-b4c6-3cdead3526fd.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a516804c-ba3e-5c44-8324-b92a279c50fb/3f202daf-b5aa-552d-b47b-42937eeda593.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/8dc6c0d2-62e1-57be-9a27-3aea7075b187/79ca92be-6f4b-562b-a935-bc483bf6c0db.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/30df4d19-ab3c-5088-846a-4b8a33fba6e0/714ef560-5ca9-58b7-91d4-7813f076762a.jpg"
+    ],
     "authorId": "u013"
   },
   {
@@ -150,7 +211,11 @@
     "subcategory": "repair",
     "description": "Научу безопасно пользоваться основными инструментами и решать распространённые бытовые задачи.",
     "tags": ["ремонт", "инструменты", "своими руками"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/722e9fde-ea96-5572-85b8-b6946707acfa/d2adab9b-42ad-55f8-9906-f47f9a5429c8.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/705ae319-0053-5a9d-bbf0-f660f8b6bd17/a0699a94-9efe-5a2d-a83e-282e2c0a7886.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/de4ab652-1e96-59cc-9899-e110bff3c073/f6017308-2fa8-56a0-af1c-5994d9becf06.jpg"
+    ],
     "authorId": "u014"
   },
   {
@@ -161,7 +226,12 @@
     "subcategory": "resume-interview",
     "description": "Помогу подготовить рассказ о себе, разобрать частые вопросы и увереннее вести диалог с работодателем.",
     "tags": ["собеседование", "карьера", "резюме"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/24380414-862d-5c83-a5b1-0e33c3896f97/10f1907b-2567-564d-b1ad-0ade96af1083.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/13d93d0b-c315-597d-9812-b06ad8d6825a/602ed161-4a2f-5fd6-962f-6276aa02a02c.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/76d361d0-1ecd-59a0-ba36-99e5f3f20810/67a262e9-6001-5abc-8e5e-20c5c0dc9c5f.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/becd3ba0-2247-5206-a16e-484bce11d6c8/a095f525-2b33-5aac-9ec9-19463ae0e076.jpg"
+    ],
     "authorId": "u015"
   },
   {
@@ -172,7 +242,11 @@
     "subcategory": "physical-training",
     "description": "Расскажу, как начать бегать без перегрузок, выбрать комфортный темп и выстроить регулярные тренировки.",
     "tags": ["бег", "тренировки", "выносливость"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/dabb3eee-de81-5977-854f-5cfaa10cc4fe/0cb56828-3e40-561d-bc25-139db8b612a7.jpg",
+      "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
+      "https://images.unsplash.com/photo-1530143311094-34d807799e8f?w=800&q=80"
+    ],
     "authorId": "u016"
   },
   {
@@ -183,7 +257,11 @@
     "subcategory": "creative-writing",
     "description": "Покажу, как находить темы, строить понятную структуру и писать живые тексты для блога.",
     "tags": ["тексты", "блог", "копирайтинг"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a4c8fdc4-4d45-5c12-a4d4-8c6752792cf4/e0768043-f16d-5667-a3cd-c51a212d68ac.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/31ff6151-e14c-5804-bb11-9c63dd826951/da45c960-5fd6-5c68-99fc-dc7e18ca8253.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6ce8899c-b61e-5373-bc01-0f8ddaf19007/10f1907b-2567-564d-b1ad-0ade96af1083.jpg"
+    ],
     "authorId": "u017"
   },
   {
@@ -194,7 +272,11 @@
     "subcategory": "music-sound",
     "description": "Расскажу, как организовать простую запись дома, настроить звук и подготовить трек к публикации.",
     "tags": ["звук", "музыка", "запись"],
-    "images": [],
+    "images": [
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/003dd7ab-a7c6-5f51-b0d9-51f236ca98f4/54122eba-505e-5b81-9a30-3ecd2de72150.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3bd97752-8784-54d1-8803-ab2712302aa5/afc70732-3fdb-52d0-bf90-7f13fd64cc37.jpg",
+      "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/15e2cc25-bba9-5990-9955-20ca1f74de86/39d88be1-77fc-5395-af5c-59e080573918.jpg"
+    ],
     "authorId": "u018"
   },
   {
@@ -221,7 +303,12 @@
     "subcategory": "marketing-advertising",
     "description": "Покажу, как составить контент-план, определить аудиторию и оценивать результат публикаций.",
     "tags": ["маркетинг", "контент", "соцсети"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80"
+    ],
     "authorId": "u020"
   },
   {
@@ -232,7 +319,12 @@
     "subcategory": "learning-skills",
     "description": "Научу фиксировать главное на лекциях, встречах и при чтении, чтобы легко возвращаться к материалу.",
     "tags": ["конспекты", "обучение", "заметки"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+    ],
     "authorId": "u021"
   },
   {
@@ -243,7 +335,11 @@
     "subcategory": "team-management",
     "description": "Расскажу, как давать конструктивную обратную связь без обвинений и превращать её в план действий.",
     "tags": ["обратная связь", "команда", "коммуникация"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80"
+    ],
     "authorId": "u022"
   },
   {
@@ -254,7 +350,11 @@
     "subcategory": "acting",
     "description": "Покажу упражнения на дикцию, дыхание и выразительность, чтобы речь звучала увереннее.",
     "tags": ["речь", "дикция", "выступления"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80"
+    ],
     "authorId": "u023"
   },
   {
@@ -265,7 +365,13 @@
     "subcategory": "home-finance",
     "description": "Помогу завести понятный учёт доходов и расходов, определить финансовые цели и планировать накопления.",
     "tags": ["бюджет", "финансы", "планирование"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80",
+      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+    ],
     "authorId": "u024"
   },
   {
@@ -276,7 +382,12 @@
     "subcategory": "decor-diy",
     "description": "Поделюсь идеями простого декора из доступных материалов и помогу подобрать проект для дома.",
     "tags": ["декор", "diy", "творчество"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80",
+      "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80",
+      "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?w=800&q=80",
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&q=80"
+    ],
     "authorId": "u025"
   },
   {
@@ -287,7 +398,11 @@
     "subcategory": "project-management",
     "description": "Объясню основы Agile, работу с бэклогом, короткими итерациями и регулярными улучшениями процесса.",
     "tags": ["agile", "проекты", "процессы"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+    ],
     "authorId": "u026"
   },
   {
@@ -298,7 +413,12 @@
     "subcategory": "creative-writing",
     "description": "Помогу преодолеть страх чистого листа, развить наблюдательность и создавать выразительные тексты.",
     "tags": ["письмо", "тексты", "творчество"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800&q=80",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80",
+      "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=800&q=80",
+      "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80"
+    ],
     "authorId": "u027"
   },
   {
@@ -309,7 +429,12 @@
     "subcategory": "spanish",
     "description": "Научу базовым разговорным конструкциям и помогу начать говорить на испанском в повседневных ситуациях.",
     "tags": ["испанский", "разговорная практика", "языки"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800&q=80",
+      "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80",
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
+      "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&q=80"
+    ],
     "authorId": "u028"
   },
   {
@@ -320,7 +445,13 @@
     "subcategory": "yoga-meditation",
     "description": "Покажу короткий утренний комплекс для мягкого пробуждения, подвижности и спокойного начала дня.",
     "tags": ["йога", "утро", "гибкость"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80",
+      "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80",
+      "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
+    ],
     "authorId": "u029"
   },
   {
@@ -331,7 +462,12 @@
     "subcategory": "repair",
     "description": "Научу планировать небольшой ремонт, выбирать материалы и избегать типичных ошибок на старте.",
     "tags": ["ремонт", "дом", "материалы"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80"
+    ],
     "authorId": "u030"
   },
   {
@@ -342,7 +478,12 @@
     "subcategory": "english",
     "description": "Объясню основные грамматические темы на понятных примерах и помогу применять их в речи.",
     "tags": ["английский", "грамматика", "языки"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
+      "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80",
+      "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80",
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80"
+    ],
     "authorId": "u031"
   },
   {
@@ -353,7 +494,12 @@
     "subcategory": "photography",
     "description": "Покажу, как замечать сюжеты в городе, работать с композицией и уверенно снимать на улице.",
     "tags": ["фотография", "улица", "композиция"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80",
+      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
+      "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80",
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80"
+    ],
     "authorId": "u032"
   },
   {
@@ -364,7 +510,12 @@
     "subcategory": "cleaning-organization",
     "description": "Помогу провести расхламление по шагам, оставить нужное и настроить удобную систему порядка.",
     "tags": ["порядок", "расхламление", "дом"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80",
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=80"
+    ],
     "authorId": "u033"
   },
   {
@@ -375,7 +526,12 @@
     "subcategory": "project-management",
     "description": "Расскажу, как сформулировать проблему пользователя, определить приоритеты и составить простой план развития продукта.",
     "tags": ["продукт", "планирование", "приоритеты"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80",
+      "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&q=80"
+    ],
     "authorId": "u034"
   },
   {
@@ -386,7 +542,12 @@
     "subcategory": "mental-health",
     "description": "Поделюсь бережными техниками, которые помогают замечать эмоции и спокойнее реагировать в напряжённых ситуациях.",
     "tags": ["эмоции", "саморегуляция", "поддержка"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80",
+      "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80",
+      "https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=800&q=80",
+      "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=800&q=80"
+    ],
     "authorId": "u035"
   },
   {
@@ -397,7 +558,12 @@
     "subcategory": "drawing-illustration",
     "description": "Научу быстро передавать форму, свет и объём в скетче без сложных материалов.",
     "tags": ["скетчинг", "рисование", "наброски"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=800&q=80",
+      "https://images.unsplash.com/photo-1456086272160-b28b0645b729?w=800&q=80",
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=800&q=80",
+      "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800&q=80"
+    ],
     "authorId": "u036"
   },
   {
@@ -408,7 +574,12 @@
     "subcategory": "exam-preparation",
     "description": "Помогу выстроить план подготовки, разобрать формат заданий и тренировать языковые навыки.",
     "tags": ["ielts", "английский", "экзамен"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&q=80",
+      "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80",
+      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&q=80",
+      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&q=80"
+    ],
     "authorId": "u037"
   },
   {
@@ -419,7 +590,12 @@
     "subcategory": "cooking",
     "description": "Покажу базовые приёмы работы с тестом и простые рецепты выпечки для дома.",
     "tags": ["выпечка", "кулинария", "тесто"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
+      "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&q=80",
+      "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&q=80"
+    ],
     "authorId": "u038"
   },
   {
@@ -430,7 +606,12 @@
     "subcategory": "resume-interview",
     "description": "Помогу кратко и уверенно рассказывать о своём опыте, сильных сторонах и целях.",
     "tags": ["самопрезентация", "карьера", "коммуникация"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80"
+    ],
     "authorId": "u039"
   },
   {
@@ -441,7 +622,12 @@
     "subcategory": "cognitive-techniques",
     "description": "Познакомлю с простыми приёмами запоминания имён, терминов, списков и новой информации.",
     "tags": ["память", "мнемотехника", "обучение"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
+      "https://images.unsplash.com/photo-1453733190371-0a9bedd82893?w=800&q=80",
+      "https://images.unsplash.com/photo-1589998059171-988d887df646?w=800&q=80",
+      "https://images.unsplash.com/photo-1550592704-6c76defa9985?w=800&q=80"
+    ],
     "authorId": "u040"
   },
   {
@@ -452,7 +638,11 @@
     "subcategory": "drawing-illustration",
     "description": "Покажу основы работы с акварелью: подбор материалов, смешивание цветов и создание лёгких иллюстраций.",
     "tags": ["акварель", "иллюстрация", "рисование"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80",
+      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+      "https://images.unsplash.com/photo-1604871000636-074fa5117945?w=800&q=80"
+    ],
     "authorId": "u041"
   },
   {
@@ -463,7 +653,12 @@
     "subcategory": "sales-negotiations",
     "description": "Расскажу, как выяснять потребности клиента, аргументировать предложения и фиксировать договорённости.",
     "tags": ["переговоры", "клиенты", "продажи"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+      "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80",
+      "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&q=80",
+      "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&q=80"
+    ],
     "authorId": "u042"
   },
   {
@@ -474,7 +669,12 @@
     "subcategory": "time-management",
     "description": "Помогу выстроить реалистичный план дня, приоритизировать задачи и оставлять время на отдых.",
     "tags": ["время", "планирование", "продуктивность"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&q=80",
+      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80",
+      "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&q=80",
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80"
+    ],
     "authorId": "u043"
   },
   {
@@ -485,7 +685,11 @@
     "subcategory": "video-editing",
     "description": "Покажу, как снимать выразительные видео на смартфон, работать со светом и собирать материал для монтажа.",
     "tags": ["смартфон", "видео", "съёмка"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+      "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=80",
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80"
+    ],
     "authorId": "u044"
   },
   {
@@ -496,7 +700,11 @@
     "subcategory": "personal-development",
     "description": "Помогу определить направления развития, выбрать небольшие регулярные действия и отслеживать свой прогресс.",
     "tags": ["развитие", "цели", "привычки"],
-    "images": [],
+    "images": [
+      "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=800&q=80",
+      "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80",
+      "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80"
+    ],
     "authorId": "u045"
   }
 ]
