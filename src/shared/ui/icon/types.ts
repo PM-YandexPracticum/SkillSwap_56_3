@@ -28,3 +28,4 @@ export type IconName =
   | 'exchanges'
   | 'skills'
   | 'profile'
+  | 'done'

@@ -1,14 +1,8 @@
-export type ImageUploadProps = {
-  value: File[]
-  onChange: (files: File[]) => void
+export interface ImageUploadProps {
+  value: string[]                       // ← blob-URL, не File[]
+  onChange: (urls: string[]) => void    // ← отдаём массив URL
   className?: string
   disabled?: boolean
   multiple?: boolean
   accept?: string
-}
-
-export type ImagePreview = {
-  id: string
-  file: File
-  previewUrl: string
 }

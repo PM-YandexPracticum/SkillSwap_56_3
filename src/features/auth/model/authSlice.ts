@@ -1,22 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { AuthUser, RegistrationDraft } from '@/shared/types'
-import type { AuthState } from './types'
-import type { FieldErrors } from './types'
-import { login, register, getUser, logoutUser, updateUserProfile } from './authThunks'
+import type { AuthState, FieldErrors } from './types'
+import {
+  login,
+  register,
+  getUser,
+  logoutUser,
+  updateUserProfile,
+} from './authThunks'
 
 const emptyDraft: RegistrationDraft = {
   email: '',
   password: '',
   name: '',
   birthDate: '',
-  gender: 'all',
+  gender: null,
   city: '',
-  learnCategory: '',
-  learnSubcategory: '',
   avatar: '',
+  learnSelections: [],
+  teachSelections: [],
   teachSkillName: '',
-  teachCategory: '',
-  teachSubcategory: '',
   teachDescription: '',
   teachImages: [],
 }
@@ -50,8 +53,18 @@ const authSlice = createSlice({
     },
     updateDraft(state, action: PayloadAction<Partial<RegistrationDraft>>) {
       state.draft = { ...state.draft, ...action.payload }
+
       Object.keys(action.payload).forEach((key) => {
         delete state.draftErrors[key]
+        
+        if (key === 'learnSelections') {
+          delete state.draftErrors.learnCategories
+          delete state.draftErrors.learnSubcategories
+        }
+        if (key === 'teachSelections') {
+          delete state.draftErrors.teachCategory
+          delete state.draftErrors.teachSubcategory
+        }
       })
     },
     resetDraft(state) {
@@ -72,11 +85,11 @@ const authSlice = createSlice({
     },
     clearLoginErrors(state) {
       state.loginErrors = {}
-},
+    },
   },
   extraReducers: (builder) => {
     builder
-      // login
+      // ─── login ─────────────────────────────────────────
       .addCase(login.pending, (state) => {
         state.isLoading = true
         state.error = null
@@ -97,7 +110,7 @@ const authSlice = createSlice({
         }
       })
 
-      // register
+      // ─── register ──────────────────────────────────────
       .addCase(register.pending, (state) => {
         state.isLoading = true
         state.error = null

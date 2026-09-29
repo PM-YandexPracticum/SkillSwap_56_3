@@ -4,11 +4,15 @@ import styles from './textarea.module.css'
 export const Textarea = ({
   className,
   label,
+  error = '',
   rightSlot,
   ...props
 }: TextareaProps) => {
+  const hasError = Boolean(error)
+
   const textareaClassName = [
     styles.textarea,
+    hasError ? styles.textareaError : '',
     rightSlot ? styles.withRightSlot : '',
     className,
   ]
@@ -23,6 +27,8 @@ export const Textarea = ({
         <textarea {...props} className={textareaClassName} />
         {rightSlot && <div className={styles.rightSlot}>{rightSlot}</div>}
       </div>
+
+      {hasError && <p className={styles.error}>{error}</p>}
     </div>
   )
 }

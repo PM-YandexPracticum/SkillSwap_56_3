@@ -4,4 +4,5 @@ export type DatePickerProps = {
   onChange: (date: Date | null) => void
   placeholder?: string
   extraClass?: string
+  error?: string
 }

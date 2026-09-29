@@ -1,0 +1,1 @@
+export { RegisterStep3 } from './register-step-3'

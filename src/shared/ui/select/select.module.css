@@ -1,4 +1,6 @@
 .root {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
   font-family: Roboto, sans-serif;
@@ -6,10 +8,10 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 2%;
+  gap: 6px;
 }
 
 .label {
-  margin-bottom: 6px;
   color: #253017;
 }
 
