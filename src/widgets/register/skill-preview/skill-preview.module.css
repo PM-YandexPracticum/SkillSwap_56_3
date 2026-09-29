@@ -35,8 +35,7 @@
   display: grid;
   grid-template-columns: 420px 440px;
   grid-template-rows: 256px min-content;
-  column-gap: 40px;
-  row-gap: 18px;
+  gap: 18px 40px;
 }
 
 .info {
