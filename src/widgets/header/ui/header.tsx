@@ -15,6 +15,8 @@ import { setSearchQuery } from '@/entities/filter/model/filterSlice'
 import { selectSearchQuery } from '@/entities/filter/model/filterSelectors'
 import { useNavigate } from 'react-router-dom'
 import { FAKE_DELAY } from '@/shared/lib/constants'
+import { NotificationPopover } from '@/shared/ui/notification-popover'
+import { FavouritesLink } from '@/shared/ui/favourites-link'
 
 export const MainHeader = () => {
   const dispatch = useAppDispatch()
@@ -61,7 +63,14 @@ export const MainHeader = () => {
       />
       <SearchInput onChange={handleSearchChange} value={searchValue} />
 
-      {isAuth ? <AuthorizedActions /> : <GuestActions />}
+      {isAuth 
+      ? 
+      <div className={styles.auth}>
+        <NotificationPopover/>
+        <FavouritesLink/>
+        <AuthorizedActions /> 
+      </div>
+      : <GuestActions />}
     </header>
   )
 }

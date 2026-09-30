@@ -1,6 +1,7 @@
 .root {
   position: relative;
   display: inline-flex;
+  block-size: 24px;
 }
 
 .bell {
@@ -24,14 +25,15 @@
 }
 
 .panel {
+  top: 55px;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 400px;
+  width: 556px;
   max-width: calc(100vw - 32px);
-  padding: 24px;
+  padding: 60px;
   border: 1px solid #69735d;
-  border-radius: 20px;
+  border-radius: 12px;
   font-family: Roboto, sans-serif;
   color: #253017;
 }

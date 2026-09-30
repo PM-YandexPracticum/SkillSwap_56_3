@@ -13,7 +13,7 @@ import type { ExchangeNotification } from '@/shared/types'
 import { Button } from '@/shared/ui/button'
 import { Icon } from '@/shared/ui/icon/Icon'
 import { Popover } from '@/shared/ui/popover'
-import styles from './notifications-menu.module.css'
+import styles from './notification-popover.module.css'
 import type { NotificationPopoverProps } from './type'
 
 export const NotificationPopover = ({ panel, className }: NotificationPopoverProps) => {
