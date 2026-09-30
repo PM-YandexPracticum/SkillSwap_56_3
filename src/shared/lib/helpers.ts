@@ -38,3 +38,20 @@ export function getAgeFromBirth(birth: string): number {
 
   return birthdayIsAhead ? age - 1 : age
 }
+
+/** Дата уведомления: «сегодня», «вчера» или «1 сентября» */
+export function formatNotificationDate(dateString: string): string {
+  const date = new Date(dateString)
+  if (Number.isNaN(date.getTime())) return ''
+
+  const startOfDay = (value: Date) =>
+    new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime()
+
+  const dayInMs = 24 * 60 * 60 * 1000
+  const daysAgo = Math.round((startOfDay(new Date()) - startOfDay(date)) / dayInMs)
+
+  if (daysAgo === 0) return 'сегодня'
+  if (daysAgo === 1) return 'вчера'
+
+  return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
+}

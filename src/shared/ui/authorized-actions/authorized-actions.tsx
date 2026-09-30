@@ -8,7 +8,6 @@ import { selectUser } from '@/features/auth/model/authSelectors'
 import { logoutUser } from '@/features/auth/model/authThunks'
 import { ROUTES } from '@/shared/lib/constants'
 import styles from './authorized-actions.module.css'
-import { FavouritesLink } from '../favourites-link'
 
 export const AuthorizedActions = () => {
   const dispatch = useAppDispatch()
@@ -40,7 +39,6 @@ export const AuthorizedActions = () => {
       }}
       trigger={
         <div className={styles.container}>
-          <FavouritesLink/>
           <button type="button" className={styles.trigger}>
             <span className={styles.name}>{user.name}</span>
 
