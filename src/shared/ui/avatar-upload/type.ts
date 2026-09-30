@@ -1,6 +1,6 @@
 export interface AvatarUploadProps {
-  value?: string | null
-  onChange?: (file: File) => void
+  value?: string
+  onChange?: (url: string) => void
   size?: number
   extraClass?: string
 }

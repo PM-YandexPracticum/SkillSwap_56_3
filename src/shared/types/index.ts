@@ -45,6 +45,11 @@ export interface AuthUser {
   name: string
   email: string
   token: string
+  gender: GenderValue | null
+  birthDate: string
+  city: string
+  aboutMe: string
+  avatar: string
 }
 
 // ─── Subcategory ────────────────────────────────────────────────
@@ -172,4 +177,21 @@ export interface Section {
 export interface ExchangeNotification {
   userId: string
   createdAt: string
+}
+
+export interface LoginPayload {
+  email: string
+  password: string
+}
+
+export interface UpdateProfilePayload {
+  name: string
+  email: string
+  birthDate: string
+  gender: GenderValue | null
+  city: string
+  aboutMe: string
+  avatar: string
+  oldPassword?: string
+  newPassword?: string
 }

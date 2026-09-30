@@ -1,5 +1,6 @@
 import type { RegistrationDraft } from '@/shared/types'
 import type { FieldErrors } from '../model/types'
+import type { UpdateProfilePayload } from '@/shared/types'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@.]+\.[a-zA-Z]{2,}$/
 const PASSWORD_MIN_LENGTH = 8
@@ -11,7 +12,7 @@ export function validateEmail(email: string): string | null {
 }
 
 export function validatePassword(password: string): string | null {
-  if (!password) return 'Введите пароль'
+  if (!password.trim()) return 'Введите пароль'
   if (password.length < PASSWORD_MIN_LENGTH) {
     return 'Пароль должен содержать не менее 8 символов'
   }
@@ -77,6 +78,26 @@ export function validateStep3(draft: RegistrationDraft): FieldErrors {
     errors.teachDescription = 'Добавьте описание навыка'
 
   return errors
+}
+
+export function validateUpdateProfile(
+  payload: Pick<UpdateProfilePayload, 'email' | 'name' | 'birthDate' | 'gender' | 'city'>
+): FieldErrors {
+  const errors: FieldErrors = {}
+
+  const emailError = validateEmail(payload.email)
+  if (emailError) errors.email = emailError
+
+  if (!payload.name.trim()) errors.name = 'Введите имя'
+  if (!payload.birthDate) errors.birthDate = 'Укажите дату рождения'
+  if (!payload.gender) errors.gender = 'Укажите пол'
+  if (!payload.city) errors.city = 'Выберите город'
+
+  return errors
+}
+
+export function validateNewPassword(newPassword: string): string | null {
+  return validatePassword(newPassword)
 }
 
 export const hasErrors = (errors: FieldErrors): boolean =>

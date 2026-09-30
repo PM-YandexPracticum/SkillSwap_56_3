@@ -4,4 +4,5 @@ export interface AvatarProps {
   size?: number
   onEditClick?: () => void
   extraClass?: string
+  onChange: (file: File) => void
 }

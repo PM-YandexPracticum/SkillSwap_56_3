@@ -105,6 +105,7 @@ const authSlice = createSlice({
         state.user = action.payload
         state.isAuthenticated = true
         state.loginErrors = {}
+        console.log('FULFILLED')
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false
@@ -113,6 +114,7 @@ const authSlice = createSlice({
         } else {
           state.error = action.error.message ?? 'Не удалось выполнить вход'
         }
+        console.log('REJECT')
       })
       
       // ─── checkEmail ────────────────────────────────────
@@ -165,11 +167,24 @@ const authSlice = createSlice({
         state.draft = emptyDraft
         state.justRegistered = false
       })
+      .addCase(updateUserProfile.pending, (state) => {
+        state.isLoading = true
+        state.error = null
+        state.draftErrors = {}
+      })
       .addCase(updateUserProfile.fulfilled, (state, action) => {
+        state.isLoading = false
         state.user = action.payload
+        state.draftErrors = {}
+        state.error = null
       })
       .addCase(updateUserProfile.rejected, (state, action) => {
-        state.error = action.payload ?? 'Не удалось сохранить профиль'
+        state.isLoading = false
+        if (action.payload && typeof action.payload === 'object') {
+          state.draftErrors = action.payload
+        } else {
+          state.error = action.error.message ?? 'Не удалось сохранить профиль'
+        }
       })
   },
 })
