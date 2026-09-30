@@ -1,13 +1,13 @@
-import type { Category } from '@/shared/types'
+import { Category } from "@/shared/types"
+import { SkillSelection } from "@/shared/types"
 
 export interface CategorySelectProps {
   categories: Category[]
-  categoryValue: string[]
-  subcategoryValue: string[]
-  onCategoryChange: (value: string[]) => void
-  onSubcategoryChange: (value: string[]) => void
+  selections: SkillSelection[]
+  onChange: (selections: SkillSelection[]) => void
   categoryLabel?: string
   subcategoryLabel?: string
   categoryError?: string
   subcategoryError?: string
+  multiple?: boolean
 }

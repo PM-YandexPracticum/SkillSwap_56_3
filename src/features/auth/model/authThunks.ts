@@ -1,4 +1,13 @@
-import type { AuthUser, RegistrationDraft, UserCard } from '@/shared/types'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import type { RootState } from '@/store'
+import type {
+  AuthUser,
+  RegistrationDraft,
+  UserCard,
+  LearnSkill,
+  Meta,
+  Gender,
+} from '@/shared/types'
 import {
   getAuthUser,
   saveAuthUser,
@@ -12,14 +21,12 @@ import {
   validateStep1AndLogin,
   validateStep2,
   validateStep3,
-  hasErrors
+  hasErrors,
 } from '../lib/validation'
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchUsers } from '@/api/users'
 import { fetchCredentialsByEmail } from '@/api/credentials'
-import { FieldErrors } from './types'
-
-const FAKE_DELAY = 500
+import type { FieldErrors } from './types'
+import { FAKE_DELAY } from '@/shared/lib/constants'
 
 interface LoginPayload {
   email: string
@@ -71,21 +78,58 @@ export const login = createAsyncThunk<
   }
 )
 
-export const getUser = createAsyncThunk<AuthUser | null, void>('auth/getUser', async () =>
-  getAuthUser(),
+export const getUser = createAsyncThunk<AuthUser | null, void>(
+  'auth/getUser',
+  async () => getAuthUser()
 )
 
-export const logoutUser = createAsyncThunk<void, void>('auth/logout', async () => {
-  clearAuthUser()
-})
+export const logoutUser = createAsyncThunk<void, void>(
+  'auth/logout',
+  async () => {
+    clearAuthUser()
+  }
+)
 
-function draftToUser(draft: RegistrationDraft): UserCard {
+function findSubcategoryInfo(
+  subcategoryId: string,
+  meta: Meta | null
+): { subcategoryName: string; categoryName: string } {
+  for (const category of meta?.categories ?? []) {
+    const sub = category.subcategories.find((s) => s.id === subcategoryId)
+    if (sub) {
+      return { subcategoryName: sub.name, categoryName: category.name }
+    }
+  }
+  return { subcategoryName: subcategoryId, categoryName: subcategoryId }
+}
+
+function draftToUser(draft: RegistrationDraft, meta: Meta | null): UserCard {
+  const learnSkills: LearnSkill[] = draft.learnSelections.flatMap((selection) =>
+    selection.subcategories.map((subcategoryId) => {
+      const { subcategoryName, categoryName } = findSubcategoryInfo(
+        subcategoryId,
+        meta
+      )
+      return {
+        name: subcategoryName,
+        category: categoryName,
+        subcategory: subcategoryName,
+      }
+    })
+  )
+
+  const teachSelection = draft.teachSelections[0]
+  const teachSubcategoryId = teachSelection?.subcategories[0] ?? ''
+  const teachInfo = teachSubcategoryId
+    ? findSubcategoryInfo(teachSubcategoryId, meta)
+    : { subcategoryName: '', categoryName: '' }
+
   return {
     id: `u_${Date.now()}`,
     name: draft.name,
     email: draft.email,
     birthDate: draft.birthDate,
-    gender: draft.gender,
+    gender: draft.gender as Gender,
     city: draft.city,
     likesCount: 0,
     aboutMe: '',
@@ -93,16 +137,10 @@ function draftToUser(draft: RegistrationDraft): UserCard {
     teachSkill: {
       id: `s_${Date.now()}`,
       name: draft.teachSkillName,
-      category: draft.teachCategory,
-      subcategory: draft.teachSubcategory,
+      category: teachInfo.categoryName,
+      subcategory: teachInfo.subcategoryName,
     },
-    learnSkills: [
-      {
-        name: draft.learnSubcategory,
-        category: draft.learnCategory,
-        subcategory: draft.learnSubcategory,
-      },
-    ],
+    learnSkills,
     avatar: draft.avatar,
   }
 }
@@ -110,10 +148,10 @@ function draftToUser(draft: RegistrationDraft): UserCard {
 export const register = createAsyncThunk<
   AuthUser,
   RegistrationDraft,
-  { rejectValue: FieldErrors }
+  { state: RootState; rejectValue: FieldErrors }
 >(
   'auth/register',
-  async (draft, { rejectWithValue }) => {
+  async (draft, { getState, rejectWithValue }) => {
     const errors = {
       ...validateStep1AndLogin(draft),
       ...validateStep2(draft),
@@ -134,7 +172,8 @@ export const register = createAsyncThunk<
         return rejectWithValue({ email: 'Email уже используется' })
       }
 
-      const user = draftToUser(draft)
+      const meta = getState().users.meta
+      const user = draftToUser(draft, meta)
       saveRegisteredUser(user, draft.password)
 
       return saveAuthUser({ id: user.id, name: user.name, email: user.email })
@@ -147,19 +186,21 @@ export const register = createAsyncThunk<
 export const updateUserProfile = createAsyncThunk<
   AuthUser,
   UpdateProfilePayload,
-  { rejectValue: string }
->('auth/updateUserProfile', async ({ name, email }, { getState, rejectWithValue }) => {
-  const state = getState() as { auth: { user: AuthUser | null } }
-  const current = state.auth.user
+  { state: RootState; rejectValue: string }
+>(
+  'auth/updateUserProfile',
+  async ({ name, email }, { getState, rejectWithValue }) => {
+    const current = getState().auth.user
 
-  if (!current) {
-    return rejectWithValue('Пользователь не авторизован')
+    if (!current) {
+      return rejectWithValue('Пользователь не авторизован')
+    }
+
+    const emailError = validateEmail(email)
+    if (emailError) {
+      return rejectWithValue(emailError)
+    }
+
+    return saveAuthUser({ id: current.id, name, email })
   }
-
-  const emailError = validateEmail(email)
-  if (emailError) {
-    return rejectWithValue(emailError)
-  }
-
-  return saveAuthUser({ id: current.id, name, email })
-})
+)

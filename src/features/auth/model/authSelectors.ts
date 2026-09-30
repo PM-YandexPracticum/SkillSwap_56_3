@@ -4,6 +4,7 @@ export const selectAuthState = (state: RootState) => state.auth
 export const selectUser = (state: RootState) => state.auth.user
 export const selectIsAuthenticated = (state: RootState) => state.auth.isAuthenticated
 export const selectAuthLoading = (state: RootState) => state.auth.isLoading
+export const selectAuthError = (state: RootState) => state.auth.error
 export const selectDraftErrors = (state: RootState) => state.auth.draftErrors
 export const selectLoginErrors = (state: RootState) => state.auth.loginErrors
 export const selectUserEmail = (state: RootState) => state.auth.user?.email ?? null
@@ -16,13 +17,26 @@ export const selectDraftStep1 = (state: RootState) => {
 }
 
 export const selectDraftStep2 = (state: RootState) => {
-  const { name, birthDate, gender, city, learnCategory, learnSubcategory, avatar } =
-    state.auth.draft
-  return { name, birthDate, gender, city, learnCategory, learnSubcategory, avatar }
+  const {
+    name,
+    birthDate,
+    gender,
+    city,
+    learnSelections,
+    avatar,
+  } = state.auth.draft
+  return { name, birthDate, gender, city, learnSelections, avatar }
 }
 
 export const selectDraftStep3 = (state: RootState) => {
-  const { teachSkillName, teachCategory, teachSubcategory, teachDescription, teachImages } =
-    state.auth.draft
-  return { teachSkillName, teachCategory, teachSubcategory, teachDescription, teachImages }
+  const {
+    teachSkillName,
+    teachSelections,
+    teachDescription,
+    teachImages,
+  } = state.auth.draft
+  return { teachSkillName, teachSelections, teachDescription, teachImages }
 }
+
+export const selectTeachSelection = (state: RootState) =>
+  state.auth.draft.teachSelections[0] ?? null

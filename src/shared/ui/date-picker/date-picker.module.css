@@ -15,10 +15,9 @@
 
 .input {
   inline-size: 100%;
-  padding: var(--space-md);
-  padding-inline-end: 44px;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
+  padding: 11.5px 12px;
+  border: 1px solid #69735d;
+  border-radius: 12px;
   background: #fff;
   color: var(--color-text);
   font-size: var(--font-size-base);
@@ -217,7 +216,7 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 6px;
   inline-size: 100%;
 }
 
@@ -226,4 +225,9 @@
   font-size: var(--font-size-base);
   font-weight: 400;
   color: #253017;
+}
+
+.error {
+  color: #bf3920;
+  font-size: 13px;
 }

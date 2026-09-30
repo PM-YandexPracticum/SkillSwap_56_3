@@ -30,3 +30,4 @@ export type IconName =
   | 'profile'
   | 'clock'
   | 'bell'
+  | 'done'

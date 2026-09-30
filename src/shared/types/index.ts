@@ -1,3 +1,5 @@
+import { GenderValue } from "../ui/gender-select"
+
 // ─── Skill ───────────────────────────────────────────────
 export type SkillType = 'teach' | 'learn'
 
@@ -141,19 +143,22 @@ export interface Credentials {
   password: string
 }
 
+export interface SkillSelection {
+  category: string
+  subcategories: string[]
+}
+
 export interface RegistrationDraft {
   email: string
   password: string
   name: string
   birthDate: string
-  gender: Gender
+  gender: GenderValue | null
   city: string
-  learnCategory: string
-  learnSubcategory: string
   avatar: string
+  learnSelections: SkillSelection[]
+  teachSelections: SkillSelection[]
   teachSkillName: string
-  teachCategory: string
-  teachSubcategory: string
   teachDescription: string
   teachImages: string[]
 }

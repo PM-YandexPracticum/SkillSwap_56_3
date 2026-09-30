@@ -1,0 +1,1 @@
+export { RegisterStep2 } from './register-step-2'

@@ -15,6 +15,7 @@ import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
 import { useNavigate } from 'react-router-dom'
 import { getAgeFromBirth } from '@/shared/lib/helpers'
+import { resetFilters } from '@/entities/filter/model/filterSlice'
 
 export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardProps) => {
   const navigate = useNavigate()
@@ -53,6 +54,7 @@ export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardPr
 
   const handleMore = () => {
     navigate(`/skill/${user.teachSkill.id}`)
+    dispatch(resetFilters())
   }
 
   return (
