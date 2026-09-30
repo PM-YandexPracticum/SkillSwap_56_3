@@ -10,6 +10,7 @@ export const selectLoginErrors = (state: RootState) => state.auth.loginErrors
 export const selectUserEmail = (state: RootState) => state.auth.user?.email ?? null
 export const selectUserId = (state: RootState) => state.auth.user?.id ?? null
 export const selectRegistrationDraft = (state: RootState) => state.auth.draft
+export const selectJustRegistered = (state: RootState) => state.auth.justRegistered
 
 export const selectDraftStep1 = (state: RootState) => {
   const { email, password } = state.auth.draft

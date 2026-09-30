@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import {
   updateDraft,
@@ -10,7 +9,6 @@ import {
   selectRegistrationDraft,
   selectDraftErrors,
   selectAuthLoading,
-  selectIsAuthenticated,
 } from '@/features/auth/model/authSelectors'
 import { selectMeta } from '@/entities/user/model/usersSelectors'
 import {
@@ -23,21 +21,18 @@ import { RegisterStep1 } from '@/widgets/register/register-step-1'
 import { RegisterStep2 } from '@/widgets/register/register-step-2'
 import { RegisterStep3 } from '@/widgets/register/register-step-3'
 import { SkillPreview } from '@/widgets/register/skill-preview/skill-preview'
-import { SuccessModal } from '@/widgets/success-modal/success-modal'
+import { checkEmail } from '@/features/auth/model/authThunks'
 
 export default function RegisterPage() {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
 
   const draft = useAppSelector(selectRegistrationDraft)
   const errors = useAppSelector(selectDraftErrors)
   const isLoading = useAppSelector(selectAuthLoading)
-  const isAuth = useAppSelector(selectIsAuthenticated)
   const meta = useAppSelector(selectMeta)
 
   const [step, setStep] = useState<1 | 2 | 3>(1)
   const [isPreviewOpen, setIsPreviewOpen] = useState(false)
-  const [isSuccessOpen, setIsSuccessOpen] = useState(false)
 
   const handleFieldChange = (patch: Record<string, unknown>) => {
     dispatch(updateDraft(patch))
@@ -48,9 +43,21 @@ export default function RegisterPage() {
     dispatch(updateDraft({ avatar: url }))
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     let nextErrors = {}
-    if (step === 1) nextErrors = validateStep1AndLogin(draft)
+    if (step === 1) {
+      nextErrors = validateStep1AndLogin(draft)
+      dispatch(setDraftErrors(nextErrors))
+      if (hasErrors(nextErrors)) return
+
+    try {
+      await dispatch(checkEmail(draft.email)).unwrap()
+      setStep(2)
+    } catch {
+      return
+    }
+    return
+  }
     if (step === 2) nextErrors = validateStep2(draft)
     if (step === 3) nextErrors = validateStep3(draft)
 
@@ -80,18 +87,6 @@ export default function RegisterPage() {
     dispatch(register(draft))
   }
 
-  useEffect(() => {
-    if (isAuth) {
-      setIsPreviewOpen(false)
-      setIsSuccessOpen(true)
-    }
-  }, [isAuth])
-
-  const handleSuccessDone = () => {
-    setIsSuccessOpen(false)
-    navigate('/')
-  }
-
   if (!meta) return null
 
   return (
@@ -102,6 +97,7 @@ export default function RegisterPage() {
           errors={errors}
           onFieldChange={handleFieldChange}
           onNext={handleNext}
+          isLoading={isLoading}
         />
       )}
 
@@ -149,12 +145,11 @@ export default function RegisterPage() {
           teachDescription: draft.teachDescription,
           teachImages: draft.teachImages,
         }}
+        errors={errors}
         onEdit={handleEdit}
         onConfirm={handleConfirm}
         isLoading={isLoading}
       />
-
-      <SuccessModal isOpen={isSuccessOpen} onDone={handleSuccessDone} />
     </>
   )
 }
