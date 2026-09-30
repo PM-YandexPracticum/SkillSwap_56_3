@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FormLayout } from '@/shared/ui/form-layout'
 import { AuthSocialButtons } from '@/shared/ui/auth-social-buttons'
 import { EmailInput } from '@/shared/ui/form-inputs'
@@ -15,7 +15,6 @@ import styles from './login-page.module.css'
 
 export default function LoginPage() {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
   const isLoading = useAppSelector(selectAuthLoading)
   const loginErrors = useAppSelector(selectLoginErrors)
 
@@ -33,12 +32,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
-
-    const result = await dispatch(login({ email, password }))
-
-    if (login.fulfilled.match(result)) {
-      navigate(ROUTES.HOME)
-    }
+    dispatch(login({ email, password }))
   }
 
   return (
