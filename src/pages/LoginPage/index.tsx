@@ -12,6 +12,7 @@ import { selectAuthLoading, selectLoginErrors } from '@/features/auth/model/auth
 import { ROUTES } from '@/shared/lib/constants'
 import lightBulb from '@/icons/light-bulb.svg'
 import styles from './login-page.module.css'
+import { InfoBlock } from '@/shared/ui/info-block'
 
 export default function LoginPage() {
   const dispatch = useAppDispatch()
@@ -36,53 +37,58 @@ export default function LoginPage() {
   }
 
   return (
-    <FormLayout headerCenter={<h1 className={styles.title}>Вход</h1>}>
-      <form className={styles.form} onSubmit={handleSubmit} noValidate>
-        <AuthSocialButtons />
+    <FormLayout 
+    headerCenter={<h2 className={styles.title}>Вход</h2>}
+    leftContent={
+        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+          <AuthSocialButtons />
 
-        <div className={styles.divider}>
-          <span className={styles.dividerText}>или</span>
-        </div>
+          <div className={styles.divider}>
+            <span className={styles.dividerText}>или</span>
+          </div>
 
-        <EmailInput
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value)
-            clearErrors()
-          }}
-          error={loginErrors.email}
-          className={hasFormError ? styles.invalid : undefined}
+          <EmailInput
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value)
+              clearErrors()
+            }}
+            error={loginErrors.email}
+            className={hasFormError ? styles.invalid : undefined}
+          />
+
+          <PasswordInput
+            value={password}
+            label='Пароль'
+            placeholder="Введите ваш пароль"
+            onChange={(event) => {
+              setPassword(event.target.value)
+              clearErrors()
+            }}
+            error={loginErrors.password}
+            className={hasFormError ? styles.invalid : undefined}
+          />
+
+          {hasFormError && <p className={styles.formError}>{loginErrors.form}</p>}
+
+          <div className={styles.actions}>
+            <Button type="submit" extraClass={styles.submit} disabled={isLoading}>
+              {isLoading ? 'Входим...' : 'Войти'}
+            </Button>
+
+            <Link className={styles.registerLink} to={ROUTES.REGISTER}>
+              Зарегистрироваться
+            </Link>
+          </div>
+        </form>
+      }
+      rightContent={
+        <InfoBlock
+          image={<img className={styles.promoImage} src={lightBulb} alt="" />}
+          title="С возвращением в SkillSwap!"
+          description="Обменивайтесь знаниями и навыками с другими людьми"
         />
-
-        <PasswordInput
-          value={password}
-          placeholder="Введите ваш пароль"
-          onChange={(event) => {
-            setPassword(event.target.value)
-            clearErrors()
-          }}
-          error={loginErrors.password}
-          className={hasFormError ? styles.invalid : undefined}
-        />
-
-        {hasFormError && <p className={styles.formError}>{loginErrors.form}</p>}
-
-        <div className={styles.actions}>
-          <Button type="submit" extraClass={styles.submit}>
-            {isLoading ? 'Входим...' : 'Войти'}
-          </Button>
-
-          <Link className={styles.registerLink} to={ROUTES.REGISTER}>
-            Зарегистрироваться
-          </Link>
-        </div>
-      </form>
-
-      <div className={styles.promo}>
-        <img className={styles.promoImage} src={lightBulb} alt="" />
-        <h2 className={styles.promoTitle}>С возвращением в SkillSwap!</h2>
-        <p className={styles.promoText}>Обменивайтесь знаниями и навыками с другими людьми</p>
-      </div>
-    </FormLayout>
+      }
+    />
   )
 }

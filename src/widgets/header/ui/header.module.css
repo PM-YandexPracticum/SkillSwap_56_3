@@ -12,3 +12,9 @@
   min-height: 104px;
   padding-block: 36px 20px;
 }
+
+.auth {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}

@@ -64,7 +64,15 @@
 }
 
 .confirm {
-  padding: 12px 76px;
+  padding: 12px 0;
   background-color: #abd27a;
   border-radius: 12px;
+  flex-grow: 2;
+}
+
+.error {
+  margin: 4px 0 0;
+  color: #bf3920;
+  font-size: 13px;
+  grid-row: 3;
 }

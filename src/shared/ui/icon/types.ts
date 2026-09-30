@@ -31,3 +31,5 @@ export type IconName =
   | 'clock'
   | 'bell'
   | 'done'
+  | 'logout'
+  | 'notification'

@@ -36,3 +36,9 @@
   padding: 12px 0;
   border-radius: 12px;
 }
+
+.error {
+  margin: 4px 0 0;
+  color: #bf3920;
+  font-size: 13px;
+}

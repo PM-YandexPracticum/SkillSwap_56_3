@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.name {
+  color: #253017;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  vertical-align: middle;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e5e5e5;
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel {
+  min-width: 260px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #b2b9a9;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 24px;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  text-align: left;
+}

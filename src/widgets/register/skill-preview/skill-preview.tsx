@@ -9,6 +9,7 @@ import { Icon } from '@/shared/ui/icon'
 export function SkillPreview({
   isOpen,
   values,
+  errors,
   onEdit,
   onConfirm,
   isLoading,
@@ -58,6 +59,7 @@ export function SkillPreview({
               {isLoading ? 'Отправка...' : 'Готово'}
             </Button>
           </div>
+          {errors.form && <p className={styles.error}>{errors.form}</p>}
         </div>
       </div>
     </Modal>

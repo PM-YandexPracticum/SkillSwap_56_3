@@ -14,10 +14,13 @@ export function RegisterStep1({
   errors,
   onFieldChange,
   onNext,
+  isLoading,
 }: RegisterStep1Props) {
+  const hasFormError = Boolean(errors.form)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (isLoading) return
     onNext()
   }
 
@@ -40,13 +43,16 @@ export function RegisterStep1({
 
           <PasswordInput
             value={values.password}
+            label='Пароль'
             onChange={(e) => onFieldChange({ password: e.target.value })}
             error={errors.password}
             placeholder='Придумайте надёжный пароль'
           />
 
-          <Button type="submit" extraClass={styles.submit}>
-            Далее
+          {hasFormError && <p className={styles.error}>{errors.form}</p>}
+
+          <Button type="submit" extraClass={styles.submit} disabled={isLoading}>
+            {isLoading ? 'Проверяем...' : 'Далее'}
           </Button>
         </form>
       }
