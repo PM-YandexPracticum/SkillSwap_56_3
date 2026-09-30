@@ -45,7 +45,7 @@ export default function SkillPage() {
   const main = () => {
     if (isLoading) {
       return (
-        <main style={{ display: 'flex', justifyContent: 'center', padding: '60px 0' }}>
+        <main className={`${styles.container} ${styles.center}`.trim()}>
           <Loader size="large" />
         </main>
       )
@@ -53,7 +53,7 @@ export default function SkillPage() {
 
     if (error) {
       return (
-        <main style={{ textAlign: 'center', padding: '60px 0' }}>
+        <main className={`${styles.container} ${styles.center}`.trim()}>
           <div className={styles.message}>{error}</div>
         </main>
       )
@@ -61,7 +61,7 @@ export default function SkillPage() {
 
     if (!skill) {
       return (
-        <main style={{ textAlign: 'center', padding: '60px 0' }}>
+        <main className={`${styles.container} ${styles.center}`.trim()}>
           <div className={styles.message}>Навык не найден</div>
         </main>
       )
