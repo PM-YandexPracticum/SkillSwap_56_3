@@ -7,14 +7,11 @@ import {
   selectCurrentSkillLoading,
   selectCurrentSkillError,
 } from '@/entities/skill/model/skillsSelectors'
-import { selectMeta, selectUserById } from '@/entities/user/model/usersSelectors'
-import { SkillDetailsSection } from '@/widgets/skill-details-section'
+import { selectMeta } from '@/entities/user/model/usersSelectors'
+import { SkillSection } from '@/widgets/skill-section'
 import { SimilarSection } from '@/widgets/similar-section'
 import { Loader } from '@/shared/ui/loader'
 import styles from './skill-page.module.css'
-import { UserCard } from '@/shared/types'
-import { MainHeader } from '@/widgets/header/ui'
-import { Footer } from '@/widgets/footer'
 
 export default function SkillPage() {
   const { id } = useParams<{ id: string }>()
@@ -24,9 +21,6 @@ export default function SkillPage() {
   const skill = useAppSelector(selectCurrentSkill)
   const isLoading = useAppSelector(selectCurrentSkillLoading)
   const error = useAppSelector(selectCurrentSkillError)
-  const author = useAppSelector((state) =>
-    skill ? selectUserById(state, skill.authorId) : null
-  )
 
   useEffect(() => {
     if (id) dispatch(loadSkillById(id))
@@ -42,47 +36,37 @@ export default function SkillPage() {
     return skill.subcategory
   }, [meta, skill])
 
-  const main = () => {
-    if (isLoading) {
-      return (
-        <main style={{ display: 'flex', justifyContent: 'center', padding: '60px 0' }}>
-          <Loader size="large" />
-        </main>
-      )
-    }
-
-    if (error) {
-      return (
-        <main style={{ textAlign: 'center', padding: '60px 0' }}>
-          <div className={styles.message}>{error}</div>
-        </main>
-      )
-    }
-
-    if (!skill) {
-      return (
-        <main style={{ textAlign: 'center', padding: '60px 0' }}>
-          <div className={styles.message}>Навык не найден</div>
-        </main>
-      )
-    }
-
+  if (isLoading) {
     return (
       <main className={styles.container}>
-        <SkillDetailsSection skill={skill} author={author as UserCard}/>
-        <SimilarSection
-          subcategory={subcategoryName}
-          excludeAuthorId={skill.authorId}
-        />
+        <Loader size="large" />
+      </main>
+    )
+  }
+
+  if (error) {
+    return (
+      <main className={styles.container}>
+        <div className={styles.message}>{error}</div>
+      </main>
+    )
+  }
+
+  if (!skill) {
+    return (
+      <main className={styles.container}>
+        <div className={styles.message}>Навык не найден</div>
       </main>
     )
   }
 
   return (
-    <>
-      <MainHeader />
-      {main()}
-      <Footer />
-    </>
+    <main className={styles.container}>
+      <SkillSection skill={skill} />
+      <SimilarSection
+        subcategory={subcategoryName}
+        excludeAuthorId={skill.authorId}
+      />
+    </main>
   )
 }

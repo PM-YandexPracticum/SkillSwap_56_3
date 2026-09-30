@@ -6,7 +6,11 @@ import { LearnSkills } from '@/shared/ui/learn-skills'
 import { MoreButton } from '@/shared/ui/more-button'
 import { FavoriteButton } from '@/shared/ui/favorite-button'
 import { getCategoryTone } from '@/entities/skill/lib/category-tone'
-import { selectMeta, selectLikedUserIds } from '@/entities/user/model/usersSelectors'
+import {
+  selectMeta,
+  selectLikedUserIds,
+} from '@/entities/user/model/usersSelectors'
+import { selectHasExchange } from '@/features/exchange/model/exchangeSelectors'
 import { toggleLike } from '@/entities/user/model/usersSlice'
 import styles from './user-card.module.css'
 import { useNavigate } from 'react-router-dom'
@@ -19,6 +23,9 @@ export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardPr
   const meta = useAppSelector(selectMeta)
   const likedUserIds = useAppSelector(selectLikedUserIds)
   const isFavorite = likedUserIds.includes(user.id)
+
+  // если обмен с этим пользователем уже предложен — кнопка «Обмен предложен»
+  const hasExchange = useAppSelector((state) => selectHasExchange(state, user.id))
 
   const getCategoryName = (categoryId: string): string => {
     const category = meta?.categories.find((category) => category.id === categoryId)
@@ -70,9 +77,12 @@ export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardPr
       )}
       <div className={styles.skills}>
         <TeachSkill skill={teachSkillTag} />
-        <LearnSkills skills={learnSkillsTags} visible={isCatalog ? 2 : user.learnSkills.length} />
+        <LearnSkills
+          skills={learnSkillsTags}
+          visible={isCatalog ? 2 : user.learnSkills.length}
+        />
       </div>
-      {isCatalog && <MoreButton onClick={handleMore} />}
+      {isCatalog && <MoreButton onClick={handleMore} hasExchange={hasExchange} />}
     </article>
   )
 }

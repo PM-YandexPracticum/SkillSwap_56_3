@@ -1,20 +1,32 @@
-import { useAppSelector } from '@/store/hooks'
+import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { selectMeta, selectUsersByIds } from '@/entities/user/model/usersSelectors'
+import { proposeExchange } from '@/features/exchange/model/exchangeSlice'
+import { selectHasExchange } from '@/features/exchange/model/exchangeSelectors'
 import { UserInfo } from '@/entities/user/ui/user-info'
 import { TeachSkill } from '@/shared/ui/teach-skill'
 import { LearnSkills } from '@/shared/ui/learn-skills'
 import { OfferExchangeButton } from '@/shared/ui/offer-exchange-button'
 import { ImageCarousel } from '@/shared/ui/image-carousel'
 import { Icon } from '@/shared/ui/icon/Icon'
+import { Modal } from '@/shared/ui/modal'
+import { Button } from '@/shared/ui/button'
 import { getCategoryTone } from '@/entities/skill/lib/category-tone'
 import { getAgeFromBirth } from '@/shared/lib/helpers'
 import type { SkillSectionProps } from './type'
 import styles from './skill-section.module.css'
 
 export function SkillSection({ skill }: SkillSectionProps) {
+  const dispatch = useAppDispatch()
   const meta = useAppSelector(selectMeta)
   const authors = useAppSelector((state) => selectUsersByIds(state, [skill.authorId]))
   const author = authors[0]
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const hasExchange = useAppSelector((state) =>
+    author ? selectHasExchange(state, author.id) : false,
+  )
 
   if (!meta || !author) return null
 
@@ -42,6 +54,12 @@ export function SkillSection({ skill }: SkillSectionProps) {
   }))
 
   const handleOfferExchange = () => {
+    dispatch(proposeExchange(author.id))
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   return (
@@ -84,7 +102,7 @@ export function SkillSection({ skill }: SkillSectionProps) {
             <p className={styles.description}>{skill.description}</p>
 
             <div className={styles.skillButton}>
-              <OfferExchangeButton onClick={handleOfferExchange} />
+              <OfferExchangeButton onClick={handleOfferExchange} hasExchange={hasExchange} />
             </div>
           </div>
 
@@ -95,6 +113,19 @@ export function SkillSection({ skill }: SkillSectionProps) {
           )}
         </div>
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} width={556}>
+        <div className={styles.successContent}>
+          <Icon name="bell" size={64} />
+          <h2 className={styles.successTitle}>Вы предложили обмен</h2>
+          <p className={styles.successText}>
+            Теперь дождитесь подтверждения. Вам придёт уведомление
+          </p>
+          <Button onClick={handleCloseModal} extraClass={styles.successButton}>
+            Готово
+          </Button>
+        </div>
+      </Modal>
     </section>
   )
 }
