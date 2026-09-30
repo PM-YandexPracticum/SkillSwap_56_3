@@ -8,6 +8,7 @@ import { selectUser } from '@/features/auth/model/authSelectors'
 import { logoutUser } from '@/features/auth/model/authThunks'
 import { ROUTES } from '@/shared/lib/constants'
 import styles from './authorized-actions.module.css'
+import { clearAllExchanges, clearViewed, markAllAsViewed } from '@/features/exchange/model/exchangeSlice'
 
 export const AuthorizedActions = () => {
   const dispatch = useAppDispatch()
@@ -28,6 +29,7 @@ export const AuthorizedActions = () => {
   const handleLogout = () => {
     setIsOpen(false)
     dispatch(logoutUser())
+    dispatch(clearAllExchanges())
   }
 
   return (

@@ -42,6 +42,11 @@ const exchangeSlice = createSlice({
     clearViewed(state) {
       state.viewed = []
     },
+
+    clearAllExchanges(state) {
+      state.new = []
+      state.viewed = []
+    },
   },
 })
 
@@ -50,6 +55,7 @@ export const {
   markAsViewed,
   markAllAsViewed,
   clearViewed,
+  clearAllExchanges
 } = exchangeSlice.actions
 
 export default exchangeSlice.reducer
