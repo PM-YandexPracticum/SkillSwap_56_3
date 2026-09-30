@@ -43,6 +43,7 @@ export function RegisterStep1({
 
           <PasswordInput
             value={values.password}
+            label='Пароль'
             onChange={(e) => onFieldChange({ password: e.target.value })}
             error={errors.password}
             placeholder='Придумайте надёжный пароль'

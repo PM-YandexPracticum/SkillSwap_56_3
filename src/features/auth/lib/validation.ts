@@ -12,7 +12,7 @@ export function validateEmail(email: string): string | null {
 }
 
 export function validatePassword(password: string): string | null {
-  if (!password) return 'Введите пароль'
+  if (!password.trim()) return 'Введите пароль'
   if (password.length < PASSWORD_MIN_LENGTH) {
     return 'Пароль должен содержать не менее 8 символов'
   }

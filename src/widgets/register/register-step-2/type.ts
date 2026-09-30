@@ -14,7 +14,6 @@ export interface RegisterStep2Props {
   errors: Record<string, string>
   categories: Category[]
   onFieldChange: (patch: Record<string, unknown>) => void
-  onAvatarChange: (file: File) => void
   onBack: () => void
   onNext: () => void
 }

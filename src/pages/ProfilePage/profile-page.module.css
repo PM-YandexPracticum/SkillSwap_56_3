@@ -1,31 +1,21 @@
 .page {
-  max-width: 1120px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 32px;
+  display: flex;
+  gap: 24px;
+  flex: 1;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  flex-grow: 2;
+  padding: 60px;
   gap: 24px;
+  background-color: #fff;
 }
 
-.title {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 32px;
+.container {
+  display: flex;
+  gap: 196px;
   align-items: start;
 }
 
@@ -37,10 +27,22 @@
 .fields {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  inline-size: 460px;
 }
 
-.changePassword {
+.fieldsContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.changePassword, .cancelPassword {
+  color: #508826;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
   align-self: flex-start;
 }
 
@@ -48,22 +50,16 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
-  background: #fafafa;
-  border-radius: 12px;
-}
-
-.cancelPassword {
-  align-self: flex-start;
 }
 
 .submit {
-  align-self: flex-start;
-  margin-top: 8px;
+  padding: 12px 0;
+  background-color: #abd27a;
+  border-radius: 12px;
+  inline-size: 100%;
 }
 
 .error {
-  margin: 0;
-  font-size: 14px;
-  color: #e53935;
+  color: #bf3920;
+  font-size: 13px;
 }

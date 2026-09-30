@@ -9,22 +9,12 @@ export const AvatarUpload = ({
   size = 54,
   extraClass = '',
 }: AvatarUploadProps) => {
-  const [previewUrl, setPreviewUrl] = useState<string | null>(value || null)
+  const [previewUrl, setPreviewUrl] = useState<string | null>(value ?? null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    if (value !== undefined) {
-      setPreviewUrl(value)
-    }
+    setPreviewUrl(value ?? null)
   }, [value])
-
-  useEffect(() => {
-    return () => {
-      if (previewUrl && previewUrl.startsWith('blob:')) {
-        URL.revokeObjectURL(previewUrl)
-      }
-    }
-  }, [previewUrl])
 
   const handleContainerClick = () => {
     fileInputRef.current?.click()
@@ -35,8 +25,13 @@ export const AvatarUpload = ({
     if (!file) return
 
     const objectUrl = URL.createObjectURL(file)
+
+    if (previewUrl?.startsWith('blob:')) {
+      URL.revokeObjectURL(previewUrl)
+    }
+
     setPreviewUrl(objectUrl)
-    onChange?.(file)
+    onChange?.(objectUrl)
     e.target.value = ''
   }
 

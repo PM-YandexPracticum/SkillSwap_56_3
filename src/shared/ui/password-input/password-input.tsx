@@ -13,7 +13,7 @@ export const PasswordInput = ({ className, ...props }: PasswordInputProps) => {
   return (
     <Input
       {...props}
-      label='Пароль'
+      label={props.label}
       className={inputClassName}
       type={isVisible ? 'text' : 'password'}
       rightSlot={

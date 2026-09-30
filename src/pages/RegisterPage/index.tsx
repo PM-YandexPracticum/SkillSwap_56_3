@@ -38,11 +38,6 @@ export default function RegisterPage() {
     dispatch(updateDraft(patch))
   }
 
-  const handleAvatarChange = (file: File) => {
-    const url = URL.createObjectURL(file)
-    dispatch(updateDraft({ avatar: url }))
-  }
-
   const handleNext = async () => {
     let nextErrors = {}
     if (step === 1) {
@@ -114,7 +109,6 @@ export default function RegisterPage() {
           errors={errors}
           categories={meta.categories}
           onFieldChange={handleFieldChange}
-          onAvatarChange={handleAvatarChange}
           onBack={handleBack}
           onNext={handleNext}
         />

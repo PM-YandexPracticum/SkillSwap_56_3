@@ -29,3 +29,4 @@ export type IconName =
   | 'skills'
   | 'profile'
   | 'done'
+  | 'logout'

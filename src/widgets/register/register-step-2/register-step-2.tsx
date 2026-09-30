@@ -17,7 +17,6 @@ export function RegisterStep2({
   errors,
   categories,
   onFieldChange,
-  onAvatarChange,
   onBack,
   onNext,
 }: RegisterStep2Props) {
@@ -32,7 +31,11 @@ export function RegisterStep2({
       headerCenter={<AuthStepper step={2} />}
       leftContent={
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
-          <AvatarUpload value={values.avatar} onChange={onAvatarChange} extraClass={styles.avatar} />
+          <AvatarUpload
+            value={values.avatar}
+            onChange={(url) => onFieldChange({ avatar: url })}
+            extraClass={styles.avatar}
+          />
 
           <NameInput
             value={values.name}
