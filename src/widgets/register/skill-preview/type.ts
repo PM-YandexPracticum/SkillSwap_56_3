@@ -8,6 +8,7 @@ export interface SkillPreviewProps {
     teachDescription: string
     teachImages: string[]
   }
+  errors: Record<string, string>
   onEdit: () => void
   onConfirm: () => void
   isLoading: boolean

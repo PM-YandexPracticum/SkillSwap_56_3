@@ -10,4 +10,5 @@ export interface AuthState {
   draft: RegistrationDraft
   draftErrors: FieldErrors
   loginErrors: FieldErrors
+  justRegistered: boolean
 }

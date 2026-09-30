@@ -68,3 +68,10 @@
   background-color: #abd27a;
   border-radius: 12px;
 }
+
+.error {
+  margin: 4px 0 0;
+  color: #bf3920;
+  font-size: 13px;
+  grid-row: 3;
+}

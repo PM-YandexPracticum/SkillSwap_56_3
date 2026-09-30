@@ -15,8 +15,15 @@ import styles from './catalog-page.module.css'
 import { MainHeader } from '@/widgets/header/ui'
 import { Footer } from '@/widgets/footer'
 import { ActiveFiltersBar } from '@/entities/filter/ui/active-filters-bar'
+import { useAppDispatch } from '@/store/hooks'
+import { selectJustRegistered } from '@/features/auth/model/authSelectors'
+import { setJustRegistered } from '@/features/auth/model/authSlice'
+import { SuccessModal } from '@/widgets/success-modal'
 
 export default function CatalogPage() {
+  const dispatch = useAppDispatch()
+  const justRegistered = useAppSelector(selectJustRegistered)
+
   const users = useAppSelector(selectUsers)
   const isLoading = useAppSelector(selectUsersLoading)
   const error = useAppSelector(selectUsersError)
@@ -25,6 +32,10 @@ export default function CatalogPage() {
   const isInitialLoading = isLoading && users.length === 0
   const isEmpty = !isLoading && !error && users.length === 0
   const isError = Boolean(error) && users.length === 0
+
+  const handleSuccessDone = () => {
+    dispatch(setJustRegistered(false))
+  }
 
   const main = () => {
     if (isInitialLoading) {
@@ -82,6 +93,11 @@ export default function CatalogPage() {
       <MainHeader />
       {main()}
       <Footer />
+
+      <SuccessModal
+        isOpen={justRegistered}
+        onDone={handleSuccessDone}
+      />
     </>
   )
 }

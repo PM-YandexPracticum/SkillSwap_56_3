@@ -145,6 +145,35 @@ function draftToUser(draft: RegistrationDraft, meta: Meta | null): UserCard {
   }
 }
 
+export const checkEmail = createAsyncThunk<
+  void,
+  string,
+  { rejectValue: FieldErrors }
+>(
+  'auth/checkEmail',
+  async (email, { rejectWithValue }) => {
+    const emailError = validateEmail(email)
+    if (emailError) {
+      return rejectWithValue({ email: emailError })
+    }
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
+
+      const existing = await fetchCredentialsByEmail(email)
+      const registered = getRegisteredCredentials()
+
+      if (existing || registered.some((item) => item.email === email)) {
+        return rejectWithValue({ email: 'Email уже используется' })
+      }
+
+      return
+    } catch {
+      return rejectWithValue({ form: 'Не удалось проверить email' })
+    }
+  }
+)
+
 export const register = createAsyncThunk<
   AuthUser,
   RegistrationDraft,
@@ -164,13 +193,6 @@ export const register = createAsyncThunk<
 
     try {
       await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
-
-      const existing = await fetchCredentialsByEmail(draft.email)
-      const registered = getRegisteredCredentials()
-
-      if (existing || registered.some((item) => item.email === draft.email)) {
-        return rejectWithValue({ email: 'Email уже используется' })
-      }
 
       const meta = getState().users.meta
       const user = draftToUser(draft, meta)

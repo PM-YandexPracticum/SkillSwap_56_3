@@ -7,6 +7,7 @@ import {
   getUser,
   logoutUser,
   updateUserProfile,
+  checkEmail
 } from './authThunks'
 
 const emptyDraft: RegistrationDraft = {
@@ -32,6 +33,7 @@ const initialState: AuthState = {
   draft: emptyDraft,
   draftErrors: {},
   loginErrors: {},
+  justRegistered: false,
 }
 
 const authSlice = createSlice({
@@ -86,6 +88,9 @@ const authSlice = createSlice({
     clearLoginErrors(state) {
       state.loginErrors = {}
     },
+    setJustRegistered(state, action: PayloadAction<boolean>) {
+      state.justRegistered = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -109,6 +114,23 @@ const authSlice = createSlice({
           state.error = action.error.message ?? 'Не удалось выполнить вход'
         }
       })
+      
+      // ─── checkEmail ────────────────────────────────────
+      .addCase(checkEmail.pending, (state) => {
+        state.isLoading = true
+        state.error = null
+      })
+      .addCase(checkEmail.fulfilled, (state) => {
+        state.isLoading = false
+      })
+      .addCase(checkEmail.rejected, (state, action) => {
+        state.isLoading = false
+        if (action.payload && typeof action.payload === 'object') {
+          state.draftErrors = { ...state.draftErrors, ...action.payload }
+        } else {
+          state.error = action.error.message ?? 'Не удалось проверить email'
+        }
+      })
 
       // ─── register ──────────────────────────────────────
       .addCase(register.pending, (state) => {
@@ -122,6 +144,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true
         state.draft = emptyDraft
         state.draftErrors = {}
+        state.justRegistered = true
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
@@ -140,6 +163,7 @@ const authSlice = createSlice({
         state.user = null
         state.isAuthenticated = false
         state.draft = emptyDraft
+        state.justRegistered = false
       })
       .addCase(updateUserProfile.fulfilled, (state, action) => {
         state.user = action.payload
@@ -161,6 +185,7 @@ export const {
   clearDraftErrors,
   setLoginErrors,
   clearLoginErrors,
+  setJustRegistered,
 } = authSlice.actions
 
 export default authSlice.reducer
