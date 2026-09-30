@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchSkillById, fetchSkills } from '@/api/skills'
 import type { SkillsState } from './types'
 import { Skill } from '@/shared/types'
+import { FAKE_DELAY } from '@/shared/lib/constants'
 
 export const loadSkills = createAsyncThunk<
   Skill[],
@@ -11,7 +12,7 @@ export const loadSkills = createAsyncThunk<
   'skills/loadSkills',
   async (_, { rejectWithValue }) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500))
+      await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
 
       const skills = await fetchSkills()
       return skills
@@ -32,7 +33,7 @@ export const loadSkillById = createAsyncThunk<Skill, string, { rejectValue: stri
   'skills/getById',
   async (id, { rejectWithValue }) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500))
+      await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
       const skill = await fetchSkillById(id)
 
       if (!skill) {

@@ -26,8 +26,7 @@ import {
 import { fetchUsers } from '@/api/users'
 import { fetchCredentialsByEmail } from '@/api/credentials'
 import type { FieldErrors } from './types'
-
-const FAKE_DELAY = 500
+import { FAKE_DELAY } from '@/shared/lib/constants'
 
 interface LoginPayload {
   email: string

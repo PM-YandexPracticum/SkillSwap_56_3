@@ -33,6 +33,8 @@ export const LOCAL_STORAGE_KEYS = {
 
 export const CITIES_VISIBLE_COUNT = 5
 
+export const FAKE_DELAY = 500
+
 export const SECTIONS: Section[] = [
   { id: 'requests', label: 'Заявки' },
   { id: 'exchanges', label: 'Мои обмены' },
