@@ -9,7 +9,7 @@ export const ExpandListButton = ({
   onClick,
   expandedLabel = 'Свернуть',
   expanded,
-  extraClass = '',
+  extraclass = '',
 }: ExpandListButtonProps) => {
   const [ownExpanded, setOwnExpanded] = useState(false)
   const isExpanded = expanded ?? ownExpanded
@@ -22,7 +22,7 @@ export const ExpandListButton = ({
   }
 
   return (
-    <Button onClick={handleClick} extraClass={`${styles.expandListButton} ${extraClass}`.trim()}>
+    <Button onClick={handleClick} extraclass={`${styles.expandListButton} ${extraclass}`.trim()}>
       {isExpanded ? expandedLabel : label}
       <span className={`${styles.icon} ${isExpanded ? styles.iconExpanded : ''}`.trim()}>
         <Icon name="chevron-down" size={20} />

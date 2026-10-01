@@ -34,7 +34,7 @@ export function RegisterStep2({
           <AvatarUpload
             value={values.avatar}
             onChange={(url) => onFieldChange({ avatar: url })}
-            extraClass={styles.avatar}
+            extraclass={styles.avatar}
           />
 
           <NameInput
@@ -77,10 +77,10 @@ export function RegisterStep2({
           />
 
           <div className={styles.actions}>
-            <Button type="button" onClick={onBack} extraClass={styles.back}>
+            <Button type="button" onClick={onBack} extraclass={styles.back}>
               Назад
             </Button>
-            <Button type="submit" extraClass={styles.next}>
+            <Button type="submit" extraclass={styles.next}>
               Продолжить
             </Button>
           </div>

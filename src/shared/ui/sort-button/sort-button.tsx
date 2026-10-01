@@ -16,7 +16,7 @@ export const SortButton = () => {
   }
 
   return (
-    <Button onClick={handleClick} extraClass={`${styles.sortToggle}`.trim()}>
+    <Button onClick={handleClick} extraclass={`${styles.sortToggle}`.trim()}>
       <Icon name='sort'/>
       {label}
     </Button>

@@ -7,5 +7,5 @@ export type CitiesFilterProps = {
   onChange?: (selected: string[]) => void
   visibleCount?: number
   title?: string
-  extraClass?: string
+  extraclass?: string
 }

@@ -9,7 +9,7 @@ export const SkillInfo: FC<SkillInfoProps> = ({
   category,
   subcategory,
   description,
-  extraClass = '',
+  extraclass = '',
 }) => {
   const meta = useAppSelector(selectMeta);
   const getCategoryName = (categoryId: string): string =>
@@ -28,7 +28,7 @@ export const SkillInfo: FC<SkillInfoProps> = ({
     : category
 
   return (
-    <div className={`${styles.container} ${extraClass}`.trim()}>
+    <div className={`${styles.container} ${extraclass}`.trim()}>
       <div className={styles.header}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.category}>{categoryPath}</p>

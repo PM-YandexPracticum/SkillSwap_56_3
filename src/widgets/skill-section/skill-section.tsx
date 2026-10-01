@@ -121,7 +121,7 @@ export function SkillSection({ skill }: SkillSectionProps) {
           <p className={styles.successText}>
             Теперь дождитесь подтверждения. Вам придёт уведомление
           </p>
-          <Button onClick={handleCloseModal} extraClass={styles.successButton}>
+          <Button onClick={handleCloseModal} extraclass={styles.successButton}>
             Готово
           </Button>
         </div>

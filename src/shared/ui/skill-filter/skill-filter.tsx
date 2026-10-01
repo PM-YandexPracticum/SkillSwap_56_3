@@ -12,7 +12,7 @@ export const SkillFilter = ({
   defaultSelected = [],
   onChange,
   title = 'Навыки',
-  extraClass = '',
+  extraclass = '',
 }: SkillFilterProps) => {
   const [ownSelected, setOwnSelected] = useState<string[]>(defaultSelected)
   const [openCategories, setOpenCategories] = useState<string[]>([])
@@ -53,7 +53,7 @@ export const SkillFilter = ({
   }
 
   return (
-    <fieldset className={`${styles.group} ${extraClass}`.trim()}>
+    <fieldset className={`${styles.group} ${extraclass}`.trim()}>
       <legend className={styles.title}>{title}</legend>
 
       <div className={styles.list}>
@@ -74,7 +74,7 @@ export const SkillFilter = ({
                   onChange={(checked) => toggleCategory(category, checked)}
                 />
 
-                <Button extraClass={styles.expand} onClick={() => toggleCategoryOpen(category.id)}>
+                <Button extraclass={styles.expand} onClick={() => toggleCategoryOpen(category.id)}>
                   <span className={`${styles.icon} ${isOpen ? styles.iconExpanded : ''}`.trim()}>
                     <Icon name="chevron-down" size={20} />
                   </span>

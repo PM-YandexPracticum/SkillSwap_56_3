@@ -10,7 +10,7 @@ const INITIAL_LIMIT = 3;
 const EXPANDED_LIMIT = 9;
 
 export const NewSection = ({
-  extraClass = '',
+  extraclass = '',
 }: NewSectionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const users = useAppSelector(selectNew);
@@ -28,7 +28,7 @@ export const NewSection = ({
   const showButton = users.length > INITIAL_LIMIT;
 
   return (
-    <section className={`${styles.section} ${extraClass}`.trim()}>
+    <section className={`${styles.section} ${extraclass}`.trim()}>
       <div className={styles.header}>
         <h2 className={styles.title}>Новое</h2>
         {showButton && (

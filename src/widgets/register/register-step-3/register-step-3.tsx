@@ -59,10 +59,10 @@ export function RegisterStep3({
           />
 
           <div className={styles.actions}>
-            <Button type="button" onClick={onBack} extraClass={styles.back}>
+            <Button type="button" onClick={onBack} extraclass={styles.back}>
               Назад
             </Button>
-            <Button type="submit" extraClass={styles.next} disabled={isLoading}>
+            <Button type="submit" extraclass={styles.next} disabled={isLoading}>
               {isLoading ? 'Отправка...' : 'Продолжить'}
             </Button>
           </div>

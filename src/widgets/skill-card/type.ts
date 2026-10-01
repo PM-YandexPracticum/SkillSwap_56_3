@@ -5,6 +5,6 @@ export interface SkillCardProps {
   onOfferExchange?: () => void
   onShare?: () => void
   onMoreClick?: () => void
-  extraClass?: string
+  extraclass?: string
   hasExchange?: boolean
 }

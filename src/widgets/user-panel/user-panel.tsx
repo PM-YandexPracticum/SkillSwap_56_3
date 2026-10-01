@@ -21,7 +21,7 @@ export const UserPanel = () => {
               onClick={() => {
                 if (section.path) navigate(section.path)
               }}
-              extraClass={`${styles.item} ${isActive ? styles.active : ''}`}
+              extraclass={`${styles.item} ${isActive ? styles.active : ''}`}
             >
               <Icon name={section.id as IconName} size={20}/>
               {section.label}

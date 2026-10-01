@@ -11,7 +11,7 @@ export const AuthButton = ({
     <Button
       onClick={onClick}
       type={type}
-      extraClass={styles.authButton}
+      extraclass={styles.authButton}
     >
       {children}
     </Button>

@@ -102,7 +102,7 @@ export const Select = ({
 
           <Button
             type="button"
-            extraClass={`${styles.icon} ${
+            extraclass={`${styles.icon} ${
               isOpen ? styles.iconOpen : ''
             }`.trim()}
             onClick={(e) => {

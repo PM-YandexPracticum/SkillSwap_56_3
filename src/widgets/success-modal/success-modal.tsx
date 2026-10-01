@@ -15,7 +15,7 @@ export function SuccessModal({ isOpen, onDone }: SuccessModalProps) {
             <h2 className={styles.title}>Ваше предложение создано</h2>
             <p className={styles.subtitle}>Теперь вы можете предложить обмен</p>
           </div>
-          <Button type="button" onClick={onDone} extraClass={styles.done}>
+          <Button type="button" onClick={onDone} extraclass={styles.done}>
             Готово
           </Button>
         </div>

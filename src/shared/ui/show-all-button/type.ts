@@ -5,5 +5,5 @@ export type ShowAllButtonProps = {
   label?: string
   expandedLabel?: string
   expanded?: boolean
-  extraClass?: string
+  extraclass?: string
 }

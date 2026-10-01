@@ -7,7 +7,7 @@ export const AvatarUpload = ({
   value,
   onChange,
   size = 54,
-  extraClass = '',
+  extraclass = '',
 }: AvatarUploadProps) => {
   const [previewUrl, setPreviewUrl] = useState<string | null>(value ?? null)
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -40,7 +40,7 @@ export const AvatarUpload = ({
 
   return (
     <div
-      className={`${styles.container} ${extraClass}`.trim()}
+      className={`${styles.container} ${extraclass}`.trim()}
       style={{ width: `${size}px`, height: `${size}px` }}
       onClick={handleContainerClick}
       role="button"

@@ -10,7 +10,7 @@ export const WantFilter = ({
   defaultValue = 'all',
   onChange,
   name,
-  extraClass = '',
+  extraclass = '',
 }: WantFilterProps) => {
   const generatedName = useId()
   const [ownValue, setOwnValue] = useState<WantId>(defaultValue)
@@ -25,7 +25,7 @@ export const WantFilter = ({
   }
 
   return (
-    <fieldset className={`${styles.group} ${extraClass}`.trim()}>
+    <fieldset className={`${styles.group} ${extraclass}`.trim()}>
       <legend className={styles.legend}>Что показывать</legend>
 
       <div className={styles.list}>

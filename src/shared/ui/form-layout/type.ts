@@ -5,6 +5,6 @@ export interface FormLayoutProps {
   rightContent?: ReactNode;
   headerCenter?: ReactNode;
   children?: ReactNode;
-  extraClass?: string; //Дополнительный класс для внешней обертки
+  extraclass?: string;
   closeTo?: string;
 }

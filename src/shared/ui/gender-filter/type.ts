@@ -7,5 +7,5 @@ export type GenderFilterProps = {
   onChange?: (value: Gender) => void
   name?: string
   title?: string
-  extraClass?: string
+  extraclass?: string
 }

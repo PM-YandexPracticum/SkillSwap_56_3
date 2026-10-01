@@ -1,3 +1,3 @@
 export interface PopularSectionProps {
-  extraClass?: string;
+  extraclass?: string;
 }

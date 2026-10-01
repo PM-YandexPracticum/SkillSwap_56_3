@@ -8,7 +8,7 @@ export const FavoriteButton = ({
   onToggle,
   count,
   disabled = false,
-  extraClass = '',
+  extraclass = '',
 }: FavoriteButtonProps) => {
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ export const FavoriteButton = ({
   };
 
   const iconName = isFavorite ? 'heart-filled' : 'heart';
-  const buttonClassName = `${styles.button} ${isFavorite ? styles.active : ''} ${extraClass}`.trim();
+  const buttonClassName = `${styles.button} ${isFavorite ? styles.active : ''} ${extraclass}`.trim();
 
   return (
     <div className={styles.wrapper}>

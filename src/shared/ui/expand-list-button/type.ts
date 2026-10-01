@@ -5,5 +5,5 @@ export type ExpandListButtonProps = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void
   expandedLabel?: string
   expanded?: boolean
-  extraClass?: string
+  extraclass?: string
 }

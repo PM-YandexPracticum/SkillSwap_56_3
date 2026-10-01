@@ -17,7 +17,7 @@ function shuffleArray<T>(items: T[]): T[] {
   return result
 }
 
-export const RecommendedSection = ({ extraClass = '' }: RecommendedSectionProps) => {
+export const RecommendedSection = ({ extraclass = '' }: RecommendedSectionProps) => {
   const users = useAppSelector(selectUsers)
   const [shuffledIds, setShuffledIds] = useState<string[]>([])
 
@@ -57,7 +57,7 @@ export const RecommendedSection = ({ extraClass = '' }: RecommendedSectionProps)
   }
 
   return (
-    <section className={`${styles.section} ${extraClass}`.trim()}>
+    <section className={`${styles.section} ${extraclass}`.trim()}>
       <h2 className={styles.title}>Рекомендуем</h2>
       <div className={styles.grid}>
         {visibleItems.map((user) => (

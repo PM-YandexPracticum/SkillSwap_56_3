@@ -6,7 +6,7 @@ import { ROUTES } from '@/shared/lib/constants'
 export const RouteActions = () => {
   return (
     <div className={style.actions}>
-      <Button type="button" extraClass={`${style.action} ${style.report}`}>
+      <Button type="button" extraclass={`${style.action} ${style.report}`}>
         Сообщить об ошибке
       </Button>
 

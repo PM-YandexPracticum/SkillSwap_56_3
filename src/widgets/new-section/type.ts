@@ -1,3 +1,3 @@
 export interface NewSectionProps {
-  extraClass?: string;
+  extraclass?: string;
 }

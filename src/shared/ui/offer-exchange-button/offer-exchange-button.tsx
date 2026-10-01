@@ -9,15 +9,15 @@ export const OfferExchangeButton = ({
   onClick = noop,
   disabled = false,
   hasExchange = false,
-  extraClass = '',
+  extraclass = '',
 }: OfferExchangeButtonProps) => {
-  const combinedClassName = `${styles.offerButton} ${hasExchange ? styles.disabled : ''} ${extraClass}`.trim()
+  const combinedClassName = `${styles.offerButton} ${hasExchange ? styles.disabled : ''} ${extraclass}`.trim()
 
   return (
     <Button
       type="button"
       onClick={hasExchange || disabled ? undefined : onClick}
-      extraClass={combinedClassName}
+      extraclass={combinedClassName}
     >
       {hasExchange ? (
         <>

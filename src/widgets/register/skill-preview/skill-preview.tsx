@@ -46,14 +46,14 @@ export function SkillPreview({
           </div>
 
           <div className={styles.buttons}>
-            <Button type="button" onClick={onEdit} extraClass={styles.edit}>
+            <Button type="button" onClick={onEdit} extraclass={styles.edit}>
               Редактировать
               <Icon name='pencil'/>
             </Button>
             <Button
               type="button"
               onClick={onConfirm}
-              extraClass={styles.confirm}
+              extraclass={styles.confirm}
               disabled={isLoading}
             >
               {isLoading ? 'Отправка...' : 'Готово'}

@@ -3,5 +3,5 @@ export interface FavoriteButtonProps {
   onToggle: (value: boolean) => void;
   count?: number;
   disabled?: boolean;
-  extraClass?: string;
+  extraclass?: string;
 }

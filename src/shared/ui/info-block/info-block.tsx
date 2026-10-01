@@ -6,10 +6,10 @@ export const InfoBlock = ({
   image,
   title,
   description,
-  extraClass = '',
+  extraclass = '',
 }: InfoBlockProps) => {
   return (
-    <div className={`${styles.content} ${extraClass}`}>
+    <div className={`${styles.content} ${extraclass}`}>
       <div className={styles.image}>{image}</div>
 
       <h2 className={styles.title}>{title}</h2>

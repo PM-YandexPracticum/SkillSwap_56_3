@@ -12,7 +12,7 @@ export const CitiesFilter = ({
   onChange,
   visibleCount = CITIES_VISIBLE_COUNT,
   title = 'Город',
-  extraClass = '',
+  extraclass = '',
 }: CitiesFilterProps) => {
   const [ownSelected, setOwnSelected] = useState<string[]>(defaultSelected)
   const [isExpanded, setIsExpanded] = useState(false)
@@ -33,7 +33,7 @@ export const CitiesFilter = ({
   }
 
   return (
-    <fieldset className={`${styles.group} ${extraClass}`.trim()}>
+    <fieldset className={`${styles.group} ${extraclass}`.trim()}>
       <legend className={styles.title}>{title}</legend>
 
       <div className={styles.list}>
