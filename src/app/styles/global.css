@@ -1,5 +1,5 @@
 /* ─── CSS Custom Properties ─────────────────────────────── */
-@import '../../fonts/fonts.css';
+@import url('../../fonts/fonts.css');
 
 :root {
   /* Colors */
