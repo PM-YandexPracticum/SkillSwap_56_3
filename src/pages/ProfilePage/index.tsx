@@ -4,6 +4,7 @@ import {
   selectAuthLoading,
   selectAuthError,
   selectDraftErrors,
+  selectAuthState,
 } from '@/features/auth/model/authSelectors'
 import { updateUserProfile } from '@/features/auth/model/authThunks'
 import { setDraftErrors } from '@/features/auth/model/authSlice'
@@ -17,7 +18,6 @@ import { Button } from '@/shared/ui/button'
 import type { GenderValue } from '@/shared/ui/gender-select/type'
 import styles from './profile-page.module.css'
 import { getAuthUser } from '@/features/auth/model/authUtils'
-import { selectAuthState } from '@/features/auth/model/authSelectors'
 import { MainHeader } from '@/widgets/header/ui'
 import { Footer } from '@/widgets/footer'
 import { EmailInput, NameInput } from '@/shared/ui/form-inputs'
@@ -31,6 +31,7 @@ export default function ProfilePage() {
   const isLoading = useAppSelector(selectAuthLoading)
   const authError = useAppSelector(selectAuthError)
   const errors = useAppSelector(selectDraftErrors)
+  const authState = useAppSelector(selectAuthState)
 
   const [email, setEmail] = useState(user?.email ?? '')
   const [name, setName] = useState(user?.name ?? '')
@@ -44,7 +45,12 @@ export default function ProfilePage() {
   const [oldPassword, setOldPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
 
-  const authState = useAppSelector(selectAuthState)
+  const clearFieldError = (field: string) => {
+    if (!errors[field]) return
+    const next = { ...errors }
+    delete next[field]
+    dispatch(setDraftErrors(next))
+  }
 
   const hasChanges = useMemo(() => {
     if (!user) return false
@@ -80,151 +86,165 @@ export default function ProfilePage() {
   }
 
   const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault()
-  if (!hasChanges || isLoading) return
+    e.preventDefault()
+    if (!hasChanges || isLoading) return
 
-  const payload = {
-    name,
-    email,
-    birthDate,
-    gender,
-    city,
-    aboutMe,
-    avatar,
-    ...(isChangingPassword && (oldPassword || newPassword)
-      ? { oldPassword, newPassword }
-      : {}),
+    const payload = {
+      name,
+      email,
+      birthDate,
+      gender,
+      city,
+      aboutMe,
+      avatar,
+      ...(isChangingPassword && (oldPassword || newPassword)
+        ? { oldPassword, newPassword }
+        : {}),
+    }
+
+    console.log('payload to send:', authState)
+
+    dispatch(updateUserProfile(payload))
   }
-
-  console.log('payload to send:', authState)
-
-  dispatch(updateUserProfile(payload))
-}
 
   const handleCancelPassword = () => {
     setIsChangingPassword(false)
     setOldPassword('')
     setNewPassword('')
-    dispatch(setDraftErrors({}))
-  }
-
-  const main = () => {
-    return (
-      <main className={styles.page}>
-        <UserPanel />
-          <form className={styles.content} onSubmit={handleSubmit} noValidate>
-            <div className={styles.container}>
-              <div className={styles.fields}>
-                <EmailInput
-                  label="Почта"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  error={errors.email}
-                  icon={<Icon name='pencil'/>}
-                />
-
-                {!isChangingPassword ? (
-                  <Button
-                    type="button"
-                    onClick={() => setIsChangingPassword(true)}
-                    extraClass={styles.changePassword}
-                  >
-                    Изменить пароль
-                  </Button>
-                ) : (
-                  <div className={styles.passwordBlock}>
-                    <PasswordInput
-                      label="Текущий пароль"
-                      value={oldPassword}
-                      onChange={(e) => setOldPassword(e.target.value)}
-                      error={errors.oldPassword}
-                    />
-
-                    <PasswordInput
-                      label="Новый пароль"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      error={errors.newPassword}
-                    />
-
-                    <Button
-                      type="button"
-                      onClick={handleCancelPassword}
-                      extraClass={styles.cancelPassword}
-                    >
-                      Отмена
-                    </Button>
-                  </div>
-                )}
-
-                <NameInput
-                  label="Имя"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  error={errors.name}
-                  icon={<Icon name='pencil'/>}
-                />
-
-                <div className={styles.fieldsContainer}>
-                  <DatePicker
-                    label="Дата рождения"
-                    value={birthDate ? new Date(birthDate) : null}
-                    onChange={(date) =>
-                      setBirthDate(date ? date.toISOString() : '')
-                    }
-                  />
-
-                  <GenderSelect
-                    value={gender}
-                    onChange={(v) => setGender(v)}
-                    error={errors.gender}
-                  />
-                </div>
-
-                <CitySelect
-                  value={city}
-                  onChange={(v) => setCity(v ?? '')}
-                  error={errors.city}
-                />
-
-                <AboutTextarea
-                  label="О себе"
-                  value={aboutMe}
-                  onChange={(e) => setAboutMe(e.target.value)}
-                  icon={<Icon name='pencil'/>}
-                />
-              
-                {errors.form && <p className={styles.error}>{errors.form}</p>}
-                {authError && <p className={styles.error}>{authError}</p>}
-
-                <Button
-                  type="submit"
-                  disabled={!hasChanges || isLoading}
-                  extraClass={styles.submit}
-                >
-                  {isLoading ? 'Сохранение...' : 'Сохранить'}
-                </Button>
-              </div>
-
-              <div className={styles.avatarCol}>
-                <Avatar
-                  src={avatar}
-                  alt={`Аватар ${name}`}
-                  size={244}
-                  onChange={handleAvatarChange}
-                />
-              </div>
-            </div>
-          </form>
-      </main>
-    )
+    clearFieldError('oldPassword')
+    clearFieldError('newPassword')
   }
 
   return (
-      <>
-        <MainHeader />
-        {main()}
-        <Footer />
-      </>
-    )
+    <>
+      <MainHeader />
+      <main className={styles.page}>
+        <UserPanel />
+        <form className={styles.content} onSubmit={handleSubmit} noValidate>
+          <div className={styles.container}>
+            <div className={styles.fields}>
+              <EmailInput
+                label="Почта"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  clearFieldError('email')
+                }}
+                error={errors.email}
+                icon={<Icon name="pencil" />}
+              />
+
+              {!isChangingPassword ? (
+                <Button
+                  type="button"
+                  onClick={() => setIsChangingPassword(true)}
+                  extraClass={styles.changePassword}
+                >
+                  Изменить пароль
+                </Button>
+              ) : (
+                <div className={styles.passwordBlock}>
+                  <PasswordInput
+                    label="Текущий пароль"
+                    value={oldPassword}
+                    onChange={(e) => {
+                      setOldPassword(e.target.value)
+                      clearFieldError('oldPassword')
+                    }}
+                    error={errors.oldPassword}
+                  />
+
+                  <PasswordInput
+                    label="Новый пароль"
+                    value={newPassword}
+                    onChange={(e) => {
+                      setNewPassword(e.target.value)
+                      clearFieldError('newPassword')
+                    }}
+                    error={errors.newPassword}
+                  />
+
+                  <Button
+                    type="button"
+                    onClick={handleCancelPassword}
+                    extraClass={styles.cancelPassword}
+                  >
+                    Отмена
+                  </Button>
+                </div>
+              )}
+
+              <NameInput
+                label="Имя"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value)
+                  clearFieldError('name')
+                }}
+                error={errors.name}
+                icon={<Icon name="pencil" />}
+              />
+
+              <div className={styles.fieldsContainer}>
+                <DatePicker
+                  label="Дата рождения"
+                  value={birthDate ? new Date(birthDate) : null}
+                  onChange={(date) => {
+                    setBirthDate(date ? date.toISOString() : '')
+                    clearFieldError('birthDate')
+                  }}
+                />
+
+                <GenderSelect
+                  value={gender}
+                  onChange={(v) => {
+                    setGender(v)
+                    clearFieldError('gender')
+                  }}
+                  error={errors.gender}
+                />
+              </div>
+
+              <CitySelect
+                value={city}
+                onChange={(v) => {
+                  setCity(v ?? '')
+                  clearFieldError('city')
+                }}
+                error={errors.city}
+              />
+
+              <AboutTextarea
+                label="О себе"
+                value={aboutMe}
+                onChange={(e) => setAboutMe(e.target.value)}
+                icon={<Icon name="pencil" />}
+              />
+
+              {errors.form && <p className={styles.error}>{errors.form}</p>}
+              {authError && <p className={styles.error}>{authError}</p>}
+
+              <Button
+                type="submit"
+                disabled={!hasChanges || isLoading}
+                extraClass={styles.submit}
+              >
+                {isLoading ? 'Сохранение...' : 'Сохранить'}
+              </Button>
+            </div>
+
+            <div className={styles.avatarCol}>
+              <Avatar
+                src={avatar}
+                alt={`Аватар ${name}`}
+                size={244}
+                onChange={handleAvatarChange}
+              />
+            </div>
+          </div>
+        </form>
+      </main>
+      <Footer />
+    </>
+  )
 }

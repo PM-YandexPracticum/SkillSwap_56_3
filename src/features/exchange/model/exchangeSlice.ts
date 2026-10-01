@@ -1,5 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { ExchangeState } from './types'
+import {
+  addExchangeId,
+  clearExchangeIds,
+} from './exchangeUtils'
 
 const initialState: ExchangeState = {
   new: [],
@@ -23,6 +27,7 @@ const exchangeSlice = createSlice({
         userId,
         createdAt: new Date().toISOString(),
       })
+      addExchangeId(userId)
     },
 
     markAsViewed(state, action: PayloadAction<string>) {
@@ -46,6 +51,7 @@ const exchangeSlice = createSlice({
     clearAllExchanges(state) {
       state.new = []
       state.viewed = []
+      clearExchangeIds()
     },
   },
 })
@@ -55,7 +61,7 @@ export const {
   markAsViewed,
   markAllAsViewed,
   clearViewed,
-  clearAllExchanges
+  clearAllExchanges,
 } = exchangeSlice.actions
 
 export default exchangeSlice.reducer

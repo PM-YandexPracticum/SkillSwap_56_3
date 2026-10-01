@@ -32,6 +32,7 @@ import { updateCredentials } from './authUtils'
 import type { LoginPayload, UpdateProfilePayload } from '@/shared/types'
 import { validateUpdateProfile, validateNewPassword } from '../lib/validation'
 import { updateRegisteredUser } from './authUtils'
+import { clearAllExchanges } from '@/features/exchange/model/exchangeSlice'
 
 export const login = createAsyncThunk<
   AuthUser,
@@ -91,6 +92,7 @@ export const logoutUser = createAsyncThunk<void, void>(
   'auth/logout',
   async () => {
     clearAuthUser()
+    clearAllExchanges()
   }
 )
 
