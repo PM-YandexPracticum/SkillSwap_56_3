@@ -47,11 +47,12 @@ const paths: Record<IconName, ReactNode> = {
   ),
   sun: (
     <>
-      <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="12" r="4" fill="none" stroke="#253017" />
       <path
         d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93"
         strokeWidth="2"
         strokeLinecap="round"
+        stroke="#253017"
       />
     </>
   ),
@@ -83,8 +84,9 @@ const paths: Record<IconName, ReactNode> = {
 
   moon: (
     <path
+      stroke="#253017"
       d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
-      strokeWidth="2"
+      strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
