@@ -1,19 +1,19 @@
 @font-face {
-  font-family: Jost;
+  font-family: jost;
   src: url("Jost.ttf");
   font-weight: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: OpenSans;
+  font-family: openSans;
   src: url("OpenSans.ttf");
   font-weight: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: roboto;
   src: url("Roboto.ttf");
   font-weight: normal;
   font-display: swap;
