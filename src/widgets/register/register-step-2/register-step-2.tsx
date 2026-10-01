@@ -80,7 +80,8 @@ export function RegisterStep2({
             <Button type="button" onClick={onBack} extraclass={styles.back}>
               Назад
             </Button>
-            <Button type="submit" extraclass={styles.next}>
+            <Button type="submit" extraclass={styles.next}
+              disabled={Object.keys(errors).length > 0}>
               Продолжить
             </Button>
           </div>

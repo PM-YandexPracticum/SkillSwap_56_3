@@ -64,6 +64,9 @@ export function validateStep2(draft: RegistrationDraft): FieldErrors {
 export function validateStep3(draft: RegistrationDraft): FieldErrors {
   const errors: FieldErrors = {}
 
+  if (draft.teachSkillName.length < 4)
+    errors.teachSkillName = 'Слишком короткое название'
+
   if (!draft.teachSkillName.trim())
     errors.teachSkillName = 'Введите название навыка'
 

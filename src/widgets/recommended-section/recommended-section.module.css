@@ -12,6 +12,7 @@
   font-weight: 700;
   line-height: 1.2;
   color: #21291b;
+  font-family: var(--font-jost);
 }
 
 .grid {

@@ -7,7 +7,7 @@
 
 .title {
   color: #253017;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 500;
   font-size: var(--font-size-base);
   line-height: 24px;

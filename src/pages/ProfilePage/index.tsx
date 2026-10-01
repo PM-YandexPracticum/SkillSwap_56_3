@@ -221,7 +221,7 @@ export default function ProfilePage() {
 
               <Button
                 type="submit"
-                disabled={!hasChanges || isLoading}
+                disabled={!hasChanges || isLoading || Object.keys(errors).length > 0}
                 extraclass={styles.submit}
               >
                 {isLoading ? 'Сохранение...' : 'Сохранить'}

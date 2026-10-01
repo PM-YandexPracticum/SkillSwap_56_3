@@ -23,7 +23,7 @@
   margin: 0;
   vertical-align: middle;
   color: #253017;
-  font-family: Jost, sans-serif;
+  font-family: var(--font-jost);
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
@@ -36,7 +36,7 @@
   margin: 6px 0 0;
   vertical-align: middle;
   color: #253017;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

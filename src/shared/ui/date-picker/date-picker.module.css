@@ -221,7 +221,7 @@
 }
 
 .label {
-  font-family: var(--font-sans);
+  font-family: var(--font-roboto);
   font-size: var(--font-size-base);
   font-weight: 400;
   color: #253017;

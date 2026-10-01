@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   border-radius: var(--radius-lg);
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-size: var(--font-size-base);
   line-height: 1.2;
   text-decoration: none;

@@ -19,7 +19,7 @@ export const SkillsPopoverContent = ({ categories }: SkillsPopoverContentProps) 
             className={styles.iconWrapper}
             style={{ backgroundColor: CATEGORY_COLORS[cat.id] ?? '#f0f0f0' }}
           >
-            <img className={styles.icon} src={cat.icon} alt={cat.name} />
+            <img className={styles.icon} src={`src/icons/${cat.id}.svg`} alt={cat.name} />
           </div>
           <div className={styles.categoryContent}>
             <span className={styles.categoryName}>{cat.name}</span>

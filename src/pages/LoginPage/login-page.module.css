@@ -1,5 +1,5 @@
 .title {
-  font-family: Jost, sans-serif;
+  font-family: var(--font-jost);
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
@@ -33,7 +33,7 @@
   position: relative;
   padding: 0 12px;
   background-color: #fff;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -46,7 +46,7 @@
 }
 
 .formError {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -66,7 +66,7 @@
   padding: 12px 24px;
   border-radius: 12px;
   background-color: #abd27a;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -75,7 +75,7 @@
 
 .registerLink {
   align-self: center;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -98,7 +98,7 @@
 
 .promoTitle {
   margin-block-start: 40px;
-  font-family: Jost, sans-serif;
+  font-family: var(--font-jost);
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
@@ -108,7 +108,7 @@
 
 .promoText {
   margin-block-start: 12px;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
