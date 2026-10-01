@@ -4,7 +4,7 @@
   border-radius: var(--radius-lg);
   padding-inline: var(--space-lg);
   padding-block: var(--space-sm);
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

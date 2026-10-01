@@ -16,6 +16,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
+  font-family: var(--font-jost);
 }
 
 .category {
@@ -28,7 +29,7 @@
 .description {
   margin: 0;
   color: #21291b;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

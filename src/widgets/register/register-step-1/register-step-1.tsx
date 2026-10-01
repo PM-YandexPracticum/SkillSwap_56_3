@@ -51,7 +51,8 @@ export function RegisterStep1({
 
           {hasFormError && <p className={styles.error}>{errors.form}</p>}
 
-          <Button type="submit" extraclass={styles.submit} disabled={isLoading}>
+          <Button type="submit" extraclass={styles.submit} 
+            disabled={isLoading || Object.keys(errors).length > 0}>
             {isLoading ? 'Проверяем...' : 'Далее'}
           </Button>
         </form>

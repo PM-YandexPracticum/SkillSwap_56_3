@@ -1,4 +1,6 @@
 /* ─── CSS Custom Properties ─────────────────────────────── */
+@import '../../fonts/fonts.css';
+
 :root {
   /* Colors */
   --color-primary: #6366f1;
@@ -23,6 +25,9 @@
 
   /* Typography */
   --font-sans: system-ui, -apple-system, sans-serif;
+  --font-jost: Jost, sans-serif;
+  --font-open-sans: OpenSans, sans-serif;
+  --font-roboto: Roboto, sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -58,7 +63,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-roboto);
   font-size: var(--font-size-base);
   line-height: 1.5;
   background-color: var(--color-bg);

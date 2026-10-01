@@ -33,6 +33,8 @@ export function RegisterStep3({
             value={values.teachSkillName}
             onChange={(e) => onFieldChange({ teachSkillName: e.target.value })}
             error={errors.teachSkillName}
+            maxLength={50}
+            minLength={3}
           />
 
           <CategorySelect
@@ -50,6 +52,7 @@ export function RegisterStep3({
             value={values.teachDescription}
             onChange={(e) => onFieldChange({ teachDescription: e.target.value })}
             error={errors.teachDescription}
+            maxLength={500}
           />
 
           <ImageUpload
@@ -62,7 +65,8 @@ export function RegisterStep3({
             <Button type="button" onClick={onBack} extraclass={styles.back}>
               Назад
             </Button>
-            <Button type="submit" extraclass={styles.next} disabled={isLoading}>
+            <Button type="submit" extraclass={styles.next} 
+              disabled={isLoading || Object.keys(errors).length > 0}>
               {isLoading ? 'Отправка...' : 'Продолжить'}
             </Button>
           </div>
