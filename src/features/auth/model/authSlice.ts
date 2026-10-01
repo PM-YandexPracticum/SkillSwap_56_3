@@ -105,7 +105,6 @@ const authSlice = createSlice({
         state.user = action.payload
         state.isAuthenticated = true
         state.loginErrors = {}
-        console.log('FULFILLED')
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false
@@ -114,7 +113,6 @@ const authSlice = createSlice({
         } else {
           state.error = action.error.message ?? 'Не удалось выполнить вход'
         }
-        console.log('REJECT')
       })
       
       // ─── checkEmail ────────────────────────────────────

@@ -4,7 +4,6 @@ import {
   selectAuthLoading,
   selectAuthError,
   selectDraftErrors,
-  selectAuthState,
 } from '@/features/auth/model/authSelectors'
 import { updateUserProfile } from '@/features/auth/model/authThunks'
 import { setDraftErrors } from '@/features/auth/model/authSlice'
@@ -31,7 +30,6 @@ export default function ProfilePage() {
   const isLoading = useAppSelector(selectAuthLoading)
   const authError = useAppSelector(selectAuthError)
   const errors = useAppSelector(selectDraftErrors)
-  const authState = useAppSelector(selectAuthState)
 
   const [email, setEmail] = useState(user?.email ?? '')
   const [name, setName] = useState(user?.name ?? '')
@@ -101,8 +99,6 @@ export default function ProfilePage() {
         ? { oldPassword, newPassword }
         : {}),
     }
-
-    console.log('payload to send:', authState)
 
     dispatch(updateUserProfile(payload))
   }
