@@ -1,7 +1,8 @@
 .page {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
   gap: var(--space-xl);
-  padding: 40px 36px 60px;
+  padding-top: 32px;
   color: #253017;
   font-family: var(--font-jost);
 }
@@ -15,7 +16,6 @@
   padding: var(--space-xl);
   text-align: center;
   min-block-size: 320px;
-  flex-grow: 2;
 }
 
 .message h2 {

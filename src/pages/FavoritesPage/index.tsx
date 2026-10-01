@@ -15,6 +15,7 @@ import { loadUsers } from '@/entities/user/model/usersThunks'
 import { FavoritesSection } from '@/widgets/favorites-section'
 import { UserPanel } from '@/widgets/user-panel/user-panel'
 import { selectLikedUserIds } from '@/entities/user/model/usersSelectors'
+import { useEffect } from 'react'
 
 export default function FavoritesPage() {
   const dispatch = useAppDispatch()
@@ -24,6 +25,10 @@ export default function FavoritesPage() {
   const favorites = useAppSelector(selectLikedUserIds);
 
   const totalCount = favorites.length
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   function renderContent() {
     if (isLoading && favorites.length === 0) {
