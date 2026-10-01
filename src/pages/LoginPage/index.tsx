@@ -59,6 +59,7 @@ export default function LoginPage() {
 
           <PasswordInput
             value={password}
+            label='Пароль'
             placeholder="Введите ваш пароль"
             onChange={(event) => {
               setPassword(event.target.value)

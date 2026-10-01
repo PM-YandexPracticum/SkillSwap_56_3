@@ -27,16 +27,12 @@ import { fetchUsers } from '@/api/users'
 import { fetchCredentialsByEmail } from '@/api/credentials'
 import type { FieldErrors } from './types'
 import { FAKE_DELAY } from '@/shared/lib/constants'
-
-interface LoginPayload {
-  email: string
-  password: string
-}
-
-interface UpdateProfilePayload {
-  name: string
-  email: string
-}
+import { GenderValue } from '@/shared/ui/gender-select'
+import { updateCredentials } from './authUtils'
+import type { LoginPayload, UpdateProfilePayload } from '@/shared/types'
+import { validateUpdateProfile, validateNewPassword } from '../lib/validation'
+import { updateRegisteredUser } from './authUtils'
+import { clearAllExchanges } from '@/features/exchange/model/exchangeSlice'
 
 export const login = createAsyncThunk<
   AuthUser,
@@ -71,7 +67,16 @@ export const login = createAsyncThunk<
         return rejectWithValue({ form: 'Пользователь с таким email не найден' })
       }
 
-      return saveAuthUser({ id: found.id, name: found.name, email: found.email })
+      return saveAuthUser({
+        id: found.id,
+        name: found.name,
+        email: found.email,
+        gender: found.gender as GenderValue,
+        birthDate: found.birthDate,
+        city: found.city,
+        aboutMe: found.aboutMe,
+        avatar: found.avatar,
+      })
     } catch {
       return rejectWithValue({ form: 'Не удалось выполнить вход' })
     }
@@ -87,6 +92,7 @@ export const logoutUser = createAsyncThunk<void, void>(
   'auth/logout',
   async () => {
     clearAuthUser()
+    clearAllExchanges()
   }
 )
 
@@ -198,7 +204,16 @@ export const register = createAsyncThunk<
       const user = draftToUser(draft, meta)
       saveRegisteredUser(user, draft.password)
 
-      return saveAuthUser({ id: user.id, name: user.name, email: user.email })
+      return saveAuthUser({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        gender: user.gender as GenderValue,
+        birthDate: user.birthDate,
+        city: user.city,
+        aboutMe: user.aboutMe,
+        avatar: user.avatar,
+      })
     } catch {
       return rejectWithValue({ form: 'Не удалось зарегистрироваться' })
     }
@@ -208,21 +223,81 @@ export const register = createAsyncThunk<
 export const updateUserProfile = createAsyncThunk<
   AuthUser,
   UpdateProfilePayload,
-  { state: RootState; rejectValue: string }
+  { state: RootState; rejectValue: FieldErrors }
 >(
   'auth/updateUserProfile',
-  async ({ name, email }, { getState, rejectWithValue }) => {
+  async (payload, { getState, rejectWithValue }) => {
     const current = getState().auth.user
 
     if (!current) {
-      return rejectWithValue('Пользователь не авторизован')
+      return rejectWithValue({ form: 'Пользователь не авторизован' })
     }
 
-    const emailError = validateEmail(email)
-    if (emailError) {
-      return rejectWithValue(emailError)
+    const errors = validateUpdateProfile(payload)
+
+    if (payload.newPassword) {
+      if (!payload.oldPassword) {
+        errors.oldPassword = 'Введите текущий пароль'
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
+
+        const credentials =
+          getRegisteredCredentials().find((c) => c.email === current.email) ??
+          (await fetchCredentialsByEmail(current.email))
+
+        if (!credentials || credentials.password !== payload.oldPassword) {
+          errors.oldPassword = 'Неверный пароль'
+        }
+
+        const newPasswordError = validateNewPassword(payload.newPassword)
+        if (newPasswordError) errors.newPassword = newPasswordError
+      }
     }
 
-    return saveAuthUser({ id: current.id, name, email })
+    if (hasErrors(errors)) {
+      return rejectWithValue(errors)
+    }
+    try {
+      await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
+
+      const emailChanged = payload.email !== current.email
+      const passwordChanged = Boolean(payload.newPassword)
+
+      // ─── AUTH_USER ───────────────────────
+      const updatedAuthUser = saveAuthUser({
+        ...current,
+        name: payload.name,
+        email: payload.email,
+        birthDate: payload.birthDate,
+        gender: payload.gender,
+        city: payload.city,
+        aboutMe: payload.aboutMe,
+        avatar: payload.avatar,
+      })
+
+      // ─── REGISTERED_USERS ────────────────
+      updateRegisteredUser(current.id, {
+        name: payload.name,
+        email: payload.email,
+        birthDate: payload.birthDate,
+        gender: payload.gender as GenderValue,
+        city: payload.city,
+        aboutMe: payload.aboutMe,
+        avatar: payload.avatar,
+      })
+
+      // ─── CREDENTIALS ─────────────────────
+      if (emailChanged || passwordChanged) {
+        updateCredentials(
+          current.email,
+          payload.email,
+          passwordChanged ? payload.newPassword : undefined
+        )
+      }
+
+      return updatedAuthUser
+    } catch {
+      return rejectWithValue({ form: 'Не удалось сохранить профиль' })
+    }
   }
 )

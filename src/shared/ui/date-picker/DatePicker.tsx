@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import DatePickerLib from 'react-datepicker'
 import { ru } from 'date-fns/locale'
 import { Icon } from '@/shared/ui/icon/Icon'
@@ -79,6 +79,13 @@ export function DatePicker({
     setIsInvalid(false)
   }, [value])
 
+  const handleCancel = useCallback(() => {
+    setTempDate(value)
+    setInputValue(value ? value.toLocaleDateString('ru-RU') : '')
+    setIsInvalid(false)
+    setIsOpen(false)
+  }, [value])
+
   // Клик вне — отмена
   useEffect(() => {
     if (!isOpen) return
@@ -90,18 +97,11 @@ export function DatePicker({
 
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [isOpen, value])
+  }, [isOpen, value, handleCancel])
 
   const handleOpen = () => {
     setTempDate(value)
     setIsOpen(true)
-  }
-
-  const handleCancel = () => {
-    setTempDate(value)
-    setInputValue(value ? value.toLocaleDateString('ru-RU') : '')
-    setIsInvalid(false)
-    setIsOpen(false)
   }
 
   const handleConfirm = () => {

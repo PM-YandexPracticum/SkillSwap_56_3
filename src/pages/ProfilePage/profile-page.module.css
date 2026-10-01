@@ -1,0 +1,65 @@
+.page {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  padding: 60px;
+  gap: 24px;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  gap: 196px;
+  align-items: start;
+}
+
+.avatarCol {
+  display: flex;
+  justify-content: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  inline-size: 460px;
+}
+
+.fieldsContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.changePassword, .cancelPassword {
+  color: #508826;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  align-self: flex-start;
+}
+
+.passwordBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.submit {
+  padding: 12px 0;
+  background-color: #abd27a;
+  border-radius: 12px;
+  inline-size: 100%;
+}
+
+.error {
+  color: #bf3920;
+  font-size: 13px;
+}

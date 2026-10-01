@@ -4,7 +4,15 @@ import { UserCard } from '@/shared/types'
 
 export const selectUsersState = (state: RootState) => state.users
 export const selectMeta = (state: RootState) => state.users.meta
-export const selectUsers = (state: RootState) => state.users.users
+export const selectAllUsers = (state: RootState) => state.users.users
+export const selectUsers = createSelector(
+  [selectAllUsers, (state: RootState) => state.auth.user],
+  (users, currentUser) => {
+    if (!currentUser) return users
+    return users.filter((u) => u.id !== currentUser.id)
+  }
+)
+
 export const selectUsersLoading = (state: RootState) => state.users.isLoading
 export const selectUsersError = (state: RootState) => state.users.error
 export const selectLikedUserIds = (state: RootState) => state.users.likedUserIds

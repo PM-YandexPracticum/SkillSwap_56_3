@@ -14,6 +14,7 @@ export const SkillCard: FC<SkillCardProps> = ({
   onOfferExchange,
   onShare,
   onMoreClick,
+  hasExchange,
   extraClass = '',
 }) => {
   const dispatch = useAppDispatch()
@@ -50,7 +51,7 @@ export const SkillCard: FC<SkillCardProps> = ({
           />
 
           <div className={styles.buttonWrapper}>
-            <OfferExchangeButton onClick={onOfferExchange} />
+            <OfferExchangeButton onClick={onOfferExchange} hasExchange={hasExchange} />
           </div>
         </div>
 

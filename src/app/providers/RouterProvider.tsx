@@ -4,6 +4,7 @@ import { ROUTES } from '@/shared/lib/constants'
 import { useAppDispatch } from '@/store/hooks'
 import { loadUsers } from '@/entities/user/model/usersThunks'
 import { ProtectedRoute } from './ProtectedRoute'
+import { getUser } from '@/features/auth/model/authThunks'
 
 // Lazy-загрузка страниц — каждая страница грузится только при переходе на неё
 const CatalogPage = lazy(() => import('@/pages/CatalogPage'))
@@ -20,6 +21,7 @@ export function AppRouter() {
 
   useEffect(() => {
     dispatch(loadUsers())
+    dispatch(getUser())
   }, [dispatch])
 
   return (
@@ -33,7 +35,6 @@ export function AppRouter() {
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
             <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
           </Route>
-
           <Route element={<ProtectedRoute />}>
             <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
             <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />

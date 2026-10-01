@@ -54,3 +54,53 @@ export function getRegisteredCredentials(): Credentials[] {
     return []
   }
 }
+
+/** Обновляет зарегистрированного юзера */
+export function updateRegisteredUser(
+  userId: string,
+  patch: Partial<UserCard>
+): UserCard | null {
+  const users = getRegisteredUsers()
+  const index = users.findIndex((user) => user.id === userId)
+  if (index === -1) return null
+
+  const updated: UserCard = { ...users[index], ...patch }
+  users[index] = updated
+  localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify(users))
+  return updated
+}
+
+/** Обновляет логин-пароль зарегистрированного юзера */
+export function updateCredentials(
+  oldEmail: string,
+  newEmail: string,
+  newPassword?: string
+): void {
+  const credentials = getRegisteredCredentials()
+  const index = credentials.findIndex((c) => c.email === oldEmail)
+
+  if (index === -1) {
+    const newEntry: Credentials = {
+      email: newEmail,
+      password: newPassword ?? '',
+    }
+    localStorage.setItem(
+      LOCAL_STORAGE_KEYS.REGISTERED_CREDENTIALS,
+      JSON.stringify([...credentials, newEntry])
+    )
+    return
+  }
+
+  const next = credentials.map((c) =>
+    c.email === oldEmail
+      ? {
+          email: newEmail,
+          password: newPassword ?? c.password,
+        }
+      : c
+  )
+  localStorage.setItem(
+    LOCAL_STORAGE_KEYS.REGISTERED_CREDENTIALS,
+    JSON.stringify(next)
+  )
+}

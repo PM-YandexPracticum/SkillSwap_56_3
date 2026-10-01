@@ -1,0 +1,156 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  block-size: 24px;
+}
+
+.bell {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #253017;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  background-color: #bf3920;
+}
+
+.panel {
+  top: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 556px;
+  max-width: calc(100vw - 32px);
+  padding: 60px;
+  border: 1px solid #69735d;
+  border-radius: 12px;
+  font-family: Roboto, sans-serif;
+  color: #253017;
+}
+
+.empty {
+  margin: 0;
+  color: #69735d;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.22px;
+}
+
+.action {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #508826;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.action:hover {
+  color: #253017;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.itemIcon {
+  display: inline-flex;
+  color: #253017;
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemTitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+}
+
+.itemText {
+  margin: 0;
+  color: #69735d;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+}
+
+.itemDate {
+  color: #69735d;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  white-space: nowrap;
+}
+
+.goButton {
+  align-self: flex-start;
+  margin-top: 8px;
+  min-height: 40px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #abd27a;
+  color: #253017;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  cursor: pointer;
+}
+
+.goButton:hover {
+  background-color: #deebc5;
+}
+
+.listViewed .itemTitle,
+.listViewed .itemIcon {
+  color: #69735d;
+}
