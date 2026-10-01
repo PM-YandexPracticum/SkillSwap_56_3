@@ -3,6 +3,7 @@
   gap: var(--space-xl);
   padding: 40px 36px 60px;
   color: #253017;
+  font-family: var(--font-jost);
 }
 
 .message {
@@ -14,6 +15,7 @@
   padding: var(--space-xl);
   text-align: center;
   min-block-size: 320px;
+  flex-grow: 2;
 }
 
 .message h2 {

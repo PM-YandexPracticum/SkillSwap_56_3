@@ -37,8 +37,8 @@ export function AppRouter() {
           <Route element={<ProtectedRoute />}>
             <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
             <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
-            <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
           </Route>
+          <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

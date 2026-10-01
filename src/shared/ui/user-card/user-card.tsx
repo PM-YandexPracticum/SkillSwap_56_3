@@ -8,7 +8,6 @@ import { FavoriteButton } from '@/shared/ui/favorite-button'
 import { getCategoryTone } from '@/entities/skill/lib/category-tone'
 import {
   selectMeta,
-  selectLikedUserIds,
 } from '@/entities/user/model/usersSelectors'
 import { selectHasExchange } from '@/features/exchange/model/exchangeSelectors'
 import { toggleLike } from '@/entities/user/model/usersSlice'
@@ -16,14 +15,14 @@ import styles from './user-card.module.css'
 import { useNavigate } from 'react-router-dom'
 import { getAgeFromBirth } from '@/shared/lib/helpers'
 import { resetFilters } from '@/entities/filter/model/filterSlice'
+import { hasFavoriteId } from '@/entities/user/model/toggleLikeUtils'
 
 export const UserCard = ({ user, isCatalog = true, extraclass = '' }: UserCardProps) => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
   const meta = useAppSelector(selectMeta)
-  const likedUserIds = useAppSelector(selectLikedUserIds)
-  const isFavorite = likedUserIds.includes(user.id)
+  const isFavorite = hasFavoriteId(user.id)
 
   // если обмен с этим пользователем уже предложен — кнопка «Обмен предложен»
   const hasExchange = useAppSelector((state) => selectHasExchange(state, user.id))

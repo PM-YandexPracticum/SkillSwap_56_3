@@ -3,8 +3,6 @@ import { MainHeader } from '@/widgets/header/ui/header'
 import style from './favorites-page.module.css'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import {
-  selectLikedUserIds,
-  selectUsersByIds,
   selectUsersError,
   selectUsersLoading,
 } from '@/entities/user/model/usersSelectors'
@@ -16,13 +14,14 @@ import { Loader } from '@/shared/ui/loader'
 import { loadUsers } from '@/entities/user/model/usersThunks'
 import { FavoritesSection } from '@/widgets/favorites-section'
 import { UserPanel } from '@/widgets/user-panel/user-panel'
+import { selectLikedUserIds } from '@/entities/user/model/usersSelectors'
 
 export default function FavoritesPage() {
   const dispatch = useAppDispatch()
 
   const isLoading = useAppSelector(selectUsersLoading)
   const error = useAppSelector(selectUsersError)
-  const favorites = useAppSelector((state) => selectUsersByIds(state, selectLikedUserIds(state)))
+  const favorites = useAppSelector(selectLikedUserIds);
 
   const totalCount = favorites.length
 
@@ -63,7 +62,7 @@ export default function FavoritesPage() {
       )
     }
 
-    return <FavoritesSection ids={favorites.map((user) => user.id)} />
+    return <FavoritesSection ids={favorites} />
   }
 
   return (
