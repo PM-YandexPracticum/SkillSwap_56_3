@@ -130,18 +130,6 @@ export interface UserCard {
   avatar: string
 }
 
-export interface Skill {
-  id: string
-  type: SkillType
-  title: string
-  category: string
-  subcategory: string
-  description: string
-  tags: string[]
-  images: string[]
-  authorId: string
-}
-
 // ─── Registration ────────────────────────────────────────
 export interface Credentials {
   email: string
