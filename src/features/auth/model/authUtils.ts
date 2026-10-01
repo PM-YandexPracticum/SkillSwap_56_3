@@ -33,16 +33,20 @@ export function getRegisteredUsers(): UserCard[] {
   }
 }
 
+export function saveCredentials(credentials:Credentials[], email: string, password: string): void {
+  localStorage.setItem(
+    LOCAL_STORAGE_KEYS.REGISTERED_CREDENTIALS,
+    JSON.stringify([...credentials, { email: email, password }]),
+  )
+}
+
 /** Добавляет нового пользователя и его пароль в localStorage */
 export function saveRegisteredUser(user: UserCard, password: string): void {
   const users = getRegisteredUsers()
   localStorage.setItem(LOCAL_STORAGE_KEYS.REGISTERED_USERS, JSON.stringify([...users, user]))
 
   const credentials = getRegisteredCredentials()
-  localStorage.setItem(
-    LOCAL_STORAGE_KEYS.REGISTERED_CREDENTIALS,
-    JSON.stringify([...credentials, { email: user.email, password }]),
-  )
+  saveCredentials(credentials, user.email, password)
 }
 
 /** Читает пароли зарегистрированных пользователей */
