@@ -15,12 +15,17 @@ import { login, register, getUser, logoutUser } from './authThunks'
 import type { AuthState } from './types'
 import type { AuthUser } from '@/shared/types'
 
-const user: AuthUser = {
+const user = {
   id: 'u001',
   name: 'Анна',
   email: 'anna@example.com',
   token: 'mock_token_u001',
-}
+  gender: 'female',
+  birthDate: '1995-05-05',
+  city: 'moscow',
+  aboutMe: '',
+  avatar: '',
+} as AuthUser
 
 const getInitialState = (): AuthState => authReducer(undefined, { type: 'unknown' })
 
