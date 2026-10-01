@@ -28,6 +28,8 @@ export type IconName =
   | 'exchanges'
   | 'skills'
   | 'profile'
+  | 'clock'
+  | 'bell'
   | 'done'
   | 'logout'
   | 'notification'

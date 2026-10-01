@@ -86,3 +86,53 @@
   align-items: flex-start;
   inline-size: 440px;
 }
+
+.successContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.successTitle {
+  margin: 0;
+  font-family: Jost, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #253017;
+}
+
+.successText {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 24px;
+  color: #253017;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.successButton {
+  inline-size: 100%;
+  margin-block-start: 8px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 16px;
+  background-color: #abd27a;
+  color: #253017;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.successButton:hover {
+  background-color: #9ec96c;
+}
+
+.successButton:active {
+  transform: scale(0.99);
+}

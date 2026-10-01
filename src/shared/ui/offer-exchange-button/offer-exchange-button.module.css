@@ -10,6 +10,10 @@
   font-weight: 500;
   line-height: 1;
   transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .offerButton:hover:not(:disabled) {
@@ -28,4 +32,13 @@
 .offerButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.disabled,
+.offerButton:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background-color: #fff;
+  color: #253017;
+  border: 1px solid #abd27a;
 }
