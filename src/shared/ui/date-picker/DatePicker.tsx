@@ -60,7 +60,7 @@ export function DatePicker({
   onChange,
   label,
   placeholder = 'дд.мм.гггг',
-  extraClass = '',
+  extraclass = '',
   error = ''
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -141,7 +141,7 @@ export function DatePicker({
   const inputClassName = [
     styles.input,
     hasError ? styles.inputInvalid : '',
-    extraClass,
+    extraclass,
   ]
     .filter(Boolean)
     .join(' ')
@@ -216,10 +216,10 @@ export function DatePicker({
             />
 
             <div className={styles.footer}>
-              <Button extraClass={styles.cancelButton} onClick={handleCancel}>
+              <Button extraclass={styles.cancelButton} onClick={handleCancel}>
                 Отмена
               </Button>
-              <Button extraClass={styles.confirmButton} onClick={handleConfirm}>
+              <Button extraclass={styles.confirmButton} onClick={handleConfirm}>
                 Выбрать
               </Button>
             </div>

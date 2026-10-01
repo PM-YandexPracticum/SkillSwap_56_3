@@ -8,5 +8,5 @@ export type SkillFilterProps = {
   defaultSelected?: string[]
   onChange?: (selected: string[]) => void
   title?: string
-  extraClass?: string
+  extraclass?: string
 }

@@ -4,5 +4,5 @@ export type InfoBlockProps = {
   image: ReactNode;
   title: string;
   description: string;
-  extraClass?: string;
+  extraclass?: string;
 };

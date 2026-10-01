@@ -23,7 +23,7 @@ export function MainNavigation({
         panel={panel}
         className={styles.panel}
         trigger={
-          <Button extraClass={styles.button}>
+          <Button extraclass={styles.button}>
             <span>Все навыки</span>
             <img
               src={arrowIcon}

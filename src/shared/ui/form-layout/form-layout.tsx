@@ -13,7 +13,7 @@ export const FormLayout = ({
   rightContent,
   headerCenter,
   children,
-  extraClass = '',
+  extraclass = '',
   closeTo = '/',
 }: FormLayoutProps) => {
   const navigate = useNavigate();
@@ -29,13 +29,13 @@ export const FormLayout = ({
   const resolvedRight = rightContent ?? childrenArray[1] ?? null;
 
   return (
-    <div className={`${styles.layout} ${extraClass}`.trim()}>
+    <div className={`${styles.layout} ${extraclass}`.trim()}>
       <header className={styles.header}>
         <Logo />
 
         <Button
           onClick={handleClose}
-          extraClass={styles.closeButton}
+          extraclass={styles.closeButton}
           aria-label="Закрыть"
         >
           <span>Закрыть</span>

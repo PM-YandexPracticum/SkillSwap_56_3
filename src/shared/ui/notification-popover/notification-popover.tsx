@@ -54,7 +54,7 @@ export const NotificationPopover = ({ panel, className }: NotificationPopoverPro
           <p className={styles.itemText}>Перейдите в профиль, чтобы обсудить детали</p>
 
           {withButton && (
-            <Button extraClass={styles.goButton} onClick={() => handleGo(notification.userId)}>
+            <Button extraclass={styles.goButton} onClick={() => handleGo(notification.userId)}>
               Перейти
             </Button>
           )}
@@ -72,7 +72,7 @@ export const NotificationPopover = ({ panel, className }: NotificationPopoverPro
         className={`${styles.panel} ${className ?? ''}`.trim()}
         trigger={
           <Button
-            extraClass={styles.bell}
+            extraclass={styles.bell}
             aria-label={newCount > 0 ? `Уведомления, новых: ${newCount}` : 'Уведомления'}
           >
             <Icon name="notification" size={24} />
@@ -88,7 +88,7 @@ export const NotificationPopover = ({ panel, className }: NotificationPopoverPro
           <section className={styles.section}>
             <div className={styles.sectionHead}>
               <h3 className={styles.sectionTitle}>Новые уведомления</h3>
-              <Button extraClass={styles.action} onClick={() => dispatch(markAllAsViewed())}>
+              <Button extraclass={styles.action} onClick={() => dispatch(markAllAsViewed())}>
                 Прочитать все
               </Button>
             </div>
@@ -103,7 +103,7 @@ export const NotificationPopover = ({ panel, className }: NotificationPopoverPro
           <section className={styles.section}>
             <div className={styles.sectionHead}>
               <h3 className={styles.sectionTitle}>Просмотренные</h3>
-              <Button extraClass={styles.action} onClick={() => dispatch(clearViewed())}>
+              <Button extraclass={styles.action} onClick={() => dispatch(clearViewed())}>
                 Очистить
               </Button>
             </div>

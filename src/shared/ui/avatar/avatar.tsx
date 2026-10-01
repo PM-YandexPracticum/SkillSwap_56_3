@@ -8,7 +8,7 @@ export const Avatar = ({
   alt = 'Аватар пользователя',
   size = 160,
   onChange,
-  extraClass = '',
+  extraclass = '',
 }: AvatarProps) => {
   const [hasError, setHasError] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -33,7 +33,7 @@ export const Avatar = ({
 
   return (
     <div
-      className={`${styles.wrapper} ${extraClass}`.trim()}
+      className={`${styles.wrapper} ${extraclass}`.trim()}
       style={{ width: `${size}px`, height: `${size}px` }}
     >
       <input

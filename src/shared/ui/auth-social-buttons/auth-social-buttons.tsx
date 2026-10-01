@@ -6,16 +6,16 @@ import type { AuthSocialButtonsProps } from './type'
 export const AuthSocialButtons = ({
   onGoogleClick,
   onAppleClick,
-  extraClass = '',
+  extraclass = '',
 }: AuthSocialButtonsProps) => {
   return (
-    <div className={`${styles.list} ${extraClass}`.trim()}>
-      <Button type="button" extraClass={styles.button} onClick={onGoogleClick}>
+    <div className={`${styles.list} ${extraclass}`.trim()}>
+      <Button type="button" extraclass={styles.button} onClick={onGoogleClick}>
         <Icon name="google" size={24} />
         Продолжить с Google
       </Button>
 
-      <Button type="button" extraClass={styles.button} onClick={onAppleClick}>
+      <Button type="button" extraclass={styles.button} onClick={onAppleClick}>
         <Icon name="apple" size={24} />
         Продолжить с Apple
       </Button>

@@ -6,5 +6,5 @@ export type WantFilterProps = {
   defaultValue?: WantFilter
   onChange?: (value: WantFilter) => void
   name?: string
-  extraClass?: string
+  extraclass?: string
 }

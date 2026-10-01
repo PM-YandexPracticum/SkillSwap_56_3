@@ -7,7 +7,7 @@ export const Button = ({
   return (
     <button
       {...props}
-      className={`${styles.button} ${props.extraClass}`}
+      className={`${styles.button} ${props.extraclass}`}
     >
       {props.children}
     </button>

@@ -7,13 +7,13 @@ export const ImageCarousel = ({
   images,
   alt = 'Фотография',
   maxThumbnails = 3,
-  extraClass = '',
+  extraclass = '',
 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!images || images.length === 0) {
     return (
-      <div className={`${styles.placeholder} ${extraClass}`.trim()}>
+      <div className={`${styles.placeholder} ${extraclass}`.trim()}>
         <Icon name="image-placeholder" size={48} />
         <span className={styles.placeholderText}>Нет изображений</span>
       </div>
@@ -32,7 +32,7 @@ export const ImageCarousel = ({
   const remainingCount = images.length - maxThumbnails;
 
   return (
-    <div className={`${styles.container} ${extraClass}`.trim()}>
+    <div className={`${styles.container} ${extraclass}`.trim()}>
       <div className={styles.mainWrapper}>
         <img
           src={images[currentIndex]}

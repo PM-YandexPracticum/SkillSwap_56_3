@@ -72,7 +72,7 @@ export default function LoginPage() {
           {hasFormError && <p className={styles.formError}>{loginErrors.form}</p>}
 
           <div className={styles.actions}>
-            <Button type="submit" extraClass={styles.submit} disabled={isLoading}>
+            <Button type="submit" extraclass={styles.submit} disabled={isLoading}>
               {isLoading ? 'Входим...' : 'Войти'}
             </Button>
 

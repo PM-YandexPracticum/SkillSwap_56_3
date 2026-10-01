@@ -7,5 +7,5 @@ export type CheckOptionProps = {
   value?: string
   indeterminate?: boolean
   disabled?: boolean
-  extraClass?: string
+  extraclass?: string
 }

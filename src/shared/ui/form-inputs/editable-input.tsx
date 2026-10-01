@@ -19,7 +19,7 @@ export function EditableInput({ icon, ...props }: EditableInputProps) {
           icon ? (
             <Button
               type="button"
-              extraClass={styles.editButton}
+              extraclass={styles.editButton}
               onClick={focusInput}
               aria-label="Редактировать"
             >

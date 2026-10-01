@@ -69,7 +69,7 @@ export const AuthorizedActions = () => {
         <Button
           type="button"
           onClick={handleProfile}
-          extraClass={styles.menuItem}
+          extraclass={styles.menuItem}
         >
           Личный кабинет
         </Button>
@@ -77,7 +77,7 @@ export const AuthorizedActions = () => {
         <Button
           type="button"
           onClick={handleLogout}
-          extraClass={styles.menuItem}
+          extraclass={styles.menuItem}
         >
           Выйти из аккаунта
           <Icon name='logout'/>

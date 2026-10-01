@@ -1,3 +1,3 @@
 export interface RecommendedSectionProps {
-  extraClass?: string;
+  extraclass?: string;
 }

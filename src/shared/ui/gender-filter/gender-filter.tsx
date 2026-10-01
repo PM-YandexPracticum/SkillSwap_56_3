@@ -11,7 +11,7 @@ export const GenderFilter = ({
   onChange,
   name,
   title = 'Пол автора',
-  extraClass = '',
+  extraclass = '',
 }: GenderFilterProps) => {
   const generatedName = useId()
   const [ownValue, setOwnValue] = useState<Gender>(defaultValue)
@@ -26,7 +26,7 @@ export const GenderFilter = ({
   }
 
   return (
-    <fieldset className={`${styles.group} ${extraClass}`.trim()}>
+    <fieldset className={`${styles.group} ${extraclass}`.trim()}>
       <legend className={styles.title}>{title}</legend>
 
       <div className={styles.list}>

@@ -3,5 +3,5 @@ export interface AvatarProps {
   alt?: string
   size?: number
   onChange?: (url: string) => void
-  extraClass?: string
+  extraclass?: string
 }

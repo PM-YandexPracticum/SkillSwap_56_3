@@ -4,7 +4,7 @@ import styles from './loader.module.css';
 
 export const Loader = ({
   size = 'medium',
-  extraClass = '',
+  extraclass = '',
 }: LoaderProps) => {
   const isPresetSize = typeof size === 'string';
 
@@ -17,7 +17,7 @@ export const Loader = ({
       }
     : undefined;
 
-  const className = [styles.loader, sizeClass, extraClass]
+  const className = [styles.loader, sizeClass, extraclass]
     .filter(Boolean)
     .join(' ');
 

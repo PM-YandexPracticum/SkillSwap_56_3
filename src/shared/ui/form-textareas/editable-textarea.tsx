@@ -19,7 +19,7 @@ export function EditableTextarea({ icon, ...props }: EditableTextareaProps) {
           icon ? (
             <Button
               type="button"
-              extraClass={styles.editButton}
+              extraclass={styles.editButton}
               onClick={focusTextarea}
               aria-label="Редактировать"
             >

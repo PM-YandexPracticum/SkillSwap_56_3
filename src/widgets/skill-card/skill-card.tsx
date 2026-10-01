@@ -15,7 +15,7 @@ export const SkillCard: FC<SkillCardProps> = ({
   onShare,
   onMoreClick,
   hasExchange,
-  extraClass = '',
+  extraclass = '',
 }) => {
   const dispatch = useAppDispatch()
   const likedUserIds = useAppSelector(selectLikedUserIds)
@@ -30,7 +30,7 @@ export const SkillCard: FC<SkillCardProps> = ({
   }
 
   return (
-    <article className={`${styles.card} ${extraClass}`.trim()}>
+    <article className={`${styles.card} ${extraclass}`.trim()}>
       <div className={styles.topActions}>
         <IconsBlock
           isFavorite={isFavorite}

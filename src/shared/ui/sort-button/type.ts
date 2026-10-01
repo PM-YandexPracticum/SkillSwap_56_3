@@ -1,3 +1,3 @@
 export interface SortToggleProps {
-  extraClass?: string
+  extraclass?: string
 }

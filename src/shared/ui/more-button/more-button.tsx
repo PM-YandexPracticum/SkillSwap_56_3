@@ -8,7 +8,7 @@ export const MoreButton = ({ onClick, hasExchange = false }: MoreButtonProps) =>
     <Button
       onClick={hasExchange ? undefined : onClick}
       disabled={hasExchange}
-      extraClass={styles.moreButton}
+      extraclass={styles.moreButton}
     >
       {hasExchange ? (
         <>

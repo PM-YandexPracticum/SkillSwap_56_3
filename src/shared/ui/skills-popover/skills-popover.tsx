@@ -10,7 +10,7 @@ export const SkillsPopover = ({ categories }: SkillsPopoverProps) => {
       trigger={({ isOpen, toggle }) => (
         <Button
           type="button"
-          extraClass={styles.button}
+          extraclass={styles.button}
           onClick={toggle}
         >
           <span className={styles.buttonText}>Все навыки</span>

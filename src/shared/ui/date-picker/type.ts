@@ -3,6 +3,6 @@ export type DatePickerProps = {
   label?: string 
   onChange: (date: Date | null) => void
   placeholder?: string
-  extraClass?: string
+  extraclass?: string
   error?: string
 }

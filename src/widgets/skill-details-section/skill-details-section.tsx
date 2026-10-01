@@ -54,13 +54,13 @@ export const SkillDetailsSection = ({
         <UserCard
           user={author}
           isCatalog={false}
-          extraClass={styles.user}
+          extraclass={styles.user}
         />
       </aside>
 
       <SkillCard
         skill={skill}
-        extraClass={styles.skillCard}
+        extraclass={styles.skillCard}
         onOfferExchange={handleOfferExchange}
         hasExchange={hasExchange}
       />
@@ -74,7 +74,7 @@ export const SkillDetailsSection = ({
             <h2 className={styles.successTitle}>Вы предложили обмен</h2>
             <p className={styles.successText}>Теперь дождитесь подтверждения. Вам придёт уведомление</p>
           </div>
-          <Button type="button" onClick={handleCloseModal} extraClass={styles.successButton}>
+          <Button type="button" onClick={handleCloseModal} extraclass={styles.successButton}>
             Готово
           </Button>
         </div>

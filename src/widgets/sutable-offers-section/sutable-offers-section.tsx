@@ -7,7 +7,7 @@ import styles from './sutable-offers-section.module.css'
 import { useProgressiveList } from '@/shared/hooks/useProgressiveList'
 import { useEffect } from 'react'
 
-export const SutableOffersSection = ({ extraClass = '' }: SutableOffersProps) => {
+export const SutableOffersSection = ({ extraclass = '' }: SutableOffersProps) => {
   const users = useAppSelector(selectFilteredUsers)
   const filters = useAppSelector(selectFilters)
 
@@ -18,7 +18,7 @@ export const SutableOffersSection = ({ extraClass = '' }: SutableOffersProps) =>
   }, [filters, reset])
 
   return (
-    <section className={`${styles.section} ${extraClass}`.trim()}>
+    <section className={`${styles.section} ${extraclass}`.trim()}>
       <div className={styles.header}>
         <h2 className={styles.title}>Подходящие предложения: {totalCount}</h2>
         <SortButton />

@@ -46,7 +46,7 @@ export const FilterPanel = () => {
 
         {isFiltering && (
           <Button
-            extraClass={styles.reset}
+            extraclass={styles.reset}
             onClick={() => dispatch(resetFilters())}
           >
             Сбросить

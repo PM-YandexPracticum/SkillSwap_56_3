@@ -3,5 +3,5 @@ export interface SkillInfoProps {
   category: string
   subcategory?: string
   description: string
-  extraClass?: string
+  extraclass?: string
 }

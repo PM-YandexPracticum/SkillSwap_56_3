@@ -133,7 +133,7 @@ export default function ProfilePage() {
                 <Button
                   type="button"
                   onClick={() => setIsChangingPassword(true)}
-                  extraClass={styles.changePassword}
+                  extraclass={styles.changePassword}
                 >
                   Изменить пароль
                 </Button>
@@ -162,7 +162,7 @@ export default function ProfilePage() {
                   <Button
                     type="button"
                     onClick={handleCancelPassword}
-                    extraClass={styles.cancelPassword}
+                    extraclass={styles.cancelPassword}
                   >
                     Отмена
                   </Button>
@@ -222,7 +222,7 @@ export default function ProfilePage() {
               <Button
                 type="submit"
                 disabled={!hasChanges || isLoading}
-                extraClass={styles.submit}
+                extraclass={styles.submit}
               >
                 {isLoading ? 'Сохранение...' : 'Сохранить'}
               </Button>

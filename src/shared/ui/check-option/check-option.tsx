@@ -11,7 +11,7 @@ export const CheckOption = ({
   value,
   indeterminate = false,
   disabled = false,
-  extraClass = '',
+  extraclass = '',
 }: CheckOptionProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -25,7 +25,7 @@ export const CheckOption = ({
   }
 
   return (
-    <label className={`${styles.check} ${extraClass}`.trim()}>
+    <label className={`${styles.check} ${extraclass}`.trim()}>
       <input
         ref={inputRef}
         className={styles.input}

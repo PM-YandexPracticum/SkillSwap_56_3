@@ -8,7 +8,7 @@ export const FilterChip = ({ label, onRemove }: FilterChipProps) => {
     <Button
       type="button"
       onClick={onRemove}
-      extraClass={style.chip}
+      extraclass={style.chip}
       aria-label={`Удалить фильтр: ${label}`}
     >
       <span>{label}</span>

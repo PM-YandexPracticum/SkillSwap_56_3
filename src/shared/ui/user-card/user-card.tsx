@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom'
 import { getAgeFromBirth } from '@/shared/lib/helpers'
 import { resetFilters } from '@/entities/filter/model/filterSlice'
 
-export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardProps) => {
+export const UserCard = ({ user, isCatalog = true, extraclass = '' }: UserCardProps) => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
@@ -58,7 +58,7 @@ export const UserCard = ({ user, isCatalog = true, extraClass = '' }: UserCardPr
   }
 
   return (
-    <article className={`${styles.userCard} ${extraClass}`.trim()}>
+    <article className={`${styles.userCard} ${extraclass}`.trim()}>
       {isCatalog && (
         <div className={styles.favoriteWrapper}>
           <FavoriteButton
