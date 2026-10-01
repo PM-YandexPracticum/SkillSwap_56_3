@@ -24,14 +24,15 @@ export const AvatarUpload = ({
     const file = e.target.files?.[0]
     if (!file) return
 
-    const objectUrl = URL.createObjectURL(file)
+    const reader = new FileReader()
 
-    if (previewUrl?.startsWith('blob:')) {
-      URL.revokeObjectURL(previewUrl)
+    reader.onload = () => {
+      const dataUrl = reader.result as string
+      setPreviewUrl(dataUrl)
+      onChange?.(dataUrl)
     }
 
-    setPreviewUrl(objectUrl)
-    onChange?.(objectUrl)
+    reader.readAsDataURL(file)
     e.target.value = ''
   }
 

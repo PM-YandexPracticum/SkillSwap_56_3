@@ -78,8 +78,7 @@ export default function ProfilePage() {
 
   if (!user) return null
 
-  const handleAvatarChange = (file: File) => {
-    const url = URL.createObjectURL(file)
+  const handleAvatarChange = (url: string) => {
     setAvatar(url)
   }
 

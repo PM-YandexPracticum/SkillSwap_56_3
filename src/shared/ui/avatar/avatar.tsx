@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, type ChangeEvent } from 'react'
 import { Icon } from '@/shared/ui/icon/Icon'
 import type { AvatarProps } from './type'
 import styles from './avatar.module.css'
@@ -16,9 +16,18 @@ export const Avatar = ({
   const showFallback = !src || hasError
   const buttonSize = Math.round(size * 0.25)
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
-    if (file) onChange?.(file)
+    if (!file) return
+
+    const reader = new FileReader()
+
+    reader.onload = () => {
+      const dataUrl = reader.result as string
+      onChange?.(dataUrl)
+    }
+
+    reader.readAsDataURL(file)
     e.target.value = ''
   }
 
