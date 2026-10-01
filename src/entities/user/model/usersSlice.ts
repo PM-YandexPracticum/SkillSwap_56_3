@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { loadUsers, loadUserById } from './usersThunks'
 import type { UsersState } from './types'
+import { addFavoriteId, removeFavoriteId, getFavoritesIds, hasFavoriteId } from './toggleLikeUtils'
 
 const initialState: UsersState = {
   meta: null,
   users: [],
-  likedUserIds: [],
+  likedUserIds: getFavoritesIds(),
   currentUser: null,
   isLoading: false,
   isLoadingCurrent: false,
@@ -26,9 +27,11 @@ const usersSlice = createSlice({
 
       if (alreadyLiked) {
         state.likedUserIds = state.likedUserIds.filter((id) => id !== userId)
+        removeFavoriteId(userId)
         user.likesCount -= 1
       } else {
         state.likedUserIds.push(userId)
+        addFavoriteId(userId)
         user.likesCount += 1
       }
     },
@@ -50,7 +53,11 @@ const usersSlice = createSlice({
       .addCase(loadUsers.fulfilled, (state, action) => {
         state.isLoading = false
         state.meta = action.payload.meta
-        state.users = action.payload.data
+        state.users = action.payload.data.map((user) =>
+          hasFavoriteId(user.id)
+            ? { ...user, likesCount: user.likesCount + 1 }
+            : user
+        )
         state.error = null
       })
       .addCase(loadUsers.rejected, (state, action) => {
