@@ -15,6 +15,7 @@ import {
   getRegisteredUsers,
   getRegisteredCredentials,
   saveRegisteredUser,
+  saveCredentials,
 } from './authUtils'
 import {
   validateEmail,
@@ -66,6 +67,11 @@ export const login = createAsyncThunk<
       if (!found) {
         return rejectWithValue({ form: 'Пользователь с таким email не найден' })
       }
+
+      if (!getRegisteredCredentials().find((item) => item.email === email)) {
+        saveCredentials(getRegisteredCredentials(), email, password)
+      }
+
 
       return saveAuthUser({
         id: found.id,
@@ -282,6 +288,8 @@ export const updateUserProfile = createAsyncThunk<
 
       const emailChanged = payload.email !== current.email
       const passwordChanged = Boolean(payload.newPassword)
+
+      
 
       // ─── AUTH_USER ───────────────────────
       const updatedAuthUser = saveAuthUser({

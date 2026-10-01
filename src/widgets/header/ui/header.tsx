@@ -17,6 +17,7 @@ import { useNavigate } from 'react-router-dom'
 import { FAKE_DELAY } from '@/shared/lib/constants'
 import { NotificationPopover } from '@/shared/ui/notification-popover'
 import { FavouritesLink } from '@/shared/ui/favourites-link'
+import { ThemeSwitcher } from '@/shared/ui/theme-toggle'
 
 export const MainHeader = () => {
   const dispatch = useAppDispatch()
@@ -26,6 +27,8 @@ export const MainHeader = () => {
   const searchValue = useAppSelector(selectSearchQuery)
   const categories = useAppSelector(selectMeta)?.categories ?? []
   const isAuth = useAppSelector(selectIsAuthenticated)
+
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     if (!searchValue.trim()) return
@@ -62,6 +65,7 @@ export const MainHeader = () => {
         variant="header"
       />
       <SearchInput onChange={handleSearchChange} value={searchValue} />
+      <ThemeSwitcher theme={theme} onChange={setTheme} />
 
       {isAuth 
       ? 

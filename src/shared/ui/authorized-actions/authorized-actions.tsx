@@ -9,6 +9,7 @@ import { logoutUser } from '@/features/auth/model/authThunks'
 import { ROUTES } from '@/shared/lib/constants'
 import styles from './authorized-actions.module.css'
 import { clearAllExchanges } from '@/features/exchange/model/exchangeSlice'
+import { resetFilters } from '@/entities/filter/model/filterSlice'
 
 export const AuthorizedActions = () => {
   const dispatch = useAppDispatch()
@@ -23,6 +24,7 @@ export const AuthorizedActions = () => {
 
   const handleProfile = () => {
     setIsOpen(false)
+    dispatch(resetFilters())
     navigate(ROUTES.PROFILE)
   }
 
