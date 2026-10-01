@@ -30,7 +30,6 @@ export function AppRouter() {
         <Routes>
           <Route path={ROUTES.HOME} element={<CatalogPage />} />
           <Route path={ROUTES.SKILL} element={<SkillPage />} />
-          <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
           <Route element={<ProtectedRoute onlyUnAuth/>}>
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
             <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
@@ -38,6 +37,7 @@ export function AppRouter() {
           <Route element={<ProtectedRoute />}>
             <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
             <Route path={ROUTES.CREATE} element={<CreateSkillPage />} />
+            <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
