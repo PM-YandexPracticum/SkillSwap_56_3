@@ -77,6 +77,20 @@ export function updateCredentials(
   newPassword?: string
 ): void {
   const credentials = getRegisteredCredentials()
+  const index = credentials.findIndex((c) => c.email === oldEmail)
+
+  if (index === -1) {
+    const newEntry: Credentials = {
+      email: newEmail,
+      password: newPassword ?? '',
+    }
+    localStorage.setItem(
+      LOCAL_STORAGE_KEYS.REGISTERED_CREDENTIALS,
+      JSON.stringify([...credentials, newEntry])
+    )
+    return
+  }
+
   const next = credentials.map((c) =>
     c.email === oldEmail
       ? {
