@@ -235,6 +235,25 @@ export const updateUserProfile = createAsyncThunk<
 
     const errors = validateUpdateProfile(payload)
 
+    const emailChanged = payload.email !== current.email
+
+    if (emailChanged) {
+      await new Promise((r) => setTimeout(r, FAKE_DELAY))
+
+      const existing = await fetchCredentialsByEmail(payload.email)
+      const registered = getRegisteredCredentials()
+
+      const isInUse =
+        existing ||
+        registered.some(
+          (c) => c.email === payload.email && c.email !== current.email
+        )
+
+      if (isInUse) {
+        errors.email = 'Email уже используется'
+      }
+    }
+
     if (payload.newPassword) {
       if (!payload.oldPassword) {
         errors.oldPassword = 'Введите текущий пароль'
@@ -257,6 +276,7 @@ export const updateUserProfile = createAsyncThunk<
     if (hasErrors(errors)) {
       return rejectWithValue(errors)
     }
+
     try {
       await new Promise((resolve) => setTimeout(resolve, FAKE_DELAY))
 

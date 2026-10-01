@@ -1,8 +1,7 @@
 export interface AvatarProps {
-  src?: string | null
+  src?: string
   alt?: string
   size?: number
-  onEditClick?: () => void
+  onChange?: (url: string) => void
   extraClass?: string
-  onChange: (file: File) => void
 }
