@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useAppSelector } from '@/store/hooks'
 import { selectUsers } from '@/entities/user/model/usersSelectors'
 import { UserCard } from '@/shared/ui/user-card'
@@ -21,20 +21,36 @@ export const RecommendedSection = ({ extraClass = '' }: RecommendedSectionProps)
   const users = useAppSelector(selectUsers)
   const [shuffledIds, setShuffledIds] = useState<string[]>([])
 
-  const usersMap = new Map(users.map((u) => [u.id, u]))
-
-  const orderedUsers = shuffledIds
-    .map((id) => usersMap.get(id))
-    .filter((user): user is NonNullable<typeof user> => Boolean(user))
-
-  const { visibleItems, hasMore, sentinelRef } = useProgressiveList(orderedUsers)
-
   useEffect(() => {
-    if (users.length > 0 && shuffledIds.length === 0) {
-      const ids = users.map((u) => u.id)
-      setShuffledIds(shuffleArray(ids))
+    if (users.length === 0) return
+
+    const currentIds = users.map((u) => u.id).sort()
+    const shuffledSorted = [...shuffledIds].sort()
+
+    const isSameSet =
+      currentIds.length === shuffledSorted.length &&
+      currentIds.every((id, i) => id === shuffledSorted[i])
+
+    if (!isSameSet) {
+      setShuffledIds(shuffleArray(users.map((u) => u.id)))
     }
-  }, [users, shuffledIds.length])
+  }, [users, shuffledIds])
+
+  const usersMap = useMemo(
+    () => new Map(users.map((u) => [u.id, u])),
+    [users]
+  )
+
+  const orderedUsers = useMemo(
+    () =>
+      shuffledIds
+        .map((id) => usersMap.get(id))
+        .filter((user): user is NonNullable<typeof user> => Boolean(user)),
+    [shuffledIds, usersMap]
+  )
+
+  const { visibleItems, hasMore, sentinelRef } =
+    useProgressiveList(orderedUsers)
 
   if (!users.length || !shuffledIds.length) {
     return null
